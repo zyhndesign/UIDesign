@@ -1,4 +1,4 @@
-package com.cidic.design;
+package com.cidic.design.controllers;
 
 import java.text.DateFormat;
 import java.util.Date;
