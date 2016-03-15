@@ -9,21 +9,21 @@
 			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
 		</layout>
 	</appender>
-	
+
 	<!-- Application Loggers -->
 	<logger name="com.cidic.design">
 		<level value="info" />
 	</logger>
-	
+
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework.core">
 		<level value="info" />
 	</logger>
-	
+
 	<logger name="org.springframework.beans">
 		<level value="info" />
 	</logger>
-	
+
 	<logger name="org.springframework.context">
 		<level value="info" />
 	</logger>
@@ -32,10 +32,57 @@
 		<level value="info" />
 	</logger>
 
-	<!-- Root Logger -->
+	<logger name="log4j.logger.org.hibernate">
+		<level value="debug" />
+	</logger>
+	<logger name="log4j.logger.org.hibernate.SQL">
+		<level value="trace" />
+	</logger>
+	<logger name="log4j.logger.org.hibernate.type">
+		<level value="trace" />
+	</logger>
+	<logger name="log4j.logger.org.hibernate.hql.ast.AST">
+		<level value="debug" />
+	</logger>
+	<logger name="log4j.logger.org.hibernate.type.descriptor.sql.BasicBinder">
+		<level value="trace" />
+	</logger>
+	<logger name="log4j.logger.org.hibernate.type.descriptor.sql.BasicExtractor">
+		<level value="trace" />
+	</logger>
+	<logger name="log4j.logger.org.hibernate.engine.QueryParameters">
+		<level value="debug" />
+	</logger>
+	<logger name="log4j.logger.org.hibernate.engine.query.HQLQueryPlan">
+		<level value="debug" />
+	</logger>
+
+	<logger name="log4j.logger.org.hibernate.tool.hbm2ddl">
+		<level value="debug" />
+	</logger>
+	<logger name="log4j.logger.org.hibernate.hql">
+		<level value="debug" />
+	</logger>
+	<logger name="log4j.logger.org.hibernate.cache">
+		<level value="debug" />
+	</logger>
+	<logger name="log4j.logger.org.hibernate.transaction">
+		<level value="debug" />
+	</logger>
+	<logger name="log4j.logger.org.hibernate.jdbc">
+		<level value="debug" />
+	</logger>
+	<logger
+		name="log4j.logger.org.hibernate.connection.DriverManagerConnectionProvider">
+		<level value="trace" />
+	</logger>
+	<logger name="log4j.logger.org.hibernate.type.descriptor.sql.BasicBinder">
+		<level value="trace" />
+	</logger>
+
 	<root>
 		<priority value="warn" />
 		<appender-ref ref="console" />
 	</root>
-	
+
 </log4j:configuration>
