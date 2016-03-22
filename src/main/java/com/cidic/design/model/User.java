@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.NaturalId;
 
 @Entity
 @Table(name="user")
@@ -19,12 +20,14 @@ public class User implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(generator="increment")
-	@GenericGenerator(name="increment", strategy="increment")
-    @Column(name="id",length=32,nullable=false,unique=true)
+	@GeneratedValue
+	//@GeneratedValue(generator="increment")
+	//@GenericGenerator(name="increment", strategy="increment")
+    //@Column(name="id",length=32,nullable=false,unique=true)
 	private Integer id;
 	
 	@Column
+	@NaturalId
 	private String username;
 	
 	@Column

@@ -1,5 +1,8 @@
 package com.cidic.design.dao.impl;
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -32,15 +35,42 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void insertUser() {
+	public void insertUser(User user) {
 		// TODO Auto-generated method stub
 		Session session = this.getSessionFactory().getCurrentSession();
        
-        User user = new User();
-        user.setUsername("liling");
-        user.setPassword("111111");
         logger.info("save user :" +user.getUsername());
         session.save(user);
+	}
+
+	@Override
+	public boolean checkUser(User user) {
+		Session session = this.getSessionFactory().getCurrentSession();
+		String sql="from User u where u.username=? and u.password=?";
+	    Query query= session.createQuery(sql);
+	    query.setParameter(0, user.getUsername());
+	    query.setParameter(1, user.getPassword());
+	    List<User> users=query.list();
+	    if(users.size()!=0){
+	    	return true;
+	    }
+	    else{
+	    	return false;
+	    }
+	}
+
+	@Override
+	public boolean checkUserName(String username) {
+		// TODO Auto-generated method stub
+		Session session = this.getSessionFactory().getCurrentSession();
+		Object object = session.byNaturalId(User.class).using("username", username).getReference();
+		if (object != null){
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 }

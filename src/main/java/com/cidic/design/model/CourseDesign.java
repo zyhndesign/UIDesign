@@ -2,17 +2,52 @@ package com.cidic.design.model;
 // Generated 2016-3-14 16:01:31 by Hibernate Tools 4.3.1.Final
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+@Entity
+@Table(name="course_design")
+@Cache(usage=CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class CourseDesign implements java.io.Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue
 	private Integer id;
+	
+	@Column
 	private String title;
+	
+	@Column(name="abstract") 
 	private String abstract_;
+	
+	@Column
 	private String teacher;
+	       
+    @Column(name="create_time")
+    @Temporal(TemporalType.TIMESTAMP)
 	private Date createTime;
+	
+	@Column(name="course_detail_id")
 	private int courseDetailId;
 
+	@OneToMany(mappedBy = "courseDesign",cascade=CascadeType.ALL,fetch = FetchType.EAGER)
+	private List<CourseDesignTag> courseTagList;
+	 
 	public CourseDesign() {
 	}
 
@@ -72,4 +107,13 @@ public class CourseDesign implements java.io.Serializable {
 		this.courseDetailId = courseDetailId;
 	}
 
+	public List<CourseDesignTag> getCourseTagList() {
+		return courseTagList;
+	}
+
+	public void setCourseTagList(List<CourseDesignTag> courseTagList) {
+		this.courseTagList = courseTagList;
+	}
+
+	
 }

@@ -2,16 +2,46 @@ package com.cidic.design.model;
 // Generated 2016-3-14 16:01:31 by Hibernate Tools 4.3.1.Final
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+@Entity
+@Table(name="courseware")
+@Cache(usage=CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Courseware implements java.io.Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue
 	private Integer id;
+	
+	@Column
 	private String title;
+	
+	@Column
 	private String author;
+	
+	@Column
 	private String thumbnail;
+	
+	@Column(name="create_time")
 	private Date createTime;
+	
+	@Column
 	private String content;
+	
+	@OneToMany(mappedBy = "courseware")
+	private List<CoursewareTag> coursewareTagList;
 
 	public Courseware() {
 	}
@@ -70,6 +100,14 @@ public class Courseware implements java.io.Serializable {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public List<CoursewareTag> getCoursewareTagList() {
+		return coursewareTagList;
+	}
+
+	public void setCoursewareTagList(List<CoursewareTag> coursewareTagList) {
+		this.coursewareTagList = coursewareTagList;
 	}
 
 }

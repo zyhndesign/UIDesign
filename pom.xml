@@ -13,8 +13,6 @@
 	</properties>
 	<dependencies>
 
-
-
 		<!-- junit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -33,7 +31,6 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-
 
 		<!-- Spring -->
 		<dependency>
@@ -219,7 +216,7 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.6.1</version>
 		</dependency>
-		
+
 		<!-- tomcat7.0.35 数据库连接池 -->
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
@@ -227,7 +224,35 @@
 			<version>7.0.35</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>4.0.3.RELEASE</version>
+		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>4.0.3.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>4.0.3.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.19</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

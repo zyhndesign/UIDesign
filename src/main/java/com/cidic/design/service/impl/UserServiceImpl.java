@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cidic.design.dao.UserDao;
+import com.cidic.design.model.User;
 import com.cidic.design.service.UserService;
 
 @Service
@@ -24,9 +25,26 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDaoImpl;
 	
 	@Override
-	public void insertUser() {
+	@Transactional(rollbackFor={Exception.class})
+	public void insertUser(User user) {
 		logger.info("service insert user...");
-		this.userDaoImpl.insertUser();
+		this.userDaoImpl.insertUser(user);
+	}
+	
+	// @Transactional(propagation = Propagation.NESTED, timeout = 1000, isolation = Isolation.READ_COMMITTED, 
+	// rollbackFor = Exception.class, noRollbackFor = CustomRuntimeException.class)
+	
+	@Override
+	@Transactional(readOnly=true)
+	public void checkUser(User user) {
+		// TODO Auto-generated method stub
+		this.userDaoImpl.checkUser(user);
+	}
+
+	@Override
+	public boolean checkUserName(String username) {
+		// TODO Auto-generated method stub
+		return this.userDaoImpl.checkUserName(username);
 	}
 
 }

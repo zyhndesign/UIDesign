@@ -1,14 +1,39 @@
 package com.cidic.design.model;
 // Generated 2016-3-14 16:01:31 by Hibernate Tools 4.3.1.Final
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+@Entity
+@Table(name="video_course")
+@Cache(usage=CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class VideoCourse implements java.io.Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue
 	private Integer id;
+	
+	@Column
 	private String title;
+	
+	@Column(name="abstract")
 	private String abstract_;
+	
+	@Column
 	private String duration;
+	
+	@Column
 	private String thumbnail;
+	
+	@Column
 	private String content;
 
 	public VideoCourse() {
