@@ -33,12 +33,12 @@ public class CoursewareTagServiceImpl implements CoursewareTagService {
 
 	@Override
 	public void deleteCoursewareTag(int coursewareId, int tagId) {
-		
+		coursewareTagDao.deleteCoursewareTag(coursewareId, tagId);
 	}
 
 	@Override
 	public void updateCoursewareTag(CoursewareTag coursewareTag, int coursewareTagId) {
-		
+		coursewareTagDao.updateCoursewareTag(coursewareTag, coursewareTagId);
 	}
 
 }

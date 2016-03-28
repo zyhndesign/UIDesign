@@ -1,5 +1,7 @@
 package com.cidic.design.service.impl;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +34,23 @@ public class CourseDesignServiceImpl implements CourseDesignService {
 	@Override
 	public CourseDesign selectCourseDesign(int id) {
 		return courseDesignDao.selectCourseDesign(id);
+	}
+
+	@Override
+	public void updateCourseDesign(CourseDesign courseDesign) {
+		courseDesignDao.updateCourseDesign(courseDesign);
+	}
+
+	@Override
+	public void deleteCourseDesign(CourseDesign courseDesign) {
+		// TODO Auto-generated method stub
+		courseDesignDao.deleteCourseDesign(courseDesign);
+	}
+
+	@Override
+	public List<CourseDesign> getTopCourseware() {
+		// TODO Auto-generated method stub
+		return courseDesignDao.getTopCourseware();
 	}
 
 }

@@ -58,10 +58,10 @@ public class CourseDesignTagDaoImpl implements CourseDesignTagDao {
 	@Override
 	public void updateCourseDesignTag(CourseDesignTag courseDesignTag, int courseDesignTagId) {
 		Session session = this.getSessionFactory().getCurrentSession();
-		String hqlVersionedUpdate = "update CourseDesignTag set tag_id = :tag_id, courseDesign_id = :courseDesign_id where id = :id";
+		String hqlVersionedUpdate = "update CourseDesignTag set tag = :tag, courseDesign = :courseDesign where id = :id";
 		int updatedEntities = session.createQuery( hqlVersionedUpdate )
-		        .setInteger( "tag_id", courseDesignTag.getTag().getId() )
-		        .setInteger( "courseDesign_id", courseDesignTag.getCourseDesign().getId() )
+		        .setEntity( "tag", courseDesignTag.getTag())
+		        .setEntity( "courseDesign", courseDesignTag.getCourseDesign() )
 		        .setInteger("id",courseDesignTagId)
 		        .executeUpdate();
 		logger.info("update course design tag result is :"+updatedEntities);

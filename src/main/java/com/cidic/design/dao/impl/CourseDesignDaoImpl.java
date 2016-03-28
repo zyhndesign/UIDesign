@@ -1,5 +1,8 @@
 package com.cidic.design.dao.impl;
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -11,6 +14,7 @@ import org.springframework.stereotype.Repository;
 
 import com.cidic.design.dao.CourseDesignDao;
 import com.cidic.design.model.CourseDesign;
+import com.cidic.design.model.Courseware;
 
 @Repository
 @Component
@@ -53,6 +57,28 @@ private static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
         session.close();   
         return courseDesign;
         */
+	}
+
+	@Override
+	public void updateCourseDesign(CourseDesign courseDesign) {
+		Session session = this.getSessionFactory().getCurrentSession();
+		session.update(courseDesign);
+	}
+
+	@Override
+	public void deleteCourseDesign(CourseDesign courseDesign) {
+		Session session = this.getSessionFactory().getCurrentSession();
+		session.delete(courseDesign);
+	}
+	
+	@Override
+	public List<CourseDesign> getTopCourseware() {
+		Session session = this.getSessionFactory().getCurrentSession();
+		String hql = "from CourseDesign order by createTime desc";
+		Query query = session.createQuery(hql);
+		query.setFirstResult(0);
+		query.setMaxResults(10);
+		return query.list();
 	}
 
 }

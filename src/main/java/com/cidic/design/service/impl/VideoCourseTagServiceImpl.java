@@ -33,12 +33,12 @@ public class VideoCourseTagServiceImpl implements VideoCourseTagService {
 
 	@Override
 	public void deleteVideoCourseTag(int videoCourseId, int tagId) {
-		
+		videoCourseTagDao.deleteVideoCourseTag(videoCourseId, tagId);
 	}
 
 	@Override
 	public void updateVideoCourseTag(VideoCourseTag videoCourseTag, int videoCourseTagId) {
-		
+		videoCourseTagDao.updateVideoCourseTag(videoCourseTag, videoCourseTagId);
 	}
 
 }

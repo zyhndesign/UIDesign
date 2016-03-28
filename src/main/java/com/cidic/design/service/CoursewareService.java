@@ -1,5 +1,18 @@
 package com.cidic.design.service;
 
-public interface CoursewareService {
+import java.util.List;
 
+import com.cidic.design.model.Courseware;
+
+public interface CoursewareService {
+	
+	public void insertCourseDesign(Courseware courseware);
+	
+	public Courseware selectCourseware(int id);
+	
+	public void updateCourseware(Courseware courseware);
+	
+	public void deleteCourseware(Courseware courseware);
+	
+	public List<Courseware> getTopCourseware();
 }

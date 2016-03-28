@@ -1,0 +1,33 @@
+package com.cidic.design.model;
+
+public class ResultModel {
+	private int resultCode;
+	private String message;
+	private Object object;
+	
+	public int getResultCode() {
+		return resultCode;
+	}
+	
+	public void setResultCode(int resultCode) {
+		this.resultCode = resultCode;
+	}
+	
+	public String getMessage() {
+		return message;
+	}
+	
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
+	public Object getObject() {
+		return object;
+	}
+	
+	public void setObject(Object object) {
+		this.object = object;
+	}
+	
+	
+}
