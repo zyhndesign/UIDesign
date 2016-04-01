@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cidic.design.exception.UIDesignException;
@@ -18,6 +18,7 @@ import com.cidic.design.model.ResultModel;
 import com.cidic.design.service.CourseDesignService;
 
 @Controller
+@RequestMapping("/coursedesign")
 public class CourseDesignController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(CourseDesignController.class);
@@ -36,7 +37,30 @@ public class CourseDesignController {
 		return resultModel;
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces="application/json")  
+	@RequestMapping(value = "/insert", method = RequestMethod.POST)  
+	@ResponseBody 
+	public ResultModel insertCourseDesign(@RequestParam String title, @RequestParam String abstract_,@RequestParam String teacher){
+		
+		logger.info("/coursedesign/insert/"+title);
+		CourseDesign courseDesign;
+		try{
+			courseDesign = new CourseDesign();
+			courseDesign.setAbstract_(abstract_);
+			courseDesign.setTeacher(teacher);
+			courseDesign.setTitle(title);
+			courseDesignServiceImpl.insertCourseDesign(courseDesign);
+			
+			resultModel = new ResultModel();
+			resultModel.setResultCode(200);
+			
+		}
+		catch(Exception e){
+			throw new UIDesignException(500, "Ìí¼ÓÊ§°Ü£¡");
+		}
+		return resultModel;
+	}
+	
+	@RequestMapping(value = "/select/{id}", method = RequestMethod.GET, produces="application/json")  
 	@ResponseBody 
 	public ResultModel selectCourseDesign(@PathVariable int id) throws Exception{
 		CourseDesign courseDesign = null;
@@ -52,14 +76,23 @@ public class CourseDesignController {
 		return resultModel;
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.POST, produces="application/json")  
+	@RequestMapping(value = "/update/{id}", method = RequestMethod.POST)  
 	@ResponseBody 
-	public ResultModel updateCourseDesign(@RequestBody CourseDesign courseDesign,@PathVariable int id){
+	public ResultModel updateCourseDesign(@PathVariable int id, @RequestParam String title, @RequestParam String abstract_,@RequestParam String teacher){
 		
+		logger.info("/coursedesign/update/"+id +" "+title);
+		CourseDesign courseDesign;
 		try{
+			courseDesign = new CourseDesign();
+			courseDesign.setId(id);
+			courseDesign.setAbstract_(abstract_);
+			courseDesign.setTeacher(teacher);
+			courseDesign.setTitle(title);
 			courseDesignServiceImpl.updateCourseDesign(courseDesign);
+			
 			resultModel = new ResultModel();
 			resultModel.setResultCode(200);
+			
 		}
 		catch(Exception e){
 			throw new UIDesignException(500, "¸üÐÂÊ§°Ü£¡");
@@ -67,7 +100,7 @@ public class CourseDesignController {
 		return resultModel;
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces="application/json")  
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE, produces="application/json")  
 	@ResponseBody 
 	public ResultModel deleteCourseDesign(@PathVariable int id){
 		CourseDesign courseDesign = new CourseDesign();

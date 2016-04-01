@@ -73,6 +73,7 @@ private static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
 	
 	@Override
 	public List<CourseDesign> getTopCourseware() {
+		
 		Session session = this.getSessionFactory().getCurrentSession();
 		String hql = "from CourseDesign order by createTime desc";
 		Query query = session.createQuery(hql);

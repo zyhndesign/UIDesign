@@ -6,7 +6,7 @@ import com.cidic.design.model.Courseware;
 
 public interface CoursewareService {
 	
-	public void insertCourseDesign(Courseware courseware);
+	public void insertCourseware(Courseware courseware);
 	
 	public Courseware selectCourseware(int id);
 	

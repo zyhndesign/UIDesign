@@ -18,21 +18,29 @@ import com.cidic.design.service.TagService;
 @Transactional
 public class TagServiceImpl implements TagService {
 
-private static final Logger logger = LoggerFactory.getLogger(CourseDesignServiceImpl.class);
+	private static final Logger logger = LoggerFactory.getLogger(CourseDesignServiceImpl.class);
 	
 	@Autowired
 	@Qualifier(value="tagDaoImpl")
 	private TagDao tagDao;
 	
 	@Override
+	@Transactional (readOnly = false)
 	public void insertTag(Tag tag) {
-		
+		tagDao.insertTag(tag);
 	}
 
 	@Override
+	@Transactional (readOnly = true)
 	public Tag selectTagById(int id) {
 		
-		return null;
+		return tagDao.selectTagById(id);
+	}
+
+	@Override
+	@Transactional (readOnly = true)
+	public Tag selectTagByTagName(String tagName) {
+		return tagDao.selectTagByTagName(tagName);
 	}
 
 }

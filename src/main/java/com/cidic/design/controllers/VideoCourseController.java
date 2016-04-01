@@ -28,6 +28,7 @@ public class VideoCourseController {
 	private VideoCourseService videoCourseServiceImpl;
 	
 	private ResultModel resultModel = null;
+	private static final String REQUEST_RESULT_MESSAGE = "操作成功";
 	
 	@ExceptionHandler(UIDesignException.class)
 	public @ResponseBody ResultModel handleCustomException(UIDesignException ex) {
@@ -37,29 +38,14 @@ public class VideoCourseController {
 		return resultModel;
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces="application/json")  
+	@RequestMapping(value = "/insert", method = RequestMethod.POST, produces="application/json")  
 	@ResponseBody 
-	public ResultModel selectCourseware(@PathVariable int id) throws Exception{
-		VideoCourse videoCourse = null;
-		try{
-			videoCourse = videoCourseServiceImpl.selectVideoCourse(id);
-			resultModel = new ResultModel();
-			resultModel.setResultCode(200);
-			resultModel.setObject(videoCourse);
-		}
-		catch(Exception e){
-			throw new UIDesignException(500, "查找失败！");
-		}
-		return resultModel;
-	}
-	
-	@RequestMapping(value = "/{id}", method = RequestMethod.POST, produces="application/json")  
-	@ResponseBody 
-	public ResultModel updateCourseware(@RequestBody VideoCourse videoCourse,@PathVariable int id){
+	public ResultModel insertVideoCourse(@RequestBody VideoCourse videoCourse){
 		
 		try{
-			videoCourseServiceImpl.updateVideoCourse(videoCourse);
+			videoCourseServiceImpl.insertVideoCourse(videoCourse);
 			resultModel = new ResultModel();
+			resultModel.setMessage(REQUEST_RESULT_MESSAGE);
 			resultModel.setResultCode(200);
 		}
 		catch(Exception e){
@@ -68,14 +54,48 @@ public class VideoCourseController {
 		return resultModel;
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces="application/json")  
+	@RequestMapping(value = "/select/{id}", method = RequestMethod.GET, produces="application/json")  
 	@ResponseBody 
-	public ResultModel deleteCourseware(@PathVariable int id){
+	public ResultModel selectVideoCourse(@PathVariable int id) throws Exception{
+		VideoCourse videoCourse = null;
+		try{
+			videoCourse = videoCourseServiceImpl.selectVideoCourse(id);
+			resultModel = new ResultModel();
+			resultModel.setResultCode(200);
+			resultModel.setMessage(REQUEST_RESULT_MESSAGE);
+			resultModel.setObject(videoCourse);
+		}
+		catch(Exception e){
+			throw new UIDesignException(500, "查找失败！");
+		}
+		return resultModel;
+	}
+	
+	@RequestMapping(value = "/update/{id}", method = RequestMethod.POST, produces="application/json")  
+	@ResponseBody 
+	public ResultModel updateVideoCourse(@RequestBody VideoCourse videoCourse,@PathVariable int id){
+		
+		try{
+			videoCourseServiceImpl.updateVideoCourse(videoCourse);
+			resultModel = new ResultModel();
+			resultModel.setMessage(REQUEST_RESULT_MESSAGE);
+			resultModel.setResultCode(200);
+		}
+		catch(Exception e){
+			throw new UIDesignException(500, "更新失败！");
+		}
+		return resultModel;
+	}
+	
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE, produces="application/json")  
+	@ResponseBody 
+	public ResultModel deleteVideoCourse(@PathVariable int id){
 		VideoCourse videoCourse = new VideoCourse();
 		videoCourse.setId(id);
 		try{
 			videoCourseServiceImpl.deleteVideoCourse(videoCourse);
 			resultModel = new ResultModel();
+			resultModel.setMessage(REQUEST_RESULT_MESSAGE);
 			resultModel.setResultCode(200);
 		}
 		catch(Exception e){

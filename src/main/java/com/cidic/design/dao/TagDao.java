@@ -4,7 +4,9 @@ import com.cidic.design.model.Tag;
 
 public interface TagDao {
 	
-	public void insertTag(Tag tag);
+	public int insertTag(Tag tag);
 	
 	public Tag selectTagById(int id);
+	
+	public Tag selectTagByTagName(String tagName);
 }

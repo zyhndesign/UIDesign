@@ -39,7 +39,22 @@ public class CoursewareController {
 		return resultModel;
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces="application/json")  
+	@RequestMapping(value = "/insert", method = RequestMethod.POST, produces="application/json")  
+	@ResponseBody 
+	public ResultModel insertCourseware(@RequestBody Courseware courseware){
+		
+		try{
+			coursewareServiceImpl.insertCourseware(courseware);
+			resultModel = new ResultModel();
+			resultModel.setResultCode(200);
+		}
+		catch(Exception e){
+			throw new UIDesignException(500, "ÃÌº” ß∞‹£°");
+		}
+		return resultModel;
+	}
+	
+	@RequestMapping(value = "/select/{id}", method = RequestMethod.GET, produces="application/json")  
 	@ResponseBody 
 	public ResultModel selectCourseware(@PathVariable int id) throws Exception{
 		Courseware courseware = null;
@@ -55,7 +70,7 @@ public class CoursewareController {
 		return resultModel;
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.POST, produces="application/json")  
+	@RequestMapping(value = "/update/{id}", method = RequestMethod.POST, produces="application/json")  
 	@ResponseBody 
 	public ResultModel updateCourseware(@RequestBody Courseware courseware,@PathVariable int id){
 		
@@ -70,7 +85,7 @@ public class CoursewareController {
 		return resultModel;
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces="application/json")  
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE, produces="application/json")  
 	@ResponseBody 
 	public ResultModel deleteCourseware(@PathVariable int id){
 		Courseware courseware = new Courseware();

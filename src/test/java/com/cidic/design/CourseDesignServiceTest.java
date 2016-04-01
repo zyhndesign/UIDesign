@@ -78,14 +78,14 @@ public class CourseDesignServiceTest {
     
     @Test
     public void testDeleteTagRelation(){
-    	/*
+    	
     	CourseDesign courseDesign = new CourseDesign();
-    	courseDesign.setId(1);
+    	courseDesign.setId(5);
     	courseDesignService.deleteCourseDesign(courseDesign);
-    	*/
+    	
     }
     
-    @Test
+   // @Test
     public void testUpdateRelation(){
     	CourseDesign courseDesign = new CourseDesign();
     	courseDesign.setTitle("服务设计课程作业666666");
