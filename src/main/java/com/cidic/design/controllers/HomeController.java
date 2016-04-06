@@ -1,7 +1,9 @@
 package com.cidic.design.controllers;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import org.slf4j.Logger;
@@ -10,12 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.cidic.design.service.CourseDesignService;
-import com.cidic.design.service.CoursewareService;
-import com.cidic.design.service.VideoCourseService;
+import com.cidic.design.exception.UIDesignException;
+import com.cidic.design.model.ResultModel;
+import com.cidic.design.service.HomeService;
 
 /**
  * Handles requests for the application home page.
@@ -25,17 +29,19 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	@Autowired
-	@Qualifier(value="coursewareServiceImpl")
-	private CoursewareService coursewareServiceImpl;
+	private ResultModel resultModel = null;
 	
 	@Autowired
-	@Qualifier(value="courseDesignServiceImpl")
-	private CourseDesignService courseDesignServiceImpl;
+	@Qualifier(value="homeServiceImpl")
+	private HomeService homeServiceImpl;
 	
-	@Autowired
-	@Qualifier(value="videoCourseServiceImpl")
-	private VideoCourseService videoCourseServiceImpl;
+	@ExceptionHandler(UIDesignException.class)
+	public @ResponseBody ResultModel handleCustomException(UIDesignException ex) {
+		ResultModel resultModel = new ResultModel();
+		resultModel.setResultCode(ex.getErrCode());
+		resultModel.setMessage(ex.getMessage());
+		return resultModel;
+	}
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -53,6 +59,23 @@ public class HomeController {
 		return "home";
 	}
 	
-	
+	@RequestMapping(value = "/homeContent", method = RequestMethod.GET)
+	public ResultModel getHomeContent(Locale locale, Model model){
+		
+		List<Object> list = null;
+		
+		try{
+			
+			list = homeServiceImpl.getHomeContentData();
+			
+			resultModel = new ResultModel();
+			resultModel.setResultCode(200);
+			resultModel.setObject(list);
+		}
+		catch(Exception e){
+			throw new UIDesignException(500, "ÃÌº” ß∞‹£°");
+		}
+		return resultModel;
+	}
 	
 }

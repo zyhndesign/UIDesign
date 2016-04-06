@@ -59,7 +59,7 @@ public class CourseDesignServiceImpl implements CourseDesignService {
 
 	@Override
 	@Transactional (readOnly = true)
-	public List<CourseDesign> getTopCourseware() {
+	public List<CourseDesign> getTopCourseDesign() {
 		// TODO Auto-generated method stub
 		return courseDesignDao.getTopCourseware();
 	}

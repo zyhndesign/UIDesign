@@ -14,6 +14,6 @@ public interface CourseDesignService {
 	
 	public void deleteCourseDesign(CourseDesign courseDesign);
 	
-	public List<CourseDesign> getTopCourseware();
+	public List<CourseDesign> getTopCourseDesign();
 }
 
