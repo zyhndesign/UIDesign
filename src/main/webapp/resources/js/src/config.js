@@ -11,7 +11,7 @@ var config={
     	upTokenUrl:"qi-niu/up-token",
         uploadDomain:"http://qiniu-plupload.qiniudn.com/",
         bucketDomain:"http://7xqx6h.com1.z0.glb.clouddn.com/",
-        swfUrl:"resources/js/lib/Moxie.swf"
+        swfUrl:basePath+"/resources/js/lib/Moxie.swf"
     },
     ajaxUrls:{
         courseDesignGetAll:"list",
@@ -22,14 +22,14 @@ var config={
         courseVideoDelete:"/:id"
     },
     dataTable:{
-        langUrl:"resources/lang/de_DE.txt"
+        langUrl:basePath+"/resources/lang/de_DE.txt"
     },
     perLoadCounts:{
         table:10
     },
     uploader:{
         url:"#",
-        swfUrl:"resources/js/plupload/plupload.flash.swf",
+        swfUrl:basePath+"/resources/js/plupload/plupload.flash.swf",
         sizes:{
             all:"5120m",
             img:"2m"
