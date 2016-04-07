@@ -120,6 +120,7 @@ label.error{
 */
 .logo{
     margin: 0px;
+    display: inline-block;
 }
 .logo a{
     color: #000;
