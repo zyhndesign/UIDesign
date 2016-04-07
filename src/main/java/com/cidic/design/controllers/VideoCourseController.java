@@ -1,5 +1,7 @@
 package com.cidic.design.controllers;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.cidic.design.exception.UIDesignException;
 import com.cidic.design.model.ResultModel;
@@ -36,6 +39,20 @@ public class VideoCourseController {
 		resultModel.setResultCode(ex.getErrCode());
 		resultModel.setMessage(ex.getMessage());
 		return resultModel;
+	}
+	
+	@RequestMapping(value = "/videoCourseCOR", method = RequestMethod.GET)
+	public ModelAndView getVideoCourseCOR(HttpServletRequest request) {
+		ModelAndView view = new ModelAndView();
+		view.setViewName("/admin/videoCourseCOR");
+		return view;
+	}
+	
+	@RequestMapping(value = "/videoCourseMgr", method = RequestMethod.GET)
+	public ModelAndView getCourseWareMgr(HttpServletRequest request) {
+		ModelAndView view = new ModelAndView();
+		view.setViewName("/admin/videoCourseMgr");
+		return view;
 	}
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST, produces="application/json")  

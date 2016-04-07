@@ -41,7 +41,7 @@ public class MemberInterceptor implements HandlerInterceptor {
           
         String username =  (String)request.getSession().getAttribute(SEESION_MEMBER);   
         if(username == null){  
-        	logger.info("Interceptor£ºÌø×ªµ½loginÒ³Ãæ£¡");  
+        	logger.info("Interceptor login");  
             request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);  
             return false;  
         }else  
