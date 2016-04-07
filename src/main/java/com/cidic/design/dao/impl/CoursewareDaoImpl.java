@@ -69,7 +69,7 @@ public class CoursewareDaoImpl implements CoursewareDao {
 	@Override
 	public List<Courseware> getDataByPage(int limit, int offset, String sEcho) {
 		Session session = this.getSessionFactory().getCurrentSession();
-		final String hql = " from Courseware "; 
+		final String hql = " from Courseware  order by createTime desc"; 
         final Query query = session.createQuery(hql);   
         query.setFirstResult(offset);    
         query.setMaxResults(limit); 

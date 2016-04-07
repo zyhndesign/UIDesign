@@ -2,6 +2,7 @@ package com.cidic.design.service;
 
 import java.util.List;
 
+import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.Courseware;
 
 public interface CoursewareService {
@@ -15,4 +16,6 @@ public interface CoursewareService {
 	public void deleteCourseware(Courseware courseware);
 	
 	public List<Courseware> getTopCourseware();
+	
+	public List<Courseware> getDataByPage(int limit, int offset, String sEcho);
 }

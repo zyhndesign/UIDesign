@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cidic.design.dao.CoursewareDao;
 import com.cidic.design.dao.TagDao;
+import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.Courseware;
 import com.cidic.design.service.CoursewareService;
 
@@ -59,8 +60,13 @@ public class CoursewareServiceImpl implements CoursewareService {
 	@Override
 	@Transactional (readOnly = true)
 	public List<Courseware> getTopCourseware() {
-		// TODO Auto-generated method stub
 		return coursewareDao.getTopCourseware();
+	}
+
+	@Override
+	@Transactional (readOnly = true)
+	public List<Courseware> getDataByPage(int limit, int offset, String sEcho) {
+		return coursewareDao.getDataByPage(limit, offset, sEcho);
 	}
 
 }

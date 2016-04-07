@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cidic.design.dao.TagDao;
 import com.cidic.design.dao.VideoCourseDao;
+import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.VideoCourse;
 import com.cidic.design.service.VideoCourseService;
 
@@ -60,6 +61,12 @@ public class VideoCourseServiceImpl implements VideoCourseService {
 	public List<VideoCourse> getTopVideoCourse() {
 		// TODO Auto-generated method stub
 		return videoCourseDao.getTopVideoCourse();
+	}
+
+	@Override
+	public List<VideoCourse> getDataByPage(int limit, int offset, String sEcho) {
+		// TODO Auto-generated method stub
+		return videoCourseDao.getDataByPage(limit, offset, sEcho);
 	}
 
 }

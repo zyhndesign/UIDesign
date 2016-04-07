@@ -46,7 +46,7 @@ public class CourseDesignServiceImpl implements CourseDesignService {
 	@Override
 	@Transactional(readOnly = false, rollbackFor = Exception.class)
 	public void updateCourseDesign(CourseDesign courseDesign) {
-		//¸üÐÂ²Ù×÷Ê±ºòÒª½«¸üÐÂ±êÇ©ºÍÉ¾³ý±êÇ©·Ö¿ª
+		//ï¿½ï¿½ï¿½Â²ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Â±ï¿½Ç©ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½Ç©ï¿½Ö¿ï¿½
 		courseDesignDao.updateCourseDesign(courseDesign);
 	}
 
@@ -62,6 +62,13 @@ public class CourseDesignServiceImpl implements CourseDesignService {
 	public List<CourseDesign> getTopCourseDesign() {
 		// TODO Auto-generated method stub
 		return courseDesignDao.getTopCourseware();
+	}
+
+	@Override
+	@Transactional (readOnly = true)
+	public List<CourseDesign> getDataByPage(int limit, int offset, String sEcho) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

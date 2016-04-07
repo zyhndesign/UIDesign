@@ -15,5 +15,7 @@ public interface CourseDesignService {
 	public void deleteCourseDesign(CourseDesign courseDesign);
 	
 	public List<CourseDesign> getTopCourseDesign();
+	
+	public List<CourseDesign> getDataByPage(int limit, int offset, String sEcho);
 }
 

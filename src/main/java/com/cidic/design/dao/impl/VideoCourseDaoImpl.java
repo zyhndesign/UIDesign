@@ -69,7 +69,7 @@ public class VideoCourseDaoImpl implements VideoCourseDao {
 	@Override
 	public List<VideoCourse> getDataByPage(int limit, int offset, String sEcho) {
 		Session session = this.getSessionFactory().getCurrentSession();
-		final String hql = " from VideoCourse "; 
+		final String hql = " from VideoCourse order by createTime desc"; 
         final Query query = session.createQuery(hql);   
         query.setFirstResult(offset);    
         query.setMaxResults(limit); 

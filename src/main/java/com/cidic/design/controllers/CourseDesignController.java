@@ -1,5 +1,7 @@
 package com.cidic.design.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -17,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cidic.design.exception.UIDesignException;
 import com.cidic.design.model.CourseDesign;
+import com.cidic.design.model.ListResultModel;
 import com.cidic.design.model.ResultModel;
 import com.cidic.design.service.CourseDesignService;
 
@@ -136,5 +139,23 @@ public class CourseDesignController {
 			throw new UIDesignException(500, "删除数据出错");
 		}
 		return resultModel;
+	}
+	
+	@RequestMapping(value = "/list", method = RequestMethod.GET, produces="application/json")  
+	@ResponseBody 
+	public ListResultModel listCourseDesign( @RequestParam int limit, @RequestParam int offset,@RequestParam String sEcho){
+		ListResultModel listResultModel = new ListResultModel();
+		try{
+			List<CourseDesign> list = courseDesignServiceImpl.getDataByPage(limit, offset, sEcho);
+			listResultModel.setAaData(list);
+			listResultModel.setsEcho(sEcho);
+			listResultModel.setiTotalRecords(limit);
+			listResultModel.setiTotalDisplayRecords(offset + limit);
+			listResultModel.setSuccess(true);
+		}
+		catch(Exception e){
+			listResultModel.setSuccess(false);
+		}
+		return listResultModel;
 	}
 }

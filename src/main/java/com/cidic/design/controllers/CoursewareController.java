@@ -1,5 +1,7 @@
 package com.cidic.design.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -12,11 +14,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cidic.design.exception.UIDesignException;
+import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.Courseware;
+import com.cidic.design.model.ListResultModel;
 import com.cidic.design.model.ResultModel;
 import com.cidic.design.service.CoursewareService;
 
@@ -119,5 +124,23 @@ public class CoursewareController {
 			throw new UIDesignException(500, "删除数据出错");
 		}
 		return resultModel;
+	}
+	
+	@RequestMapping(value = "/list", method = RequestMethod.GET, produces="application/json")  
+	@ResponseBody 
+	public ListResultModel listCourseware( @RequestParam int limit, @RequestParam int offset,@RequestParam String sEcho){
+		ListResultModel listResultModel = new ListResultModel();
+		try{
+			List<Courseware> list = coursewareServiceImpl.getDataByPage(limit, offset, sEcho);
+			listResultModel.setAaData(list);
+			listResultModel.setsEcho(sEcho);
+			listResultModel.setiTotalRecords(limit);
+			listResultModel.setiTotalDisplayRecords(offset + limit);
+			listResultModel.setSuccess(true);
+		}
+		catch(Exception e){
+			listResultModel.setSuccess(false);
+		}
+		return listResultModel;
 	}
 }
