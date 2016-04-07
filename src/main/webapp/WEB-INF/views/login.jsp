@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
     <meta  charset="utf-8">
@@ -18,7 +18,7 @@ pageEncoding="UTF-8"%>
 
 <div class="header">
     <a href="" class="logout">
-        <span class="span icon-typo"></span><h2 class="logo">文字设计</h2>
+        <span class="span icon-typo"></span><h2 class="logo">GUI</h2>
     </a>
 </div>
 
