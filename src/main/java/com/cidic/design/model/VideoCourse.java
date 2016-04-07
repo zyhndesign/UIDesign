@@ -1,6 +1,8 @@
 package com.cidic.design.model;
 // Generated 2016-3-14 16:01:31 by Hibernate Tools 4.3.1.Final
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,6 +38,9 @@ public class VideoCourse implements java.io.Serializable {
 	@Column
 	private String content;
 
+	@Column(name="create_time")
+	private Date createTime;
+	
 	public VideoCourse() {
 	}
 
@@ -94,5 +99,14 @@ public class VideoCourse implements java.io.Serializable {
 	public void setContent(String content) {
 		this.content = content;
 	}
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+	
 
 }

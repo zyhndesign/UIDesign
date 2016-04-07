@@ -133,14 +133,14 @@ public class VideoCourseController {
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET, produces="application/json")  
 	@ResponseBody 
-	public ListResultModel listVideoCourse( @RequestParam int limit, @RequestParam int offset,@RequestParam String sEcho){
+	public ListResultModel listVideoCourse(@RequestParam int iDisplayLength, @RequestParam int iDisplayStart,@RequestParam String sEcho){
 		ListResultModel listResultModel = new ListResultModel();
 		try{
-			List<VideoCourse> list = videoCourseServiceImpl.getDataByPage(limit, offset, sEcho);
+			List<VideoCourse> list = videoCourseServiceImpl.getDataByPage(iDisplayLength, iDisplayStart, sEcho);
 			listResultModel.setAaData(list);
 			listResultModel.setsEcho(sEcho);
-			listResultModel.setiTotalRecords(limit);
-			listResultModel.setiTotalDisplayRecords(offset + limit);
+			listResultModel.setiTotalRecords(iDisplayLength);
+			listResultModel.setiTotalDisplayRecords(iDisplayStart + iDisplayLength);
 			listResultModel.setSuccess(true);
 		}
 		catch(Exception e){

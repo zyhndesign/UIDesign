@@ -128,14 +128,14 @@ public class CoursewareController {
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET, produces="application/json")  
 	@ResponseBody 
-	public ListResultModel listCourseware( @RequestParam int limit, @RequestParam int offset,@RequestParam String sEcho){
+	public ListResultModel listCourseware(@RequestParam int iDisplayLength, @RequestParam int iDisplayStart,@RequestParam String sEcho){
 		ListResultModel listResultModel = new ListResultModel();
 		try{
-			List<Courseware> list = coursewareServiceImpl.getDataByPage(limit, offset, sEcho);
+			List<Courseware> list = coursewareServiceImpl.getDataByPage(iDisplayLength, iDisplayStart, sEcho);
 			listResultModel.setAaData(list);
 			listResultModel.setsEcho(sEcho);
-			listResultModel.setiTotalRecords(limit);
-			listResultModel.setiTotalDisplayRecords(offset + limit);
+			listResultModel.setiTotalRecords(iDisplayLength);
+			listResultModel.setiTotalDisplayRecords(iDisplayStart + iDisplayLength);
 			listResultModel.setSuccess(true);
 		}
 		catch(Exception e){
