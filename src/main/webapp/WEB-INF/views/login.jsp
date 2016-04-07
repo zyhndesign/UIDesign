@@ -12,6 +12,7 @@ pageEncoding="UTF-8"%>
     <meta name="description" content="YaLuoYe">
     <title>后台登陆</title>
     <link type="text/css" rel="stylesheet" href="resources/css/src/login.css">
+    <link type="text/css" rel="stylesheet" href="resources/css/src/main.css">
 </head>
 <body>
 
