@@ -41,6 +41,9 @@ public class VideoCourse implements java.io.Serializable {
 	@Column(name="create_time")
 	private Date createTime;
 	
+	@Column(name="top_tag")
+	private int topTag;
+	
 	public VideoCourse() {
 	}
 
@@ -107,6 +110,13 @@ public class VideoCourse implements java.io.Serializable {
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
-	
 
+	public int getTopTag() {
+		return topTag;
+	}
+
+	public void setTopTag(int topTag) {
+		this.topTag = topTag;
+	}
+	
 }

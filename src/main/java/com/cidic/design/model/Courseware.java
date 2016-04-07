@@ -40,6 +40,9 @@ public class Courseware implements java.io.Serializable {
 	@Column
 	private String content;
 	
+	@Column(name="top_tag")
+	private int topTag;
+	
 	@OneToMany(mappedBy = "courseware")
 	private List<CoursewareTag> coursewareTagList;
 
@@ -110,4 +113,13 @@ public class Courseware implements java.io.Serializable {
 		this.coursewareTagList = coursewareTagList;
 	}
 
+	public int getTopTag() {
+		return topTag;
+	}
+
+	public void setTopTag(int topTag) {
+		this.topTag = topTag;
+	}
+
+	
 }

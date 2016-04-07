@@ -19,11 +19,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cidic.design.exception.UIDesignException;
-import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.Courseware;
 import com.cidic.design.model.ListResultModel;
 import com.cidic.design.model.ResultModel;
 import com.cidic.design.service.CoursewareService;
+import com.cidic.design.util.DateUtil;
 
 @Controller
 @RequestMapping("/courseware")
@@ -66,8 +66,15 @@ public class CoursewareController {
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST, produces="application/json")  
 	@ResponseBody 
-	public ResultModel insertCourseware(@RequestBody Courseware courseware){
+	public ResultModel insertCourseware(@RequestParam String title, @RequestParam String author,
+			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String content,@RequestParam int topTag){
 		
+		Courseware courseware = new Courseware();
+		courseware.setAuthor(author);
+		courseware.setContent(content);
+		courseware.setCreateTime(DateUtil.stringToDate(createTime));
+		courseware.setThumbnail(thumbnail);
+		courseware.setTopTag(topTag);
 		try{
 			coursewareServiceImpl.insertCourseware(courseware);
 			resultModel = new ResultModel();
@@ -97,8 +104,15 @@ public class CoursewareController {
 	
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.POST, produces="application/json")  
 	@ResponseBody 
-	public ResultModel updateCourseware(@RequestBody Courseware courseware,@PathVariable int id){
-		
+	public ResultModel updateCourseware(@RequestParam String title, @RequestParam String author,
+			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String content,
+			@RequestParam int topTag,@PathVariable int id){
+		Courseware courseware = new Courseware();
+		courseware.setAuthor(author);
+		courseware.setContent(content);
+		courseware.setCreateTime(DateUtil.stringToDate(createTime));
+		courseware.setThumbnail(thumbnail);
+		courseware.setTopTag(topTag);
 		try{
 			coursewareServiceImpl.updateCourseware(courseware);
 			resultModel = new ResultModel();

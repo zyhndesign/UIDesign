@@ -23,6 +23,7 @@ import com.cidic.design.model.ListResultModel;
 import com.cidic.design.model.ResultModel;
 import com.cidic.design.model.VideoCourse;
 import com.cidic.design.service.VideoCourseService;
+import com.cidic.design.util.DateUtil;
 
 @Controller
 @RequestMapping("/videocourse")
@@ -67,8 +68,16 @@ public class VideoCourseController {
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST, produces="application/json")  
 	@ResponseBody 
-	public ResultModel insertVideoCourse(@RequestBody VideoCourse videoCourse){
-		
+	public ResultModel insertVideoCourse(@RequestParam String title, @RequestParam String abstract_,@RequestParam String duration,
+			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String content,@RequestParam int topTag){
+		VideoCourse videoCourse = new VideoCourse();
+		videoCourse.setTitle(title);
+		videoCourse.setAbstract_(abstract_);
+		videoCourse.setContent(content);
+		videoCourse.setCreateTime(DateUtil.stringToDate(createTime));
+		videoCourse.setDuration(duration);
+		videoCourse.setThumbnail(thumbnail);
+		videoCourse.setTopTag(topTag);
 		try{
 			videoCourseServiceImpl.insertVideoCourse(videoCourse);
 			resultModel = new ResultModel();
@@ -100,8 +109,17 @@ public class VideoCourseController {
 	
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.POST, produces="application/json")  
 	@ResponseBody 
-	public ResultModel updateVideoCourse(@RequestBody VideoCourse videoCourse,@PathVariable int id){
-		
+	public ResultModel updateVideoCourse(@RequestParam String title, @RequestParam String abstract_,@RequestParam String duration,
+			@RequestParam String thumbnail,@RequestParam String createTime,
+			@RequestParam String content,@RequestParam int topTag, @PathVariable int id){
+		VideoCourse videoCourse = new VideoCourse();
+		videoCourse.setTitle(title);
+		videoCourse.setAbstract_(abstract_);
+		videoCourse.setContent(content);
+		videoCourse.setCreateTime(DateUtil.stringToDate(createTime));
+		videoCourse.setDuration(duration);
+		videoCourse.setThumbnail(thumbnail);
+		videoCourse.setTopTag(topTag);
 		try{
 			videoCourseServiceImpl.updateVideoCourse(videoCourse);
 			resultModel = new ResultModel();
