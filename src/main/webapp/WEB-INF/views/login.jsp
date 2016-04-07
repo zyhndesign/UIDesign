@@ -16,9 +16,11 @@ pageEncoding="UTF-8"%>
 <body>
 
 <div class="header">
-    <a href="" class="logout">
-        <span class="span icon-gui"></span><h2 class="logo">GUI</h2>
-    </a>
+    <h1 class="logo">
+        <a href="#">
+            <span class="icon-gui"></span>GUI
+        </a>
+    </h1>
 </div>
 
 <form class="pCenter" id="myForm" method="post" action="login">
@@ -32,13 +34,13 @@ pageEncoding="UTF-8"%>
         <input class="ctrlInput" type="password" name="password" placeholder="请输入你的密码"/>
     </div>
     <div class="row">
-        <input type="checkbox" checked="checked" id="rememberMe" class="ctrlMemory" value="记住我">记住我
+        <input type="checkbox" checked="checked" id="rememberMe" class="ctrlRemember" value="记住我">记住我
     </div>
     <div class="row">
         <input type="submit" class="ctrlBtn" value="登陆">
     </div>
     <c:if test="${!empty error}">
-        <label class="error" style="text-align: center">用户名或者密码错误</label>
+        <label class="error tCenter">用户名或者密码错误</label>
     </c:if>
 </form>
 </body>

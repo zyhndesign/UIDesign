@@ -13,10 +13,10 @@
 </head>
 <body>
 
-<script src="header.js"></script>
+<jsp:include  page="header.jsp"/>
 
 <div class="left">
-    <script src="menu.js"></script>
+    <jsp:include  page="menu.jsp"/>
 </div>
 
 <div class="right">

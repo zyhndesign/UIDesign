@@ -1,10 +1,9 @@
 @font-face {
     font-family: 'design';
-    src:    url('../lib/fonts/design.eot?rkacig');
-    src:    url('../lib/fonts/design.eot?rkacig#iefix') format('embedded-opentype'),
-    url('../lib/fonts/design.ttf?rkacig') format('truetype'),
-    url('../lib/fonts/design.woff?rkacig') format('woff'),
-    url('../lib/fonts/design.svg?rkacig#design') format('svg');
+    src: url('../fonts/design.eot?rkacig');
+    src: url('../fonts/design.eot?rkacig#iefix') format('embedded-opentype'),
+    url('../fonts/design.ttf?rkacig') format('truetype'), url('../fonts/design.woff?rkacig') format('woff'),
+    url('../fonts/design.svg?rkacig#design') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -34,10 +33,20 @@ body{
     height: 100%;
     position: relative;
     font-family: "Arail","微软雅黑","Heiti";
-    background: #373737;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    background: #f2f3ea!important;
+}
+a{
+    text-decoration: none!important;
+}
+.header{
+    position: relative;
+    background: #fff;
+    height: 60px;
+}
+label.error{
+    color: red;
+    font-size: 14px;
+    display: block;
 }
 /*icon图标*/
 .icon-gui:before {
@@ -49,9 +58,25 @@ body{
 .icon-lock:before{
     content: "\e91c";
 }
-.icon-arrow-light-right:before{
-    content: '\e904';
+/*logo*/
+.logo{
+    margin: 0px;
 }
+.logo a{
+    color: #000;
+    line-height: 60px;
+    padding-left: 10px;
+    font-weight: 500;
+    font-size: 27px;
+    display: block;
+}
+.logo a .icon-gui{
+    color: #ff2e38;
+    font-size: 36px;
+    margin-right: 5px;
+    vertical-align: text-top;
+}
+
 .pCenter{
     position: absolute;
     height: 350px;
@@ -93,7 +118,7 @@ body{
     outline: none;
     border-left:3px solid #ff2e38;
 }
-.ctrlMemory{
+.ctrlRemember{
     width: 24px;
     height:24px;
     vertical-align: middle;
@@ -112,9 +137,4 @@ body{
 .ctrlBtn:hover{
     background: #443c3c;
     cursor: pointer;
-}
-label.error{
-    color: red;
-    font-size: 14px;
-    display: block;
 }

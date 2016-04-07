@@ -1,10 +1,9 @@
 @font-face {
     font-family: 'design';
-    src:    url('../lib/fonts/design.eot?rkacig');
-    src:    url('../lib/fonts/design.eot?rkacig#iefix') format('embedded-opentype'),
-    url('../lib/fonts/design.ttf?rkacig') format('truetype'),
-    url('../lib/fonts/design.woff?rkacig') format('woff'),
-    url('../lib/fonts/design.svg?rkacig#design') format('svg');
+    src: url('../fonts/design.eot?rkacig');
+    src: url('../fonts/design.eot?rkacig#iefix') format('embedded-opentype'),
+    url('../fonts/design.ttf?rkacig') format('truetype'), url('../fonts/design.woff?rkacig') format('woff'),
+    url('../fonts/design.svg?rkacig#design') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -35,7 +34,7 @@ body{
     height: 100%;
     position: relative;
     font-family: "Arail","微软雅黑","Heiti";
-    background: #f2f3ea!important;
+    background: #443c3c!important;
 }
 ul{
     padding:0px;
@@ -67,8 +66,6 @@ label.error{
 }
 .left{
     width: 180px;
-    height: 100%;
-    background: #443c3c;
 }
 .right{
     border-left: 1px solid #ccccc8;
@@ -76,7 +73,7 @@ label.error{
     padding:50px 30px;
     position: absolute;
     left:180px;
-    top:70px;
+    top:60px;
     bottom: 0px;
     right: 0px;
     overflow: auto;
@@ -123,56 +120,53 @@ label.error{
 */
 .logo{
     margin: 0px;
-    display: inline-block;
+}
+.logo a{
     color: #000;
     line-height: 60px;
-    vertical-align: top;
     padding-left: 10px;
     font-weight: 500;
-    font-size: 27px!important;
+    font-size: 27px;
+    display: block;
 }
-.logout{
-    position: absolute;
-    left:40px;
-    font-size: 18px;
-}
-.logout:hover{
-    color: #efefef;
-}
-.icon-typo{
+.logo a .icon-gui{
     color: #ff2e38;
     font-size: 36px;
-    line-height: 60px;
-    vertical-align: top;
+    margin-right: 5px;
+    vertical-align: text-top;
 }
 /**
-list
+顶部userMenu
 */
-.list .item .link{
+.userMenu{
     position: absolute;
-    top:50%;
-    transform: translateY(-50%);
+    right:80px;
+    bottom:0px;
+}
+.userMenu .item{
+    display: inline-block;
+    float: left;
+}
+.userMenu .item .link{
     color: #000;
     font-size: 16px;
+    line-height: 60px;
+    padding: 0px 15px;
 }
-.list .item:first-child .link{
-    color: #c5c5c5;
-    right:290px;
+.userMenu .item:first-child .link{
+    color: #ccccc8;
 }
-.list .item:nth-child(2) .link{
-    right:190px;
+.userMenu .item:last-child .link{
+    padding-left: 0px;
 }
-.list .item:nth-child(3) .link{
-    right:120px;
-}
-.list .item:nth-child(3) .link:before{
+.userMenu .item:last-child .link:before{
     content: "";
-    position: absolute;
-    top:5px;
-    right:50px;
     width: 1px;
     height: 14px;
     background: #ccccc8;
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
 }
 /**
 *menu导航
