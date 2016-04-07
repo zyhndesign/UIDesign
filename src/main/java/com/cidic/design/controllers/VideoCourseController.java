@@ -52,7 +52,7 @@ public class VideoCourseController {
 			videoCourse = videoCourseServiceImpl.selectVideoCourse(id);
 		}
 		ModelAndView view = new ModelAndView();
-		view.setViewName("/admin/videoCourseCOR");
+		view.setViewName("/admin/courseVideoCOR");
 		view.addObject("videoCourse", videoCourse);
 		
 		return view;
@@ -61,7 +61,7 @@ public class VideoCourseController {
 	@RequestMapping(value = "/videoCourseMgr", method = RequestMethod.GET)
 	public ModelAndView getCourseWareMgr(HttpServletRequest request) {
 		ModelAndView view = new ModelAndView();
-		view.setViewName("/admin/videoCourseMgr");
+		view.setViewName("/admin/courseVideoMgr");
 		return view;
 	}
 	
