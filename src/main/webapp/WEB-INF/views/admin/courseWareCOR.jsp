@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta charset="utf-8">
@@ -7,16 +10,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
     <title>xxxx管理系统</title>
 
-    <link type="text/css" rel="stylesheet" href="../../../../resources/css/lib/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="../../../../resources/css/lib/jquery.toastmessage.css">
-    <link type="text/css" rel="stylesheet" href="../../../../resources/css/src/main.css">
+    <link type="text/css" rel="stylesheet" href="../../../resources/css/lib/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../../../resources/css/lib/jquery.toastmessage.css">
+    <link type="text/css" rel="stylesheet" href="../../../resources/css/src/main.css">
 </head>
 <body>
 
-<script src="../header.js"></script>
+<script src="header.js"></script>
 
 <div class="left">
-    <script src="../menu.js"></script>
+    <script src="menu.js"></script>
 </div>
 
 <div class="right">
@@ -35,7 +38,7 @@
                             <a href="#" class="btn btn-success" id="uploadBtn">上传</a>
                             <p class="help-block">请上传500x500的jpg，png</p>
                             <img  id="image"  style="width:100px"
-                                  src="../../../../resources/images/app/defaultPeopleImage.jpg"/>
+                                  src="../../../resources/images/app/defaultPeopleImage.jpg"/>
                             <input type="hidden" id="imageUrl" name="thumbnail">
                         </div>
                     </div>
@@ -79,16 +82,16 @@
     <span class="text">Loading...</span>
 </div>
 
-<script src="../../../../resources/js/lib/jquery-2.0.3.min.js"></script>
-<script src="../../../../resources/js/lib/jquery.form.js"></script>
-<script src="../../../../resources/js/lib/jquery.validate.min.js"></script>
-<script src="../../../../resources/js/lib/plupload.full.min.js"></script>
-<script src="../../../../resources/js/lib/qiniu.js"></script>
-<script src="../../../../resources/js/lib/tinymce.min.js"></script>
-<script src="../../../../resources/js/lib/jquery.toastmessage.js"></script>
-<script src="../../../../resources/js/src/config.js"></script>
-<script src="../../../../resources/js/src/functions.js"></script>
-<script src="../../../../resources/js/src/courseWareCOR.js"></script>
+<script src="../../../resources/js/lib/jquery-2.0.3.min.js"></script>
+<script src="../../../resources/js/lib/jquery.form.js"></script>
+<script src="../../../resources/js/lib/jquery.validate.min.js"></script>
+<script src="../../../resources/js/lib/plupload.full.min.js"></script>
+<script src="../../../resources/js/lib/qiniu.js"></script>
+<script src="../../../resources/js/lib/tinymce.min.js"></script>
+<script src="../../../resources/js/lib/jquery.toastmessage.js"></script>
+<script src="../../../resources/js/src/config.js"></script>
+<script src="../../../resources/js/src/functions.js"></script>
+<script src="../../../resources/js/src/courseWareCOR.js"></script>
 
 </body>
 </html>

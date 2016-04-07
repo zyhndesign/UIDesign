@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 
@@ -8,18 +11,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
     <title>xxxx后台管理</title>
 
-    <link href="../../../../resources/css/lib/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="../../../../resources/css/lib/jquery.dataTables.css" rel="stylesheet" type="text/css">
-    <link href="../../../../resources/css/lib/jquery.toastmessage.css" rel="stylesheet" type="text/css">
-    <link href="../../../../resources/css/src/main.css" rel="stylesheet" type="text/css">
+    <link href="../../../resources/css/lib/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../resources/css/lib/jquery.dataTables.css" rel="stylesheet" type="text/css">
+    <link href="../../../resources/css/lib/jquery.toastmessage.css" rel="stylesheet" type="text/css">
+    <link href="../../../resources/css/src/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-<script src="../header.js"></script>
+<script src="header.js"></script>
 
 <nav class="left">
 
-    <script src="../menu.js"></script>
+    <script src="menu.js"></script>
 
 </nav>
 
@@ -27,10 +30,10 @@
     <article class="main">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h1 class="panel-title">课程管理</h1>
+                <h1 class="panel-title">课件管理</h1>
             </div>
             <div class="panel-body" id="opt-body">
-                <a class="btn btn-success" href="courseCOR.html">
+                <a class="btn btn-success" href="courseWareCOR.html">
                     <span class="glyphicon glyphicon-plus"></span> 新建
                 </a>
                 <div class="input-group tableSearchContainer col-md-6">
@@ -42,10 +45,10 @@
                 <table id="myTable" class="dataTable">
                     <thead>
                     <tr>
+                        <th>封面</th>
                         <th>标题</th>
-                        <th>教师</th>
+                        <th>作者</th>
                         <th>创建时间</th>
-                        <th>土钉墙ID</th>
                         <th>操作</th>
                     </tr>
                     </thead>
@@ -65,14 +68,14 @@
 </div>
 
 
-<script src="../../../../resources/js/lib/jquery-2.0.3.min.js"></script>
-<script src="../../../../resources/js/lib/bootstrap.min.js"></script>
-<script src="../../../../resources/js/lib/jquery.dataTables.min.js"></script>
-<script src="../../../../resources/js/lib/jquery.validate.min.js"></script>
-<script src="../../../../resources/js/lib/jquery.toastmessage.js"></script>
-<script src="../../../../resources/js/src/config.js"></script>
-<script src="../../../../resources/js/src/functions.js"></script>
-<script src="../../../../resources/js/src/courseMgr.js"></script>
+<script src="../../../resources/js/lib/jquery-2.0.3.min.js"></script>
+<script src="../../../resources/js/lib/bootstrap.min.js"></script>
+<script src="../../../resources/js/lib/jquery.dataTables.min.js"></script>
+<script src="../../../resources/js/lib/jquery.validate.min.js"></script>
+<script src="../../../resources/js/lib/jquery.toastmessage.js"></script>
+<script src="../../../resources/js/src/config.js"></script>
+<script src="../../../resources/js/src/functions.js"></script>
+<script src="../../../resources/js/src/courseWareMgr.js"></script>
 
 </body>
 </html>
