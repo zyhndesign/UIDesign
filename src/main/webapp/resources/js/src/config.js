@@ -15,11 +15,11 @@ var config={
     },
     ajaxUrls:{
         courseDesignGetAll:"coursedesign/list",
-        courseDesignDelete:"/:id",
+        courseDesignDelete:"coursedesign/delete/:id",
         courseWareGetAll:"courseware/list",
-        courseWareDelete:"/:id",
+        courseWareDelete:"courseware/delete/:id",
         courseVideoGetAll:"videocourse/list",
-        courseVideoDelete:"/:id"
+        courseVideoDelete:"videocourse/delete/:id"
     },
     dataTable:{
         langUrl:"resources/lang/de_DE.txt"
