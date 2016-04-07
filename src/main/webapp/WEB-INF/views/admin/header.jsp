@@ -7,7 +7,7 @@
             </a>
         </h1>
     </div>
-    <ul class="list">
+    <ul class="userMenu">
         <li class="item"><a class="link">立正（管理员）</a></li>
         <li class="item"><a href="#" class="link">修改密码</a></li>
         <li class="item"><a href="#" class="link">退出</a></li>
