@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.cidic.design.dao.VideoCourseDao;
+import com.cidic.design.model.Courseware;
 import com.cidic.design.model.VideoCourse;
 
 @Repository
@@ -63,6 +64,18 @@ public class VideoCourseDaoImpl implements VideoCourseDao {
 		query.setFirstResult(0);
 		query.setMaxResults(10);
 		return query.list();
+	}
+
+	@Override
+	public List<VideoCourse> getDataByPage(int limit, int offset, String sEcho) {
+		Session session = this.getSessionFactory().getCurrentSession();
+		final String hql = " from VideoCourse "; 
+        final Query query = session.createQuery(hql);   
+        query.setFirstResult(offset);    
+        query.setMaxResults(limit); 
+        
+        final List<VideoCourse> list = query.list();  
+		return list;
 	}
 
 }

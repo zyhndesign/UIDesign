@@ -82,4 +82,15 @@ private static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
 		return query.list();
 	}
 
+	@Override
+	public List<CourseDesign> getDataByPage(int limit, int offset, String sEcho) {
+		Session session = this.getSessionFactory().getCurrentSession();
+		final String hql = " from CourseDesign "; 
+        final Query query = session.createQuery(hql);   
+        query.setFirstResult(offset);    
+        query.setMaxResults(limit); 
+        final List<CourseDesign> list = query.list();  
+		return list;
+	}
+
 }

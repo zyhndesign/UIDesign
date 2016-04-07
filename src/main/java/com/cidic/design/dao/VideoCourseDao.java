@@ -15,4 +15,6 @@ public interface VideoCourseDao {
 	public void deleteVideoCourse(VideoCourse videoCourse);
 	
 	public List<VideoCourse> getTopVideoCourse();
+	
+	public List<VideoCourse> getDataByPage(int limit, int offset, String sEcho);
 }

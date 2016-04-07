@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.cidic.design.dao.CoursewareDao;
+import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.Courseware;
 
 @Repository
@@ -63,6 +64,17 @@ public class CoursewareDaoImpl implements CoursewareDao {
 		query.setFirstResult(0);
 		query.setMaxResults(10);
 		return query.list();
+	}
+
+	@Override
+	public List<Courseware> getDataByPage(int limit, int offset, String sEcho) {
+		Session session = this.getSessionFactory().getCurrentSession();
+		final String hql = " from Courseware "; 
+        final Query query = session.createQuery(hql);   
+        query.setFirstResult(offset);    
+        query.setMaxResults(limit); 
+        final List<Courseware> list = query.list();  
+		return list;
 	}
 
 }
