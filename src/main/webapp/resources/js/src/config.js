@@ -11,7 +11,7 @@ var config={
     	upTokenUrl:"qi-niu/up-token",
         uploadDomain:"http://qiniu-plupload.qiniudn.com/",
         bucketDomain:"http://7xqx6h.com1.z0.glb.clouddn.com/",
-        swfUrl:"js/lib/Moxie.swf"
+        swfUrl:"/design/resources/js/lib/Moxie.swf"
     },
     ajaxUrls:{
         courseDesignGetAll:"data/json/course.json",
