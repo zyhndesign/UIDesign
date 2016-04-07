@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <ul class="menu">
     <!--<li class="item active">
         <a class="link" href="#">首页<span class="icon-arrow-light-right"></span></a>
