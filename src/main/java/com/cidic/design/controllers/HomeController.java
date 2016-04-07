@@ -56,7 +56,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "login";
 	}
 	
 	@RequestMapping(value = "/homeContent", method = RequestMethod.GET)
@@ -73,7 +73,7 @@ public class HomeController {
 			resultModel.setObject(list);
 		}
 		catch(Exception e){
-			throw new UIDesignException(500, "Ìí¼ÓÊ§°Ü£¡");
+			throw new UIDesignException(500, "ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½");
 		}
 		return resultModel;
 	}

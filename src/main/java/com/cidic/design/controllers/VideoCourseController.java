@@ -50,6 +50,7 @@ public class VideoCourseController {
 		ModelAndView view = new ModelAndView();
 		view.setViewName("/admin/videoCourseCOR");
 		view.addObject("videoCourse", videoCourse);
+		
 		return view;
 	}
 	
