@@ -30,9 +30,9 @@ public class CourseDesignServiceTest {
     public  void testInsertCourseDesign(){
     	/*
     	CourseDesign courseDesign = new CourseDesign();
-    	courseDesign.setTitle("·þÎñÉè¼Æ¿Î³Ì×÷Òµ2");
-    	courseDesign.setAbstract_("·þÎñÉè¼Æ");
-    	courseDesign.setTeacher("ÍõÎº");
+    	courseDesign.setTitle("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¿Î³ï¿½ï¿½ï¿½Òµ2");
+    	courseDesign.setAbstract_("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+    	courseDesign.setTeacher("ï¿½ï¿½Îº");
     	courseDesign.setCreateTime(new Date());
     	courseDesign.setCourseDetailId(1);
     	List<CourseDesignTag> courseTagList = new ArrayList<CourseDesignTag>();
@@ -76,7 +76,7 @@ public class CourseDesignServiceTest {
     	*/
     }
     
-    @Test
+    //@Test
     public void testDeleteTagRelation(){
     	
     	CourseDesign courseDesign = new CourseDesign();
@@ -88,9 +88,9 @@ public class CourseDesignServiceTest {
    // @Test
     public void testUpdateRelation(){
     	CourseDesign courseDesign = new CourseDesign();
-    	courseDesign.setTitle("·þÎñÉè¼Æ¿Î³Ì×÷Òµ666666");
-    	courseDesign.setAbstract_("·þÎñÉè¼Æasdasdasd");
-    	courseDesign.setTeacher("ÍõÎºÀÏÊ¦");
+    	courseDesign.setTitle("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¿Î³ï¿½ï¿½ï¿½Òµ666666");
+    	courseDesign.setAbstract_("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½asdasdasd");
+    	courseDesign.setTeacher("ï¿½ï¿½Îºï¿½ï¿½Ê¦");
     	courseDesign.setCreateTime(new Date());
     	courseDesign.setCourseDetailId(1);
     	courseDesign.setId(5);
@@ -119,5 +119,11 @@ public class CourseDesignServiceTest {
     	courseDesign.setCourseTagList(courseTagList);
     	
     	courseDesignService.updateCourseDesign(courseDesign);
+    }
+    
+    @Test
+    public void listCourseDesign(){
+    	List<CourseDesign> list = courseDesignService.getDataByPage(10, 0, "");
+    	out.println("list size is :"+list.size());
     }
 }

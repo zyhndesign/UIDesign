@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cidic.design.exception.UIDesignException;
-import com.cidic.design.model.Courseware;
 import com.cidic.design.model.ListResultModel;
 import com.cidic.design.model.ResultModel;
 import com.cidic.design.model.VideoCourse;

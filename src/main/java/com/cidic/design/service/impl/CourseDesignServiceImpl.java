@@ -46,7 +46,6 @@ public class CourseDesignServiceImpl implements CourseDesignService {
 	@Override
 	@Transactional(readOnly = false, rollbackFor = Exception.class)
 	public void updateCourseDesign(CourseDesign courseDesign) {
-		//���²���ʱ��Ҫ�����±�ǩ��ɾ����ǩ�ֿ�
 		courseDesignDao.updateCourseDesign(courseDesign);
 	}
 
@@ -68,7 +67,7 @@ public class CourseDesignServiceImpl implements CourseDesignService {
 	@Transactional (readOnly = true)
 	public List<CourseDesign> getDataByPage(int limit, int offset, String sEcho) {
 		// TODO Auto-generated method stub
-		return null;
+		return courseDesignDao.getDataByPage(limit, offset, sEcho);
 	}
 
 }

@@ -85,7 +85,7 @@ private static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
 	@Override
 	public List<CourseDesign> getDataByPage(int limit, int offset, String sEcho) {
 		Session session = this.getSessionFactory().getCurrentSession();
-		final String hql = " from CourseDesign  order by createTime desc"; 
+		final String hql = " from CourseDesign order by createTime desc"; 
         final Query query = session.createQuery(hql);   
         query.setFirstResult(offset);    
         query.setMaxResults(limit); 
