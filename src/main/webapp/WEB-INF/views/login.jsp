@@ -37,6 +37,7 @@ pageEncoding="UTF-8"%>
     <div class="row">
         <input type="submit" class="ctrlBtn" value="登陆">
     </div>
+    <label class="error" style="text-align: center">${error}</label>
     <c:if test="${error}">
         <label class="error" style="text-align: center">用户名或者密码错误</label>
     </c:if>
