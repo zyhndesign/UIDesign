@@ -14,7 +14,7 @@ var config={
         swfUrl:"resources/js/lib/Moxie.swf"
     },
     ajaxUrls:{
-        courseDesignGetAll:"list",
+        courseDesignGetAll:"coursedesign/list",
         courseDesignDelete:"/:id",
         courseWareGetAll:"data/json/courseWare.json",
         courseWareDelete:"/:id",
