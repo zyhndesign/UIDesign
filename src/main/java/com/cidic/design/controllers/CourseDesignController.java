@@ -143,14 +143,14 @@ public class CourseDesignController {
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET, produces="application/json")  
 	@ResponseBody 
-	public ListResultModel listCourseDesign( @RequestParam int limit, @RequestParam int offset,@RequestParam String sEcho){
+	public ListResultModel listCourseDesign( @RequestParam int iDisplayLength, @RequestParam int iDisplayStart,@RequestParam String sEcho){
 		ListResultModel listResultModel = new ListResultModel();
 		try{
-			List<CourseDesign> list = courseDesignServiceImpl.getDataByPage(limit, offset, sEcho);
+			List<CourseDesign> list = courseDesignServiceImpl.getDataByPage(iDisplayLength, iDisplayStart, sEcho);
 			listResultModel.setAaData(list);
 			listResultModel.setsEcho(sEcho);
-			listResultModel.setiTotalRecords(limit);
-			listResultModel.setiTotalDisplayRecords(offset + limit);
+			listResultModel.setiTotalRecords(iDisplayLength);
+			listResultModel.setiTotalDisplayRecords(iDisplayStart + iDisplayLength);
 			listResultModel.setSuccess(true);
 		}
 		catch(Exception e){
