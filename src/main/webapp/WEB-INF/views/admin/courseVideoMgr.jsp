@@ -20,14 +20,14 @@ pageEncoding="UTF-8"%>
 
 <script src="header.js"></script>
 
-<nav class="left">
+<div class="left">
 
     <script src="menu.js"></script>
 
-</nav>
+</div>
 
-<section class="right">
-    <article class="main">
+<div class="right">
+    <div class="main">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h1 class="panel-title">课程视频</h1>
@@ -57,8 +57,8 @@ pageEncoding="UTF-8"%>
                 </table>
             </div>
         </div>
-    </article>
-</section>
+    </div>
+</div>
 
 
 

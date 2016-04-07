@@ -18,16 +18,14 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
 
-<script src="header.js"></script>
+    <jsp:include  page="header.jsp"/>
 
-<nav class="left">
+<div class="left">
+    <jsp:include  page="menu.jsp"/>
+</div>
 
-    <script src="menu.js"></script>
-
-</nav>
-
-<section class="right">
-    <article class="main">
+<div class="right">
+    <div class="main">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h1 class="panel-title">课程管理</h1>
@@ -58,8 +56,8 @@ pageEncoding="UTF-8"%>
                 </table>
             </div>
         </div>
-    </article>
-</section>
+    </div>
+</div>
 
 
 
