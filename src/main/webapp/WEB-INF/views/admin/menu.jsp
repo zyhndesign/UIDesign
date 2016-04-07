@@ -12,7 +12,7 @@
         </div>
     </li>-->
     <li class="item">
-        <a class="link" href="coursedesign/courseDesignMgr">课程设计</a>
+        <a class="link" href="../coursedesign/courseDesignMgr">课程设计</a>
     </li>
     <li class="item">
         <a class="link" href="#">汉字应用</a>
