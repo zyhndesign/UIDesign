@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -39,10 +40,12 @@ public class VideoCourseTag implements Serializable {
 		this.id = id;
 	}
 
+	@JsonBackReference
 	public VideoCourse getVideoCourse() {
 		return videoCourse;
 	}
 
+	@JsonBackReference
 	public void setVideoCourse(VideoCourse videoCourse) {
 		this.videoCourse = videoCourse;
 	}

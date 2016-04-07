@@ -125,5 +125,12 @@ public class CourseDesignServiceTest {
     public void listCourseDesign(){
     	List<CourseDesign> list = courseDesignService.getDataByPage(10, 0, "");
     	out.println("list size is :"+list.size());
+    	for (CourseDesign courseDesign : list){
+    		out.println(courseDesign.getTitle());
+			List<CourseDesignTag> tagList = courseDesign.getCourseTagList();
+			for (CourseDesignTag tag : tagList){
+				out.println("====:"+tag.getTag().getTagName());
+			}
+		}
     }
 }
