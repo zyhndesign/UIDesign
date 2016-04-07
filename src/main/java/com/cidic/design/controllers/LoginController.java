@@ -51,7 +51,7 @@ public class LoginController {
 		} else {
 
 			view.setViewName("/login");
-			view.addObject("error", "ÓÃ»§Ãû»òÃÜÂë´íÎó");
+			view.addObject("error", "ç”¨æˆ·åå¯†ç é”™è¯¯");
 		}
 		return view;
 	}

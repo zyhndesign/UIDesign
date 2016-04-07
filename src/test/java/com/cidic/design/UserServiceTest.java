@@ -30,7 +30,7 @@ public class UserServiceTest {
     	else{
     		User user = new User();
         	user.setUsername("cidic");
-        	user.setPassword(CipherUtil.generatePassword("cidic"));
+        	user.setPassword(CipherUtil.generatePassword("cidiccidic"));
         	userServiceImpl.insertUser(user);
     	}
     }

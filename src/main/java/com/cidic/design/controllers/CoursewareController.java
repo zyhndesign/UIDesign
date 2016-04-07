@@ -49,7 +49,7 @@ public class CoursewareController {
 			resultModel.setResultCode(200);
 		}
 		catch(Exception e){
-			throw new UIDesignException(500, "Ìí¼ÓÊ§°Ü£¡");
+			throw new UIDesignException(500, "å†™å…¥æ•°æ®å‡ºé”™");
 		}
 		return resultModel;
 	}
@@ -65,7 +65,7 @@ public class CoursewareController {
 			resultModel.setObject(courseware);
 		}
 		catch(Exception e){
-			throw new UIDesignException(500, "²éÕÒÊ§°Ü£¡");
+			throw new UIDesignException(500, "è·å–æ•°æ®å‡ºé”™");
 		}
 		return resultModel;
 	}
@@ -80,7 +80,7 @@ public class CoursewareController {
 			resultModel.setResultCode(200);
 		}
 		catch(Exception e){
-			throw new UIDesignException(500, "¸üĞÂÊ§°Ü£¡");
+			throw new UIDesignException(500, "æ›´æ–°æ•°æ®å‡ºé”™");
 		}
 		return resultModel;
 	}
@@ -96,7 +96,7 @@ public class CoursewareController {
 			resultModel.setResultCode(200);
 		}
 		catch(Exception e){
-			throw new UIDesignException(500, "É¾³ıÊ§°Ü£¡");
+			throw new UIDesignException(500, "åˆ é™¤æ•°æ®å‡ºé”™");
 		}
 		return resultModel;
 	}

@@ -28,7 +28,7 @@ public class VideoCourseController {
 	private VideoCourseService videoCourseServiceImpl;
 	
 	private ResultModel resultModel = null;
-	private static final String REQUEST_RESULT_MESSAGE = "²Ù×÷³É¹¦";
+	private static final String REQUEST_RESULT_MESSAGE = "ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½";
 	
 	@ExceptionHandler(UIDesignException.class)
 	public @ResponseBody ResultModel handleCustomException(UIDesignException ex) {
@@ -49,7 +49,7 @@ public class VideoCourseController {
 			resultModel.setResultCode(200);
 		}
 		catch(Exception e){
-			throw new UIDesignException(500, "¸üĞÂÊ§°Ü£¡");
+			throw new UIDesignException(500, "å†™å…¥æ•°æ®å‡ºé”™");
 		}
 		return resultModel;
 	}
@@ -66,7 +66,7 @@ public class VideoCourseController {
 			resultModel.setObject(videoCourse);
 		}
 		catch(Exception e){
-			throw new UIDesignException(500, "²éÕÒÊ§°Ü£¡");
+			throw new UIDesignException(500, "æŸ¥æ‰¾æ•°æ®å‡ºé”™");
 		}
 		return resultModel;
 	}
@@ -82,7 +82,7 @@ public class VideoCourseController {
 			resultModel.setResultCode(200);
 		}
 		catch(Exception e){
-			throw new UIDesignException(500, "¸üĞÂÊ§°Ü£¡");
+			throw new UIDesignException(500, "æ›´æ–°æ•°æ®å‡ºé”™");
 		}
 		return resultModel;
 	}
@@ -99,7 +99,7 @@ public class VideoCourseController {
 			resultModel.setResultCode(200);
 		}
 		catch(Exception e){
-			throw new UIDesignException(500, "É¾³ıÊ§°Ü£¡");
+			throw new UIDesignException(500, "åˆ é™¤æ•°æ®å‡ºé”™");
 		}
 		return resultModel;
 	}
