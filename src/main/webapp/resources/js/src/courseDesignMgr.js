@@ -8,7 +8,7 @@ var courseMgr=(function(config,functions){
 
         var ownTable=$("#myTable").dataTable({
             "bServerSide": true,
-            "sAjaxSource": config.ajaxUrls.courseGetAll,
+            "sAjaxSource": config.ajaxUrls.courseDesignGetAll,
             "bInfo":true,
             "bProcessing":true,
             "bLengthChange": false,
