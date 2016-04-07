@@ -30,7 +30,7 @@ pageEncoding="UTF-8"%>
             </div>
             <div class="panel-body">
 
-                <form class="form-horizontal" id="myForm" action="insert" method="post">
+                <form class="form-horizontal" id="myForm" action="coursedesign/insert" method="post">
 
                     <div class="form-group">
                         <label  class="control-label col-md-2">标题*</label>
