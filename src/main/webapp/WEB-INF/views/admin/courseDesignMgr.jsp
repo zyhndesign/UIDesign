@@ -5,8 +5,6 @@ pageEncoding="UTF-8"%>
 <html>
 <head>
     <jsp:include  page="head.jsp"/>
-
-
     <link href="<%=request.getContextPath() %>/resources/css/lib/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="<%=request.getContextPath() %>/resources/css/lib/jquery.dataTables.css" rel="stylesheet" type="text/css">
     <link href="<%=request.getContextPath() %>/resources/css/lib/jquery.toastmessage.css" rel="stylesheet" type="text/css">
@@ -69,7 +67,7 @@ pageEncoding="UTF-8"%>
 <script src="<%=request.getContextPath() %>/resources/js/lib/jquery.toastmessage.js"></script>
 <script src="<%=request.getContextPath() %>/resources/js/src/config.js"></script>
 <script src="<%=request.getContextPath() %>/resources/js/src/functions.js"></script>
-<script src="<%=request.getContextPath() %>/resources/js/src/courseMgr.js"></script>
+<script src="<%=request.getContextPath() %>/resources/js/src/courseDesignMgr.js"></script>
 
 </body>
 </html>

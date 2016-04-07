@@ -14,22 +14,22 @@ var config={
         swfUrl:"js/lib/Moxie.swf"
     },
     ajaxUrls:{
-        courseGetAll:"data/json/course.json",
-        courseDelete:"/:id",
+        courseDesignGetAll:"data/json/course.json",
+        courseDesignDelete:"/:id",
         courseWareGetAll:"data/json/courseWare.json",
         courseWareDelete:"/:id",
         courseVideoGetAll:"data/json/courseVideo.json",
         courseVideoDelete:"/:id"
     },
     dataTable:{
-        langUrl:"lang/de_DE.txt"
+        langUrl:"/design/resources/lang/de_DE.txt"
     },
     perLoadCounts:{
         table:10
     },
     uploader:{
         url:"#",
-        swfUrl:"js/plupload/plupload.flash.swf",
+        swfUrl:"/design/resources/js/plupload/plupload.flash.swf",
         sizes:{
             all:"5120m",
             img:"2m"
