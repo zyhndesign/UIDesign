@@ -29,9 +29,15 @@ pageEncoding="UTF-8"%>
                 <h1 class="panel-title">新建/修改课程</h1>
             </div>
             <div class="panel-body">
-                <form class="form-horizontal" id="myForm" action="#" method="post">
 
-                    <input type="hidden" name="id" value="1">
+                <c:choose>
+                <c:when test="${empty id}">
+                <form class="form-horizontal" id="myForm" action="insert" method="post">
+                <c:otherwise>
+                <form class="form-horizontal" id="myForm" action="update/${id}" method="post">
+                </c:otherwise>
+                </c:choose>
+
                     <div class="form-group">
                         <label  class="control-label col-md-2">标题*</label>
                         <div class="col-md-8">
@@ -59,7 +65,7 @@ pageEncoding="UTF-8"%>
                     <div class="form-group">
                         <label  class="control-label col-md-2">描述*</label>
                         <div class="col-md-8">
-                            <textarea class="form-control"  name="abstract" rows="3" id="abstract"></textarea>
+                            <textarea class="form-control"  name="abstract_" rows="3" id="abstract"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
