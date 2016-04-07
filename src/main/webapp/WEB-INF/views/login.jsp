@@ -26,22 +26,21 @@ pageEncoding="UTF-8"%>
     <h2 class="title">系统登陆</h2>
     <div class="row">
         <div><label class="ctrlLabel icon-portrait"></label></div>
-        <input class="ctrlInput" type="text" name="email" value="请输入你的账号" onfocus="if(this.value==defaultValue) {this.value='';this.type='text'}" onblur="if(!value) {value=defaultValue; this.type='text';}">
+        <input class="ctrlInput" type="text" name="email" placeholder="请输入你的账号">
     </div>
     <div class="row">
         <div><label  class="ctrlLabel icon-lock"></label></div>
-
-        <input class="ctrlInput" type="text" value="请输入你的密码" onfocus="if(this.value==defaultValue) {this.value='';this.type='password'}" onblur="if(!value) {value=defaultValue; this.type='text';this.style.color='#ccc'}" />
-
-
+        <input class="ctrlInput" type="password" placeholder="请输入你的密码"/>
     </div>
     <div class="row">
-        <input type="checkbox" class="ctrlMemory" value="记住密码">记住密码
+        <input type="checkbox" checked="checked" id="rememberMe" class="ctrlMemory" value="记住我">记住我
     </div>
     <div class="row">
         <input type="submit" class="ctrlBtn" value="登陆">
     </div>
-
+    <c:if test="${error}">
+        <label class="error" style="text-align: center">用户名或者密码错误</label>
+    </c:if>
 </form>
 </body>
 
