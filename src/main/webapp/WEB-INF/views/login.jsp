@@ -4,14 +4,8 @@ pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta  charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="webkit" name="renderer">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-    <meta name="keywords" content="YaLuoYe"/>
-    <meta name="description" content="YaLuoYe">
-    <title>后台登陆</title>
-    <link type="text/css" rel="stylesheet" href="resources/css/src/login.css">
+    <jsp:include  page="admin/head.jsp"/>
+    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/src/login.css">
 </head>
 <body>
 
@@ -45,10 +39,10 @@ pageEncoding="UTF-8"%>
 </form>
 </body>
 
-<script src="resources/js/lib/jquery-2.0.3.min.js"></script>
-<script src="resources/js/lib/jquery.form.js"></script>
-<script src="resources/js/lib/jquery.validate.min.js"></script>
-<script src="resources/js/src/config.js"></script>
-<script src="resources/js/src/functions.js"></script>
-<script src="resources/js/src/login.js"></script>
+<script src="<%=request.getContextPath() %>/resources/js/lib/jquery-2.0.3.min.js"></script>
+<script src="<%=request.getContextPath() %>/resources/js/lib/jquery.form.js"></script>
+<script src="<%=request.getContextPath() %>/resources/js/lib/jquery.validate.min.js"></script>
+<script src="<%=request.getContextPath() %>/resources/js/src/config.js"></script>
+<script src="<%=request.getContextPath() %>/resources/js/src/functions.js"></script>
+<script src="<%=request.getContextPath() %>/resources/js/src/login.js"></script>
 </html>
