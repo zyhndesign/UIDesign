@@ -16,7 +16,7 @@ var config={
     ajaxUrls:{
         courseDesignGetAll:"coursedesign/list",
         courseDesignDelete:"/:id",
-        courseWareGetAll:"data/json/courseWare.json",
+        courseWareGetAll:"courseware/list",
         courseWareDelete:"/:id",
         courseVideoGetAll:"videocourse/list",
         courseVideoDelete:"/:id"

@@ -1,26 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="webkit" name="renderer">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-    <title>xxxx管理系统</title>
+    <jsp:include  page="head.jsp"/>
 
-    <link type="text/css" rel="stylesheet" href="../../../resources/css/lib/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="../../../resources/css/lib/jquery.toastmessage.css">
-    <link type="text/css" rel="stylesheet" href="../../../resources/css/src/main.css">
+    <link type="text/css" rel="stylesheet" href="resources/css/lib/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="resources/css/lib/jquery.toastmessage.css">
+    <link type="text/css" rel="stylesheet" href="resources/css/src/main.css">
 </head>
 <body>
 
-<script src="header.js"></script>
+    <jsp:include  page="header.jsp"/>
 
-<div class="left">
-    <script src="menu.js"></script>
-</div>
+    <div class="left">
+    <jsp:include  page="menu.jsp"/>
+    </div>
 
 <div class="right">
     <div class="main">
@@ -81,16 +77,16 @@ pageEncoding="UTF-8"%>
     <span class="text">Loading...</span>
 </div>
 
-<script src="../../../resources/js/lib/jquery-2.0.3.min.js"></script>
-<script src="../../../resources/js/lib/jquery.form.js"></script>
-<script src="../../../resources/js/lib/jquery.validate.min.js"></script>
-<script src="../../../resources/js/lib/plupload.full.min.js"></script>
-<script src="../../../resources/js/lib/qiniu.js"></script>
-<script src="../../../resources/js/lib/tinymce.min.js"></script>
-<script src="../../../resources/js/lib/jquery.toastmessage.js"></script>
-<script src="../../../resources/js/src/config.js"></script>
-<script src="../../../resources/js/src/functions.js"></script>
-<script src="../../../resources/js/src/courseVideoCOR.js"></script>
+<script src="resources/js/lib/jquery-2.0.3.min.js"></script>
+<script src="resources/js/lib/jquery.form.js"></script>
+<script src="resources/js/lib/jquery.validate.min.js"></script>
+<script src="resources/js/lib/plupload.full.min.js"></script>
+<script src="resources/js/lib/qiniu.js"></script>
+<script src="resources/js/lib/tinymce.min.js"></script>
+<script src="resources/js/lib/jquery.toastmessage.js"></script>
+<script src="resources/js/src/config.js"></script>
+<script src="resources/js/src/functions.js"></script>
+<script src="resources/js/src/courseVideoCOR.js"></script>
 
 </body>
 </html>

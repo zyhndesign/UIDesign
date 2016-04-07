@@ -1,30 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    <!DOCTYPE html>
 <html>
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="webkit" name="renderer">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-    <title>xxxx后台管理</title>
+    <jsp:include  page="head.jsp"/>
 
-    <link href="../../../resources/css/lib/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="../../../resources/css/lib/jquery.dataTables.css" rel="stylesheet" type="text/css">
-    <link href="../../../resources/css/lib/jquery.toastmessage.css" rel="stylesheet" type="text/css">
-    <link href="../../../resources/css/src/main.css" rel="stylesheet" type="text/css">
+    <link href="resources/css/lib/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="resources/css/lib/jquery.dataTables.css" rel="stylesheet" type="text/css">
+    <link href="resources/css/lib/jquery.toastmessage.css" rel="stylesheet" type="text/css">
+    <link href="resources/css/src/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-<script src="header.js"></script>
+    <jsp:include  page="header.jsp"/>
 
-<div class="left">
-
-    <script src="menu.js"></script>
-
-</div>
+    <div class="left">
+    <jsp:include  page="menu.jsp"/>
+    </div>
 
 <div class="right">
     <div class="main">
@@ -33,7 +27,7 @@ pageEncoding="UTF-8"%>
                 <h1 class="panel-title">课件管理</h1>
             </div>
             <div class="panel-body" id="opt-body">
-                <a class="btn btn-success" href="courseWareCOR.html">
+                <a class="btn btn-success" href="courseware/courseWareCOR">
                     <span class="glyphicon glyphicon-plus"></span> 新建
                 </a>
                 <div class="input-group tableSearchContainer col-md-6">
@@ -68,14 +62,14 @@ pageEncoding="UTF-8"%>
 </div>
 
 
-<script src="../../../resources/js/lib/jquery-2.0.3.min.js"></script>
-<script src="../../../resources/js/lib/bootstrap.min.js"></script>
-<script src="../../../resources/js/lib/jquery.dataTables.min.js"></script>
-<script src="../../../resources/js/lib/jquery.validate.min.js"></script>
-<script src="../../../resources/js/lib/jquery.toastmessage.js"></script>
-<script src="../../../resources/js/src/config.js"></script>
-<script src="../../../resources/js/src/functions.js"></script>
-<script src="../../../resources/js/src/courseWareMgr.js"></script>
+<script src="resources/js/lib/jquery-2.0.3.min.js"></script>
+<script src="resources/js/lib/bootstrap.min.js"></script>
+<script src="resources/js/lib/jquery.dataTables.min.js"></script>
+<script src="resources/js/lib/jquery.validate.min.js"></script>
+<script src="resources/js/lib/jquery.toastmessage.js"></script>
+<script src="resources/js/src/config.js"></script>
+<script src="resources/js/src/functions.js"></script>
+<script src="resources/js/src/courseWareMgr.js"></script>
 
 </body>
 </html>
