@@ -28,8 +28,8 @@ $(document).ready(function(){
      });*/
 
     login.initMe([{
-        name:"email",
-        el:$("#email")
+        name:"username",
+        el:$("#username")
     },{
         name:"password",
         el:$("#password")
@@ -64,8 +64,8 @@ $(document).ready(function(){
         },
         submitHandler:function(form){
             login.rememberMe([{
-                name:"email",
-                value:$("#email").val()
+                name:"username",
+                value:$("#username").val()
             },{
                 name:"password",
                 value:$("#password").val()

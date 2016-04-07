@@ -4,7 +4,7 @@ pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <jsp:include  page="admin/head.jsp"/>
+    <%@ include file="admin/head.jsp"%>
     <link type="text/css" rel="stylesheet" href="resources/css/src/login.css">
 </head>
 <body>
@@ -21,11 +21,11 @@ pageEncoding="UTF-8"%>
     <h2 class="title">系统登陆</h2>
     <div class="row">
         <div><label class="ctrlLabel icon-portrait"></label></div>
-        <input class="ctrlInput" type="text" name="username" placeholder="请输入你的账号">
+        <input class="ctrlInput" type="text" id="username" name="username" placeholder="请输入你的账号">
     </div>
     <div class="row">
         <div><label  class="ctrlLabel icon-lock"></label></div>
-        <input class="ctrlInput" type="password" name="password" placeholder="请输入你的密码"/>
+        <input class="ctrlInput" type="password" id="password" name="password" placeholder="请输入你的密码"/>
     </div>
     <div class="row">
         <input type="checkbox" checked="checked" id="rememberMe" class="ctrlRemember" value="记住我">记住我

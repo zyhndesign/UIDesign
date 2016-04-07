@@ -3,16 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <jsp:include  page="head.jsp"/>
+    <%@ include file="head.jsp"%>
     <link type="text/css" rel="stylesheet" href="resources/css/lib/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="resources/css/src/main.css">
 </head>
 <body>
 
-<jsp:include  page="header.jsp"/>
+    <%@ include file="header.jsp"%>
 
 <div class="left">
-    <jsp:include  page="menu.jsp"/>
+    <%@ include file="menu.jsp"%>
 </div>
 
 <div class="right">
