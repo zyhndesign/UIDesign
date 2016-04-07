@@ -43,9 +43,8 @@ $(document).ready(function(){
 
     $("#myForm").validate({
         rules: {
-            email: {
+            username: {
                 required:true,
-                email:true,
                 maxlength:30
             },
             password:{
@@ -54,9 +53,8 @@ $(document).ready(function(){
             }
         },
         messages: {
-            email: {
+            username: {
                 required:config.validErrors.required,
-                email:config.validErrors.email,
                 maxlength:config.validErrors.maxLength.replace("${max}",30)
             },
             password:{

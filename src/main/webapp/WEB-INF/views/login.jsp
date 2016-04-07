@@ -18,7 +18,7 @@ pageEncoding="UTF-8"%>
 
 <div class="header">
     <a href="" class="logout">
-        <span class="span icon-typo"></span><h2 class="logo">GUI</h2>
+        <span class="span icon-gui"></span><h2 class="logo">GUI</h2>
     </a>
 </div>
 
@@ -26,7 +26,7 @@ pageEncoding="UTF-8"%>
     <h2 class="title">系统登陆</h2>
     <div class="row">
         <div><label class="ctrlLabel icon-portrait"></label></div>
-        <input class="ctrlInput" type="text" name="email" placeholder="请输入你的账号">
+        <input class="ctrlInput" type="text" name="username" placeholder="请输入你的账号">
     </div>
     <div class="row">
         <div><label  class="ctrlLabel icon-lock"></label></div>
