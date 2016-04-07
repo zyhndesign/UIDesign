@@ -34,7 +34,7 @@ public class LoginController {
 		return view;
 	}
 
-	@RequestMapping(value = "/loginSubmit", method = RequestMethod.POST)
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView submit(String username, String password, HttpServletRequest request) {
 
 		ModelAndView view = new ModelAndView();
@@ -43,7 +43,7 @@ public class LoginController {
 		user.setPassword(CipherUtil.generatePassword(password));
 		
 		if (!StringUtils.isEmpty(username) && !StringUtils.isEmpty(password) && userServiceImpl.checkUser(user)) {
-			// 当登陆成功是，将用户信息存放到session中去
+			
 			HttpSession session = request.getSession();
 			session.setAttribute(MemberInterceptor.SEESION_MEMBER, username);
 
@@ -51,7 +51,7 @@ public class LoginController {
 		} else {
 
 			view.setViewName("/login");
-
+			view.addObject("error", "用户名或密码错误");
 		}
 		return view;
 	}

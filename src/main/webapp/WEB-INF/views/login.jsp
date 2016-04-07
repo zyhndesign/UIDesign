@@ -22,7 +22,7 @@ pageEncoding="UTF-8"%>
     </a>
 </div>
 
-<form class="pCenter" id="myForm" method="post" action="submit">
+<form class="pCenter" id="myForm" method="post" action="login">
     <h2 class="title">系统登陆</h2>
     <div class="row">
         <div><label class="ctrlLabel icon-portrait"></label></div>
