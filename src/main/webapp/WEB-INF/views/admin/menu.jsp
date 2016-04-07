@@ -7,6 +7,6 @@
         <a class="link" href="#">教学课件</a>
     </li>
     <li class="item">
-        <a class="link" href="#">课程视频</a>
+        <a class="link" href="videocourse/videoCourseMgr">课程视频</a>
     </li>
 </ul>

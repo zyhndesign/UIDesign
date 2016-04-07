@@ -23,8 +23,8 @@ var courseMgr=(function(config,functions){
             "aoColumns": [
                 { "mDataProp": "title"},
                 { "mDataProp": "teacher"},
-                { "mDataProp": "create_time"},
-                { "mDataProp": "course_detail_id"},
+                { "mDataProp": "createTime"},
+                { "mDataProp": "courseDetailId"},
                 { "mDataProp": "opt",
                     "fnRender":function(oObj){
                         return '<a href="course/update?id='+oObj.aData.id+'">修改</a>&nbsp;' +

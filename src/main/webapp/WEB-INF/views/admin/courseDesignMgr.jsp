@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -25,7 +24,7 @@ pageEncoding="UTF-8"%>
                 <h1 class="panel-title">课程管理</h1>
             </div>
             <div class="panel-body" id="opt-body">
-                <a class="btn btn-success" href="courseDesignCOR">
+                <a class="btn btn-success" href="courseDesign/courseDesignCOR">
                     <span class="glyphicon glyphicon-plus"></span> 新建
                 </a>
                 <div class="input-group tableSearchContainer col-md-6">

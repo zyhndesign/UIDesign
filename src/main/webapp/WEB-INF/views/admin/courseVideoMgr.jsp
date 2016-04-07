@@ -5,11 +5,7 @@ pageEncoding="UTF-8"%>
 <html>
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="webkit" name="renderer">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-    <title>xxxx后台管理</title>
+    <jsp:include  page="head.jsp"/>
 
     <link href="../../../resources/css/lib/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../../../resources/css/lib/jquery.dataTables.css" rel="stylesheet" type="text/css">
@@ -18,13 +14,11 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
 
-<script src="header.js"></script>
+    <jsp:include  page="header.jsp"/>
 
-<div class="left">
-
-    <script src="menu.js"></script>
-
-</div>
+    <div class="left">
+    <jsp:include  page="menu.jsp"/>
+    </div>
 
 <div class="right">
     <div class="main">
@@ -33,7 +27,7 @@ pageEncoding="UTF-8"%>
                 <h1 class="panel-title">课程视频</h1>
             </div>
             <div class="panel-body" id="opt-body">
-                <a class="btn btn-success" href="courseVideoCOR.html">
+                <a class="btn btn-success" href="videocourse/videoCourseCOR">
                     <span class="glyphicon glyphicon-plus"></span> 新建
                 </a>
                 <div class="input-group tableSearchContainer col-md-6">

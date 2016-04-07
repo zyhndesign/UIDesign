@@ -18,7 +18,7 @@ var config={
         courseDesignDelete:"/:id",
         courseWareGetAll:"data/json/courseWare.json",
         courseWareDelete:"/:id",
-        courseVideoGetAll:"data/json/courseVideo.json",
+        courseVideoGetAll:"videocourse/list",
         courseVideoDelete:"/:id"
     },
     dataTable:{
