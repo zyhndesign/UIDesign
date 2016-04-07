@@ -31,7 +31,7 @@ pageEncoding="UTF-8"%>
                 <h1 class="panel-title">课程管理</h1>
             </div>
             <div class="panel-body" id="opt-body">
-                <a class="btn btn-success" href="courseCOR.html">
+                <a class="btn btn-success" href="coursedesign/courseDesignCOR">
                     <span class="glyphicon glyphicon-plus"></span> 新建
                 </a>
                 <div class="input-group tableSearchContainer col-md-6">
