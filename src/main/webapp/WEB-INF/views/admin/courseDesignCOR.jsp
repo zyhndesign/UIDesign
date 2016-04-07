@@ -31,7 +31,7 @@ pageEncoding="UTF-8"%>
             <div class="panel-body">
 
                 <c:choose>
-                <c:when test="${empty id}">
+                <c:when test="${empty id}"/>
                 <form class="form-horizontal" id="myForm" action="insert" method="post">
                 <c:otherwise>
                 <form class="form-horizontal" id="myForm" action="update/${id}" method="post">

@@ -40,17 +40,17 @@ public class CourseDesignController {
 		return resultModel;
 	}
 	
-	@RequestMapping(value = "/courseCOR", method = RequestMethod.GET)
+	@RequestMapping(value = "/courseDesignCOR", method = RequestMethod.GET)
 	public ModelAndView getCourseCOR(HttpServletRequest request) {
 		ModelAndView view = new ModelAndView();
-		view.setViewName("/admin/courseCOR");
+		view.setViewName("/admin/courseDesignCOR");
 		return view;
 	}
 	
-	@RequestMapping(value = "/courseMgr", method = RequestMethod.GET)
+	@RequestMapping(value = "/courseDesignMgr", method = RequestMethod.GET)
 	public ModelAndView getCourseMgr(HttpServletRequest request) {
 		ModelAndView view = new ModelAndView();
-		view.setViewName("/admin/courseMgr");
+		view.setViewName("/admin/courseDesignMgr");
 		return view;
 	}
 	
