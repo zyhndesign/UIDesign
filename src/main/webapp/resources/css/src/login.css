@@ -113,3 +113,9 @@ body{
     background: #443c3c;
     cursor: pointer;
 }
+label.error{
+    color: red;
+    font-size: 14px;
+    display: block;
+    margin-left: 74px;
+}
