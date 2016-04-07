@@ -5,7 +5,7 @@ pageEncoding="UTF-8"%>
 <html>
 <head>
     <jsp:include  page="admin/head.jsp"/>
-    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/src/login.css">
+    <link type="text/css" rel="stylesheet" href="resources/css/src/login.css">
 </head>
 <body>
 
@@ -39,10 +39,10 @@ pageEncoding="UTF-8"%>
 </form>
 </body>
 
-<script src="<%=request.getContextPath() %>/resources/js/lib/jquery-2.0.3.min.js"></script>
-<script src="<%=request.getContextPath() %>/resources/js/lib/jquery.form.js"></script>
-<script src="<%=request.getContextPath() %>/resources/js/lib/jquery.validate.min.js"></script>
-<script src="<%=request.getContextPath() %>/resources/js/src/config.js"></script>
-<script src="<%=request.getContextPath() %>/resources/js/src/functions.js"></script>
-<script src="<%=request.getContextPath() %>/resources/js/src/login.js"></script>
+<script src="resources/js/lib/jquery-2.0.3.min.js"></script>
+<script src="resources/js/lib/jquery.form.js"></script>
+<script src="resources/js/lib/jquery.validate.min.js"></script>
+<script src="resources/js/src/config.js"></script>
+<script src="resources/js/src/functions.js"></script>
+<script src="resources/js/src/login.js"></script>
 </html>

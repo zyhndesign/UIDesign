@@ -4,8 +4,8 @@
 <html>
 <head>
     <jsp:include  page="head.jsp"/>
-    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/lib/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/src/main.css">
+    <link type="text/css" rel="stylesheet" href="resources/css/lib/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="resources/css/src/main.css">
 </head>
 <body>
 
