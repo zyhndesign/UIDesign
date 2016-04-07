@@ -4,3 +4,6 @@
     <meta content="webkit" name="renderer">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
     <title>GUI后台管理</title>
+        <script>
+            var basePath="<%=request.getContextPath() %>";
+        </script>
