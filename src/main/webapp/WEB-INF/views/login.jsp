@@ -12,7 +12,6 @@ pageEncoding="UTF-8"%>
     <meta name="description" content="YaLuoYe">
     <title>后台登陆</title>
     <link type="text/css" rel="stylesheet" href="resources/css/src/login.css">
-    <link type="text/css" rel="stylesheet" href="resources/css/src/main.css">
 </head>
 <body>
 
@@ -30,7 +29,7 @@ pageEncoding="UTF-8"%>
     </div>
     <div class="row">
         <div><label  class="ctrlLabel icon-lock"></label></div>
-        <input class="ctrlInput" type="password" placeholder="请输入你的密码"/>
+        <input class="ctrlInput" type="password" name="password" placeholder="请输入你的密码"/>
     </div>
     <div class="row">
         <input type="checkbox" checked="checked" id="rememberMe" class="ctrlMemory" value="记住我">记住我
