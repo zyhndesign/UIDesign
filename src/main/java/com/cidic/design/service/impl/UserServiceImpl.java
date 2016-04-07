@@ -36,9 +36,9 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	@Transactional(readOnly=true)
-	public void checkUser(User user) {
+	public boolean checkUser(User user) {
 		// TODO Auto-generated method stub
-		this.userDaoImpl.checkUser(user);
+		return this.userDaoImpl.checkUser(user);
 	}
 
 	@Override

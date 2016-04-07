@@ -6,7 +6,7 @@ public interface UserService {
 	
 	public void insertUser(User user);
 	
-	public void checkUser(User user);
+	public boolean checkUser(User user);
 	
 	public boolean checkUserName(String username);
 }

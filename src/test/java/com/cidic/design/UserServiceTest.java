@@ -9,6 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.cidic.design.model.User;
 import com.cidic.design.service.UserService;
+import com.cidic.design.util.CipherUtil;
 
 import static java.lang.System.out;
 
@@ -23,20 +24,28 @@ public class UserServiceTest {
     @Test
     public  void testInsertUser(){
     	
-    	if (userServiceImpl.checkUserName("liling")){
+    	if (userServiceImpl.checkUserName("cidic")){
     		out.println("username is used");
     	}
     	else{
     		User user = new User();
-        	user.setUsername("liling");
-        	user.setPassword("123456");
+        	user.setUsername("cidic");
+        	user.setPassword(CipherUtil.generatePassword("cidic"));
         	userServiceImpl.insertUser(user);
     	}
     }
     
-    @Test
+   // @Test
     public void testCheckUsername(){
     	boolean result = userServiceImpl.checkUserName("liling");
     	out.println(result);
+    }
+    
+    //@Test
+    public void testCheckUser(){
+    	User user = new User();
+    	user.setUsername("tangyin");
+    	user.setPassword(CipherUtil.generatePassword("123456"));
+    	out.println(userServiceImpl.checkUser(user));
     }
 }
