@@ -31,7 +31,7 @@ public class VideoCourseController {
 	private VideoCourseService videoCourseServiceImpl;
 	
 	private ResultModel resultModel = null;
-	private static final String REQUEST_RESULT_MESSAGE = "�����ɹ�";
+	private static final String REQUEST_RESULT_MESSAGE = "操作成功！";
 	
 	@ExceptionHandler(UIDesignException.class)
 	public @ResponseBody ResultModel handleCustomException(UIDesignException ex) {
@@ -41,10 +41,15 @@ public class VideoCourseController {
 		return resultModel;
 	}
 	
-	@RequestMapping(value = "/videoCourseCOR", method = RequestMethod.GET)
-	public ModelAndView getVideoCourseCOR(HttpServletRequest request) {
+	@RequestMapping(value = {"/videoCourseCOR","/videoCourseCOR/{id}"}, method = RequestMethod.GET)
+	public ModelAndView getVideoCourseCOR(HttpServletRequest request,@PathVariable int id) {
+		VideoCourse videoCourse = null;
+		if (id > 0){
+			videoCourse = videoCourseServiceImpl.selectVideoCourse(id);
+		}
 		ModelAndView view = new ModelAndView();
 		view.setViewName("/admin/videoCourseCOR");
+		view.addObject("videoCourse", videoCourse);
 		return view;
 	}
 	
