@@ -54,15 +54,24 @@ pageEncoding="UTF-8"%>
                         </div>
                     </div>
                     <div class="form-group">
+                        <label  class="control-label col-md-2">标签*</label>
+                        <div class="col-md-8">
+                            <div style="margin-bottom: 5px" id="tags">
+
+                            </div>
+                            <input type="text" class="form-control" id="tagInput">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label  class="control-label col-md-2">创建时间*</label>
                         <div class="col-md-8">
-                            <input type="date" class="form-control" value="" name="create_time">
+                            <input type="date" class="form-control" value="" name="createTime">
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="control-label col-md-2">图钉墙ID*</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" value="" name="course_detail_id">
+                            <input type="text" class="form-control" value="" name="courseDetailId">
                         </div>
                     </div>
                     <div class="form-group">

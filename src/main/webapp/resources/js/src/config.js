@@ -72,7 +72,8 @@ var config={
         uploadSizeError:"最大文件大小${value}！",
         uploadExtensionError:"只允许上传${value}！",
         uploadIOError:"上传出错，请稍后重试！",
-        imageSizeError:"图片大小不符合！"
+        imageSizeError:"图片大小不符合！",
+        tagExist:"该标签已经添加过！"
     }
 };
 $(document).ready(function(){
