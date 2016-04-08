@@ -35,6 +35,15 @@ pageEncoding="UTF-8"%>
                         </div>
                     </div>
                     <div class="form-group">
+                        <label  class="control-label col-md-2">是否精选*</label>
+                        <div class="col-md-8">
+                            <select class="form-control" name="topTag">
+                                <option value="0">否</option>
+                                <option value="1">是</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label  class="control-label col-md-2">标签*</label>
                         <div class="col-md-8">
                             <div style="margin-bottom: 5px" id="tags">

@@ -1,11 +1,16 @@
 var courseVideoCOR=(function(config,functions){
     return{
+        addTags:[],
         deleteTags:[],
         submitForm:function(form){
             var me=this;
             functions.showLoading();
             $(form).ajaxSubmit({
                 dataType:"json",
+                data:{
+                    addTags:me.addTags.join(","),
+                    deleteTags:me.deleteTags.join(",")
+                },
                 success:function(response){
                     if(response.success){
                         $().toastmessage("showSuccessToast",config.messages.optSuccess);
@@ -75,29 +80,41 @@ $(document).ready(function(){
     });
 
     $("#tags").on("click",".tags",function(){
-        var tag=$(this).text();
-        //去重
-        if($.inArray(tag,courseVideoCOR.deleteTags)==-1){
+        var tag=$(this).val(),
+            tag_id=$(this).data("tag-id");
+
+        //存在tag-id,代表是修改的时候原始数据存在的tag，需要加入到deleteTags
+        if(tag_id&&$.inArray(tag_id,courseVideoCOR.deleteTags)==-1){
             courseVideoCOR.deleteTags.push(tag);
+        }else{
+
+            //如果不是原始存在的tag,删除addTags中的数据
+            var index= $.inArray(tag,courseDesignCOR.addTags);
+            courseVideoCOR.addTags.splice(index,1);
         }
 
         $(this).remove();
     });
     $("#tagInput").keydown(function(event){
         if(event.keyCode==13){
-            var value=$(this).val(),
+            var tag=$(this).val(),
                 hasFlag=false;
             $(".tags").each(function(index,el){
-                if($(this).text()==value){
+                if($(this).text()==tag){
                     hasFlag=true;
+
+                    //中断循环
                     return false;
                 }
             });
+
             if(hasFlag){
-                $().toastmessage("showErrorToast","该标签已经添加过！");
+                $().toastmessage("showErrorToast",config.messages.tagExist);
             }else{
-                $('<span class="tags">'+value+'</span>').appendTo($("#tags"));
+                $('<span class="tags">'+tag+'</span>').appendTo($("#tags"));
             }
+
+            courseVideoCOR.addTags.push(tag);
 
             $(this).val("");
         }
