@@ -2,11 +2,13 @@ package com.cidic.design.model;
 // Generated 2016-3-14 16:01:31 by Hibernate Tools 4.3.1.Final
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Cache;
@@ -43,6 +45,9 @@ public class VideoCourse implements java.io.Serializable {
 	
 	@Column(name="top_tag")
 	private int topTag;
+	
+	@OneToMany(mappedBy = "videoCourse")
+	private List<VideoCourseTag> videoCourseTagList;
 	
 	public VideoCourse() {
 	}
@@ -117,6 +122,14 @@ public class VideoCourse implements java.io.Serializable {
 
 	public void setTopTag(int topTag) {
 		this.topTag = topTag;
+	}
+
+	public List<VideoCourseTag> getVideoCourseTagList() {
+		return videoCourseTagList;
+	}
+
+	public void setVideoCourseTagList(List<VideoCourseTag> videoCourseTagList) {
+		this.videoCourseTagList = videoCourseTagList;
 	}
 	
 }

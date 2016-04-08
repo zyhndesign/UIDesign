@@ -66,7 +66,8 @@ public class CourseDesignController {
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)  
 	@ResponseBody 
 	public ResultModel insertCourseDesign(@RequestParam String title, @RequestParam String abstract_,
-			@RequestParam String teacher,@RequestParam String createTime,@RequestParam int topTag,@RequestParam int courseDetailId){
+			@RequestParam String teacher,@RequestParam String createTime,@RequestParam int topTag,
+			@RequestParam int courseDetailId,@RequestParam String insertTag){
 		
 		logger.info("/coursedesign/insert/"+title);
 		CourseDesign courseDesign;
@@ -78,7 +79,7 @@ public class CourseDesignController {
 			courseDesign.setCreateTime(DateUtil.stringToDate(createTime));
 			courseDesign.setTopTag(topTag);
 			courseDesign.setCourseDetailId(courseDetailId);
-			courseDesignServiceImpl.insertCourseDesign(courseDesign);
+			courseDesignServiceImpl.insertCourseDesign(courseDesign,insertTag);
 			
 			resultModel = new ResultModel();
 			resultModel.setResultCode(200);
@@ -109,7 +110,8 @@ public class CourseDesignController {
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.POST)  
 	@ResponseBody 
 	public ResultModel updateCourseDesign(@PathVariable int id, @RequestParam String title, @RequestParam String abstract_,
-			@RequestParam String teacher,@RequestParam String createTime,@RequestParam int topTag,@RequestParam int courseDetailId){
+			@RequestParam String teacher,@RequestParam String createTime,@RequestParam int topTag,
+			@RequestParam int courseDetailId,@RequestParam String updateTag,@RequestParam String deleteTag){
 		
 		logger.info("/coursedesign/update/"+id +" "+title);
 		CourseDesign courseDesign;
@@ -121,7 +123,7 @@ public class CourseDesignController {
 			courseDesign.setCreateTime(DateUtil.stringToDate(createTime));
 			courseDesign.setTopTag(topTag);
 			courseDesign.setCourseDetailId(courseDetailId);
-			courseDesignServiceImpl.updateCourseDesign(courseDesign);
+			courseDesignServiceImpl.updateCourseDesign(courseDesign,updateTag,deleteTag);
 			
 			resultModel = new ResultModel();
 			resultModel.setResultCode(200);

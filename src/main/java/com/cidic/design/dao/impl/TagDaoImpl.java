@@ -63,4 +63,12 @@ public class TagDaoImpl implements TagDao {
 		return null;
 	}
 
+	@Override
+	public List<Tag> selectTagByTagNameList(List<String> tagNameList) {
+		Session session = this.getSessionFactory().getCurrentSession();
+		Query query=session.createQuery("from Tag where tagName in (:tagNames)"); 
+		query.setParameterList("tagNames", tagNameList);
+		return query.list();
+	}
+
 }

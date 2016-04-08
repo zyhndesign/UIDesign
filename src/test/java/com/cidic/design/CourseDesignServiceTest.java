@@ -26,45 +26,24 @@ public class CourseDesignServiceTest {
 	@Qualifier(value="courseDesignServiceImpl")
     private CourseDesignService courseDesignService;  
      
-    @Test
+   // @Test
     public  void testInsertCourseDesign(){
-    	/*
+    	
     	CourseDesign courseDesign = new CourseDesign();
-    	courseDesign.setTitle("������ƿγ���ҵ2");
-    	courseDesign.setAbstract_("�������");
-    	courseDesign.setTeacher("��κ");
+    	courseDesign.setTitle("文字设计与编排");
+    	courseDesign.setAbstract_("舍得茶舍logo设计");
+    	courseDesign.setTeacher("皇家马德里");
     	courseDesign.setCreateTime(new Date());
-    	courseDesign.setCourseDetailId(1);
-    	List<CourseDesignTag> courseTagList = new ArrayList<CourseDesignTag>();
-    	CourseDesignTag courseDesignTag1 = new CourseDesignTag();
-    	courseDesignTag1.setCourseDesign(courseDesign);
-    	Tag tag1 = new Tag();
-    	tag1.setId(3);
-    	courseDesignTag1.setTag(tag1);
-    	courseTagList.add(courseDesignTag1);
+    	courseDesign.setCourseDetailId(15);
     	
-    	CourseDesignTag courseDesignTag2 = new CourseDesignTag();
-    	courseDesignTag2.setCourseDesign(courseDesign);
-    	Tag tag2 = new Tag();
-    	tag2.setId(1);
-    	courseDesignTag2.setTag(tag2);
-    	courseTagList.add(courseDesignTag2);
+    	String insertTag = "字体,标识,文字";
+    	courseDesignService.insertCourseDesign(courseDesign,insertTag);
     	
-    	CourseDesignTag courseDesignTag3 = new CourseDesignTag();
-    	courseDesignTag3.setCourseDesign(courseDesign);
-    	Tag tag3 = new Tag();
-    	tag3.setId(4);
-    	courseDesignTag3.setTag(tag3);
-    	courseTagList.add(courseDesignTag3);
-    	
-    	courseDesign.setCourseTagList(courseTagList);
-    	courseDesignService.insertCourseDesign(courseDesign);
-    	*/
     }
     
-    @Test
+    //@Test
     public  void testSelectCourseDesign(){
-    	/*
+    	
     	CourseDesign courseDesign1 = courseDesignService.selectCourseDesign(1);
     	out.println(courseDesign1.getTeacher());
     	
@@ -73,7 +52,7 @@ public class CourseDesignServiceTest {
     	for (CourseDesignTag courseDesignTag:list){
     		out.println(courseDesignTag.getTag().getTagName());
     	}
-    	*/
+    	
     }
     
     //@Test
@@ -85,43 +64,25 @@ public class CourseDesignServiceTest {
     	
     }
     
-   // @Test
+    @Test
     public void testUpdateRelation(){
     	CourseDesign courseDesign = new CourseDesign();
-    	courseDesign.setTitle("������ƿγ���ҵ666666");
-    	courseDesign.setAbstract_("�������asdasdasd");
-    	courseDesign.setTeacher("��κ��ʦ");
+    	courseDesign.setTitle("图形用户界面设计与模式-图标设计--测试");
+    	courseDesign.setAbstract_("设计研究基础/工业设计史/文字与编排/图形用户界面设计与模式/图钉墙");
+    	courseDesign.setTeacher("国际米兰，利物浦");
     	courseDesign.setCreateTime(new Date());
-    	courseDesign.setCourseDetailId(1);
-    	courseDesign.setId(5);
-    	List<CourseDesignTag> courseTagList = new ArrayList<CourseDesignTag>();
-    	CourseDesignTag courseDesignTag1 = new CourseDesignTag();
-    	courseDesignTag1.setCourseDesign(courseDesign);
-    	Tag tag1 = new Tag();
-    	tag1.setId(3);
-    	courseDesignTag1.setTag(tag1);
-    	courseTagList.add(courseDesignTag1);
+    	courseDesign.setCourseDetailId(19);
+    	courseDesign.setId(7);
     	
-    	CourseDesignTag courseDesignTag2 = new CourseDesignTag();
-    	courseDesignTag2.setCourseDesign(courseDesign);
-    	Tag tag2 = new Tag();
-    	tag2.setId(1);
-    	courseDesignTag2.setTag(tag2);
-    	courseTagList.add(courseDesignTag2);
+    	String deleteTag = "12";
     	
-    	CourseDesignTag courseDesignTag3 = new CourseDesignTag();
-    	courseDesignTag3.setCourseDesign(courseDesign);
-    	Tag tag3 = new Tag();
-    	tag3.setId(4);
-    	courseDesignTag3.setTag(tag3);
-    	courseTagList.add(courseDesignTag3);
+    	String updateTag = "";
     	
-    	courseDesign.setCourseTagList(courseTagList);
     	
-    	courseDesignService.updateCourseDesign(courseDesign);
+    	courseDesignService.updateCourseDesign(courseDesign,updateTag,deleteTag);
     }
     
-    @Test
+   // @Test
     public void listCourseDesign(){
     	List<CourseDesign> list = courseDesignService.getDataByPage(10, 0, "");
     	out.println("list size is :"+list.size());

@@ -67,7 +67,8 @@ public class CoursewareController {
 	@RequestMapping(value = "/insert", method = RequestMethod.POST, produces="application/json")  
 	@ResponseBody 
 	public ResultModel insertCourseware(@RequestParam String title, @RequestParam String author,
-			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String content,@RequestParam int topTag){
+			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String content,
+			@RequestParam int topTag,@RequestParam String insertTag){
 		
 		Courseware courseware = new Courseware();
 		courseware.setAuthor(author);
@@ -76,7 +77,7 @@ public class CoursewareController {
 		courseware.setThumbnail(thumbnail);
 		courseware.setTopTag(topTag);
 		try{
-			coursewareServiceImpl.insertCourseware(courseware);
+			coursewareServiceImpl.insertCourseware(courseware,insertTag);
 			resultModel = new ResultModel();
 			resultModel.setResultCode(200);
 		}
@@ -106,7 +107,7 @@ public class CoursewareController {
 	@ResponseBody 
 	public ResultModel updateCourseware(@RequestParam String title, @RequestParam String author,
 			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String content,
-			@RequestParam int topTag,@PathVariable int id){
+			@RequestParam int topTag,@PathVariable int id,@RequestParam String updateTag,@RequestParam String deleteTag){
 		Courseware courseware = new Courseware();
 		courseware.setAuthor(author);
 		courseware.setContent(content);
@@ -114,7 +115,7 @@ public class CoursewareController {
 		courseware.setThumbnail(thumbnail);
 		courseware.setTopTag(topTag);
 		try{
-			coursewareServiceImpl.updateCourseware(courseware);
+			coursewareServiceImpl.updateCourseware(courseware,updateTag,deleteTag);
 			resultModel = new ResultModel();
 			resultModel.setResultCode(200);
 		}

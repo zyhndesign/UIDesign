@@ -6,11 +6,11 @@ import com.cidic.design.model.CourseDesign;
 
 public interface CourseDesignService {
 
-	public void insertCourseDesign(CourseDesign courseDesign);
+	public void insertCourseDesign(CourseDesign courseDesign,String insertTag);
 	
 	public CourseDesign selectCourseDesign(int id);
 	
-	public void updateCourseDesign(CourseDesign courseDesign);
+	public void updateCourseDesign(CourseDesign courseDesign,String updateTag, String deleteTag);
 	
 	public void deleteCourseDesign(CourseDesign courseDesign);
 	

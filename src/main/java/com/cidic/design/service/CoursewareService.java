@@ -7,11 +7,11 @@ import com.cidic.design.model.Courseware;
 
 public interface CoursewareService {
 	
-	public void insertCourseware(Courseware courseware);
+	public void insertCourseware(Courseware courseware,String insertTag);
 	
 	public Courseware selectCourseware(int id);
 	
-	public void updateCourseware(Courseware courseware);
+	public void updateCourseware(Courseware courseware,String updateTag, String deleteTag);
 	
 	public void deleteCourseware(Courseware courseware);
 	

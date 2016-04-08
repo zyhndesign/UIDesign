@@ -69,7 +69,8 @@ public class VideoCourseController {
 	@RequestMapping(value = "/insert", method = RequestMethod.POST, produces="application/json")  
 	@ResponseBody 
 	public ResultModel insertVideoCourse(@RequestParam String title, @RequestParam String abstract_,@RequestParam String duration,
-			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String content,@RequestParam int topTag){
+			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String content,
+			@RequestParam int topTag , @RequestParam String insertTag){
 		VideoCourse videoCourse = new VideoCourse();
 		videoCourse.setTitle(title);
 		videoCourse.setAbstract_(abstract_);
@@ -79,7 +80,7 @@ public class VideoCourseController {
 		videoCourse.setThumbnail(thumbnail);
 		videoCourse.setTopTag(topTag);
 		try{
-			videoCourseServiceImpl.insertVideoCourse(videoCourse);
+			videoCourseServiceImpl.insertVideoCourse(videoCourse,insertTag);
 			resultModel = new ResultModel();
 			resultModel.setMessage(REQUEST_RESULT_MESSAGE);
 			resultModel.setResultCode(200);
@@ -110,7 +111,7 @@ public class VideoCourseController {
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.POST, produces="application/json")  
 	@ResponseBody 
 	public ResultModel updateVideoCourse(@RequestParam String title, @RequestParam String abstract_,@RequestParam String duration,
-			@RequestParam String thumbnail,@RequestParam String createTime,
+			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String updateTag,@RequestParam String deleteTag,
 			@RequestParam String content,@RequestParam int topTag, @PathVariable int id){
 		VideoCourse videoCourse = new VideoCourse();
 		videoCourse.setTitle(title);
@@ -121,7 +122,7 @@ public class VideoCourseController {
 		videoCourse.setThumbnail(thumbnail);
 		videoCourse.setTopTag(topTag);
 		try{
-			videoCourseServiceImpl.updateVideoCourse(videoCourse);
+			videoCourseServiceImpl.updateVideoCourse(videoCourse,updateTag,deleteTag);
 			resultModel = new ResultModel();
 			resultModel.setMessage(REQUEST_RESULT_MESSAGE);
 			resultModel.setResultCode(200);

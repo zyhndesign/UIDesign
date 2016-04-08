@@ -7,11 +7,11 @@ import com.cidic.design.model.VideoCourse;
 
 public interface VideoCourseService {
 	
-	public void insertVideoCourse(VideoCourse videoCourse);
+	public void insertVideoCourse(VideoCourse videoCourse,String insertTag);
 	
 	public VideoCourse selectVideoCourse(int id);
 	
-	public void updateVideoCourse(VideoCourse videoCourse);
+	public void updateVideoCourse(VideoCourse videoCourse,String updateTag, String deleteTag);
 	
 	public void deleteVideoCourse(VideoCourse videoCourse);
 	
