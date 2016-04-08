@@ -1,7 +1,9 @@
 package com.cidic.design.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -65,5 +67,15 @@ public class CourseDesignTagDaoImpl implements CourseDesignTagDao {
 		        .setInteger("id",courseDesignTagId)
 		        .executeUpdate();
 		logger.info("update course design tag result is :"+updatedEntities);
+	}
+
+	@Override
+	public List<CourseDesignTag> getCourseDesignByTagName(List<String> tagName) {
+		Session session = this.getSessionFactory().getCurrentSession();
+		String hqlSelected = "from CourseDesignTag c, Tag t, CourseDesign d where d = c.courseDesign and c.tag = t and t.tagName in (:tagNames)";
+		Query query=session.createQuery(hqlSelected);
+		query.setParameterList("tagNames", tagName);
+		
+		return query.list();
 	}
 }

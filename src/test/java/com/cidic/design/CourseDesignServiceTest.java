@@ -9,12 +9,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.CourseDesignTag;
-import com.cidic.design.model.Tag;
 import com.cidic.design.service.CourseDesignService;
 
 import static java.lang.System.out;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 

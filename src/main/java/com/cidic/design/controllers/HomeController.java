@@ -1,10 +1,11 @@
 package com.cidic.design.controllers;
 
 import java.text.DateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cidic.design.exception.UIDesignException;
@@ -73,9 +75,24 @@ public class HomeController {
 			resultModel.setObject(list);
 		}
 		catch(Exception e){
-			throw new UIDesignException(500, "���ʧ�ܣ�");
+			throw new UIDesignException(500, "获取数据失败！");
 		}
 		return resultModel;
 	}
 	
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public ResultModel getSearchContent(HttpServletRequest request,@RequestParam String searchKey){
+		List<Object> list = null;
+		
+		try{
+			
+			resultModel = new ResultModel();
+			resultModel.setResultCode(200);
+			resultModel.setObject(list);
+		}
+		catch(Exception e){
+			throw new UIDesignException(500, "获取数据失败！");
+		}
+		return resultModel;
+	}
 }

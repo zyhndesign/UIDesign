@@ -2,6 +2,7 @@ package com.cidic.design.dao;
 
 import java.util.List;
 
+import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.CourseDesignTag;
 
 public interface CourseDesignTagDao {
@@ -11,4 +12,6 @@ public interface CourseDesignTagDao {
 	public void deleteCourseDesignTag(int courseDesignId, int tagId);
 	
 	public void updateCourseDesignTag(CourseDesignTag courseDesignTag, int courseDesignTagId);
+	
+	public List<CourseDesignTag> getCourseDesignByTagName(List<String> tagName);
 }
