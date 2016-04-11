@@ -57,21 +57,21 @@ pageEncoding="UTF-8"%>
                             <select class="form-control" name="topTag">
         <%
             List<HashMap> topTags=new ArrayList<HashMap>();
-            topTags.add(new HashMap(String,String){
+            topTags.add(new HashMap(Integer,String){
                 {
-                put("0","否");
-                put("1","是");
+                put(0,"否");
+                put(1,"是");
                 }
             });
             pageContext.setAttribute("topTags", topTags);
         %>
-                            <c:forEach items="${topTags}" var="i">
+                            <c:forEach items="${topTags}" var="topTag">
                                 <c:choose>
-                                <c:when test="${courseDesign.topTag==i.key}">
-                                <option value="${i.key}" selected="selected">${i.value}</option>
+                                <c:when test="${courseDesign.topTag==topTag.key}">
+                                <option value="${topTag.key}" selected="selected">${topTag.value}</option>
                                 </c:when>
                                 <c:otherwise>
-                                <option value="${i.key}">${i.value}</option>
+                                <option value="${topTag.key}">${topTag.value}</option>
                                 </c:otherwise>
                                 </c:choose>
                             </c:forEach>
