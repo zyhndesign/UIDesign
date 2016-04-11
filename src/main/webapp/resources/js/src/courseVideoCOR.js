@@ -30,19 +30,6 @@ var courseVideoCOR=(function(config,functions){
 })(config,functions);
 
 $(document).ready(function(){
-    tinymce.init({
-        selector: "#abstract",
-        height:100,
-        toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-        toolbar2: 'print preview media | forecolor backcolor emoticons',
-        //image_advtab: true,
-        plugins : 'link image preview fullscreen table textcolor colorpicker code',
-        setup: function (ed) {
-            ed.on('blur', function (e) {
-                $("#abstract").val(ed.getContent());
-            });
-        }
-    });
     functions.createQiNiuUploader({
         maxSize:config.uploader.sizes.img,
         filter:config.uploader.filters.img,
