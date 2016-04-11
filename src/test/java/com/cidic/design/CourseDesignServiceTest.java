@@ -39,11 +39,11 @@ public class CourseDesignServiceTest {
     	
     }
     
-    //@Test
+    @Test
     public  void testSelectCourseDesign(){
     	
-    	CourseDesign courseDesign1 = courseDesignService.selectCourseDesign(1);
-    	out.println(courseDesign1.getTeacher());
+    	CourseDesign courseDesign1 = courseDesignService.selectCourseDesign(2);
+    	out.println(courseDesign1.getCreateTime());
     	
     	List<CourseDesignTag> list = courseDesign1.getCourseTagList();
 
@@ -62,7 +62,7 @@ public class CourseDesignServiceTest {
     	
     }
     
-    @Test
+    //@Test
     public void testUpdateRelation(){
     	CourseDesign courseDesign = new CourseDesign();
     	courseDesign.setTitle("图形用户界面设计与模式-图标设计--测试");
