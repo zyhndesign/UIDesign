@@ -8,8 +8,8 @@ var courseVideoCOR=(function(config,functions){
             $(form).ajaxSubmit({
                 dataType:"json",
                 data:{
-                    addTags:me.addTags.join(","),
-                    deleteTags:me.deleteTags.join(",")
+                    insertTag:me.addTags.join(","),
+                    deleteTag:me.deleteTags.join(",")
                 },
                 success:function(response){
                     if(response.success){
