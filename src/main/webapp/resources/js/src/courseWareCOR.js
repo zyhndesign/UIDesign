@@ -125,6 +125,10 @@ $(document).ready(function(){
             thumbnail:{
                 required:true
             },
+            abstract_:{
+                required:true,
+                maxlength:250
+            },
             content:{
                 required:true
             }
@@ -143,6 +147,10 @@ $(document).ready(function(){
             },
             thumbnail:{
                 required:config.validErrors.required
+            },
+            abstract_:{
+                required:config.validErrors.required,
+                maxlength:config.validErrors.maxLength.replace("${max}",250)
             },
             content:{
                 required:config.validErrors.required

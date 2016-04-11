@@ -128,8 +128,9 @@ $(document).ready(function(){
                 required:true,
                 maxlength:32
             },
-            abstract:{
-                required:true
+            abstract_:{
+                required:true,
+                maxlength:250
             },
             duration:{
                 required:true
@@ -146,8 +147,9 @@ $(document).ready(function(){
                 required:config.validErrors.required,
                 maxlength:config.validErrors.maxLength.replace("${max}",32)
             },
-            abstract:{
-                required:config.validErrors.required
+            abstract_:{
+                required:config.validErrors.required,
+                maxlength:config.validErrors.maxLength.replace("${max}",250)
             },
             duration:{
                 required:config.validErrors.required

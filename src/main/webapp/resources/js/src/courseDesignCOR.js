@@ -126,8 +126,9 @@ $(document).ready(function(){
             course_detail_id:{
                 required:true
             },
-            abstract:{
-                required:true
+            abstract_:{
+                required:true,
+                maxlength:250
             }
         },
         messages:{
@@ -145,8 +146,9 @@ $(document).ready(function(){
             course_detail_id:{
                 required:config.validErrors.required
             },
-            abstract:{
-                required:config.validErrors.required
+            abstract_:{
+                required:config.validErrors.required,
+                maxlength:config.validErrors.maxLength.replace("${max}",250)
             }
         },
         submitHandler:function(form) {
