@@ -88,7 +88,7 @@ pageEncoding="UTF-8"%>
                         <label  class="control-label col-md-2">标签*</label>
                         <div class="col-md-8">
                             <div id="tags" class="tags">
-                            <c:forEach items="${videoCourse.courseTagList}" var="tag">
+                            <c:forEach items="${videoCourse.videoCourseTagList}" var="tag">
                             <span class="tag" data-tag-id="${tag.tag.id}">${tag.tag.tagName}</span>
                             </c:forEach>
                             </div>
