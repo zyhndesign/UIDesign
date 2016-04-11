@@ -74,7 +74,7 @@ public class VideoCourseController {
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST, produces="application/json")  
 	@ResponseBody 
-	public ResultModel insertVideoCourse(@RequestParam String title, @RequestParam String abstract_,@RequestParam String duration,
+	public ResultModel insertVideoCourse(@RequestParam String title, @RequestParam String abstract_,@RequestParam(required=false) String duration,
 			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String content,
 			@RequestParam int topTag , @RequestParam String insertTag){
 		VideoCourse videoCourse = new VideoCourse();
