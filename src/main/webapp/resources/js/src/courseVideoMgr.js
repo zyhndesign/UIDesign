@@ -29,7 +29,7 @@ var courseMgr=(function(config,functions){
                 { "mDataProp": "duration"},
                 { "mDataProp": "opt",
                     "fnRender":function(oObj){
-                        return '<a href="videocourse/update/'+oObj.aData.id+'">修改</a>&nbsp;' +
+                        return '<a href="videocourse/videoCourseCOR/'+oObj.aData.id+'">修改</a>&nbsp;' +
                             '<a class="delete" href="'+oObj.aData.id+'">删除</a>';
                     }
                 }
