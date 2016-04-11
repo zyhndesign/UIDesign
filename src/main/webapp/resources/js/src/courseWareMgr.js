@@ -29,12 +29,12 @@ var courseWareMgr=(function(config,functions){
                 { "mDataProp": "author"},
                 { "mDataProp": "createTime",
                     "fnRender":function(oObj){
-                        return "";
+                        return functions.formatDate("y-m-d",oObj.aData.createTime);
                     }
                 },
                 { "mDataProp": "opt",
                     "fnRender":function(oObj){
-                        return '<a href="courseware/update?id='+oObj.aData.id+'">修改</a>&nbsp;' +
+                        return '<a href="courseware/update/'+oObj.aData.id+'">修改</a>&nbsp;' +
                             '<a class="delete" href="'+oObj.aData.id+'">删除</a>';
                     }
                 }

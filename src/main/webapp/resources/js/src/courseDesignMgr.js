@@ -23,7 +23,11 @@ var courseMgr=(function(config,functions){
             "aoColumns": [
                 { "mDataProp": "title"},
                 { "mDataProp": "teacher"},
-                { "mDataProp": "createTime"},
+                { "mDataProp": "createTime",
+                    "fnRender":function(oObj){
+                        return functions.formatDate("y-m-d",oObj.aData.createTime);
+                    }
+                },
                 { "mDataProp": "courseDetailId"},
                 { "mDataProp": "opt",
                     "fnRender":function(oObj){
