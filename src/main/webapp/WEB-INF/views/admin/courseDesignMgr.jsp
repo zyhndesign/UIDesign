@@ -40,7 +40,7 @@
                         <th>标题</th>
                         <th>教师</th>
                         <th>创建时间</th>
-                        <th>土钉墙ID</th>
+                        <th>图钉墙ID</th>
                         <th>操作</th>
                     </tr>
                     </thead>

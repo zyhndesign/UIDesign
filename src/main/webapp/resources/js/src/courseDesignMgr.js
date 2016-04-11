@@ -27,7 +27,7 @@ var courseMgr=(function(config,functions){
                 { "mDataProp": "courseDetailId"},
                 { "mDataProp": "opt",
                     "fnRender":function(oObj){
-                        return '<a href="course/update?id='+oObj.aData.id+'">修改</a>&nbsp;' +
+                        return '<a href="coursedesign/courseDesignCOR/'+oObj.aData.id+'">修改</a>&nbsp;' +
                             '<a class="delete" href="'+oObj.aData.id+'">删除</a>';
                     }
                 }
@@ -89,16 +89,16 @@ var courseMgr=(function(config,functions){
             functions.showLoading();
             var me=this;
             $.ajax({
-                url:config.ajaxUrls.courseDelete.replace(":id",id),
+                url:config.ajaxUrls.courseDesignDelete.replace(":id",id),
                 type:"post",
                 dataType:"json",
                 success:function(response){
-                    if(response.success){
+                    if(response.result_code==200){
                         $().toastmessage("showSuccessToast",config.messages.optSuccess);
                         me.ownTable.fnDraw();
                         functions.hideLoading();
                     }else{
-                        functions.ajaxReturnErrorHandler(response.error_code);
+                        functions.ajaxReturnErrorHandler(response.message);
                     }
 
                 },

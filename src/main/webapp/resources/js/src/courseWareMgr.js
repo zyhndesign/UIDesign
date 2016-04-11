@@ -96,12 +96,12 @@ var courseWareMgr=(function(config,functions){
                 type:"post",
                 dataType:"json",
                 success:function(response){
-                    if(response.success){
+                    if(response.result_code==200){
                         $().toastmessage("showSuccessToast",config.messages.optSuccess);
                         me.ownTable.fnDraw();
                         functions.hideLoading();
                     }else{
-                        functions.ajaxReturnErrorHandler(response.error_code);
+                        functions.ajaxReturnErrorHandler(response.message);
                     }
 
                 },
