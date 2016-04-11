@@ -44,7 +44,14 @@ public class CoursewareController {
 		return resultModel;
 	}
 	
-	@RequestMapping(value = {"/courseWareCOR","/courseWareCOR/{id}"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/courseWareCOR"}, method = RequestMethod.GET)
+	public ModelAndView getCourseWareCORView(HttpServletRequest request) {
+		ModelAndView view = new ModelAndView();
+		view.setViewName("/admin/courseWareCOR");
+		return view;
+	}
+	
+	@RequestMapping(value = {"/courseWareCOR/{id}"}, method = RequestMethod.GET)
 	public ModelAndView getCourseWareCOR(HttpServletRequest request,@PathVariable int id) {
 		Courseware courseware = null;
 		if (id > 0){

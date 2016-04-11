@@ -46,7 +46,14 @@ public class VideoCourseController {
 		return resultModel;
 	}
 	
-	@RequestMapping(value = {"/videoCourseCOR","/videoCourseCOR/{id}"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/videoCourseCOR"}, method = RequestMethod.GET)
+	public ModelAndView getVideoCourseCOR(HttpServletRequest request) {
+		ModelAndView view = new ModelAndView();
+		view.setViewName("/admin/courseVideoCOR");
+		return view;
+	}
+	
+	@RequestMapping(value = {"/videoCourseCOR/{id}"}, method = RequestMethod.GET)
 	public ModelAndView getVideoCourseCOR(HttpServletRequest request,@PathVariable int id) {
 		VideoCourse videoCourse = null;
 		if (id > 0){

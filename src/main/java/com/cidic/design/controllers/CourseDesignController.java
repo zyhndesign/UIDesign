@@ -44,8 +44,15 @@ public class CourseDesignController {
 		return resultModel;
 	}
 	
-	@RequestMapping(value = {"/courseDesignCOR","/courseDesignCOR/{id}"}, method = RequestMethod.GET)
-	public ModelAndView getCourseCOR(HttpServletRequest request,@RequestParam int id) {
+	@RequestMapping(value = {"/courseDesignCOR"}, method = RequestMethod.GET)
+	public ModelAndView getCourseCORView(HttpServletRequest request) {
+		ModelAndView view = new ModelAndView();
+		view.setViewName("/admin/courseDesignCOR");
+		return view;
+	}
+	
+	@RequestMapping(value = {"/courseDesignCOR/{id}"}, method = RequestMethod.GET)
+	public ModelAndView getCourseCOR(HttpServletRequest request,@PathVariable int id) {
 		CourseDesign courseDesign = null;
 		if (id > 0){
 			courseDesign = courseDesignServiceImpl.selectCourseDesign(id);
