@@ -148,7 +148,7 @@ pageEncoding="UTF-8"%>
 <script src="resources/js/lib/jquery.toastmessage.js"></script>
 <script src="resources/js/src/config.js"></script>
 <script src="resources/js/src/functions.js"></script>
-<script src="resources/js/src/coursewareCOR.js"></script>
+<script src="resources/js/src/courseWareCOR.js"></script>
 
 </body>
 </html>
