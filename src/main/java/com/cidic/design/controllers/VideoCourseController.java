@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,7 +41,7 @@ public class VideoCourseController {
 	public @ResponseBody ResultModel handleCustomException(UIDesignException ex) {
 		ResultModel resultModel = new ResultModel();
 		resultModel.setResultCode(ex.getErrCode());
-		resultModel.setMessage(ex.getMessage());
+		resultModel.setMessage(ex.getErrMsg());
 		return resultModel;
 	}
 	

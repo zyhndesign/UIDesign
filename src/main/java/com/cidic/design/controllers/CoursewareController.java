@@ -40,7 +40,7 @@ public class CoursewareController {
 	public @ResponseBody ResultModel handleCustomException(UIDesignException ex) {
 		ResultModel resultModel = new ResultModel();
 		resultModel.setResultCode(ex.getErrCode());
-		resultModel.setMessage(ex.getMessage());
+		resultModel.setMessage(ex.getErrMsg());
 		return resultModel;
 	}
 	

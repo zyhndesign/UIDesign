@@ -40,7 +40,7 @@ public class CourseDesignController {
 	public @ResponseBody ResultModel handleCustomException(UIDesignException ex) {
 		ResultModel resultModel = new ResultModel();
 		resultModel.setResultCode(ex.getErrCode());
-		resultModel.setMessage(ex.getMessage());
+		resultModel.setMessage(ex.getErrMsg());
 		return resultModel;
 	}
 	
@@ -109,6 +109,7 @@ public class CourseDesignController {
 			resultModel.setObject(courseDesign);
 		}
 		catch(Exception e){
+			
 			throw new UIDesignException(500, "获取数据出错");
 		}
 		return resultModel;
@@ -120,10 +121,10 @@ public class CourseDesignController {
 			@RequestParam String teacher,@RequestParam String createTime,@RequestParam int topTag,
 			@RequestParam int courseDetailId,@RequestParam String insertTag,@RequestParam String deleteTag){
 		
-		logger.info("/coursedesign/update/"+id +" "+title);
 		CourseDesign courseDesign;
 		try{
 			courseDesign = new CourseDesign();
+			courseDesign.setId(id);
 			courseDesign.setAbstract_(abstract_);
 			courseDesign.setTeacher(teacher);
 			courseDesign.setTitle(title);
