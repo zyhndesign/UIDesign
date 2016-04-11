@@ -76,7 +76,7 @@ $(document).ready(function(){
             if(hasFlag){
                 $().toastmessage("showErrorToast",config.messages.tagExist);
             }else{
-                $('<span class="tags">'+tag+'</span>').appendTo($("#tags"));
+                $('<span class="tag">'+tag+'</span>').appendTo($("#tags"));
             }
 
             courseDesignCOR.addTags.push(tag);

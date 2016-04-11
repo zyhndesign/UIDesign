@@ -94,6 +94,9 @@ label.error{
     height: 60px;
 }
 .tags{
+    margin-bottom: 10px;
+}
+.tags .tag{
     display: inline-block;
     height: 30px;
     line-height: 30px;
@@ -103,10 +106,10 @@ label.error{
     box-sizing: border-box;
     margin-left: 5px;
 }
-.tags:hover{
+.tags .tag:hover{
     color: red;
 }
-.tags:before{
+.tags .tag:before{
     content:"x";
     font-size: 16px;
     display: inline-block;

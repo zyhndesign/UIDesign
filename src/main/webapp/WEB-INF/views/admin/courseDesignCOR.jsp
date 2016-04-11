@@ -51,16 +51,26 @@ pageEncoding="UTF-8"%>
                         <label  class="control-label col-md-2">是否精选*</label>
                         <div class="col-md-8">
                             <select class="form-control" name="topTag">
-                                <option value="0">否</option>
-                                <option value="1">是</option>
+                            <c:forEach item="[{value:0,name:'否'},{value:1,name:'是'}]" var="i">
+                                <c:choose>
+                                <c:when test="${courseDesign.topTag==i.value}">
+                                <option value="${i.value}" selected="selected">${i.name}</option>
+                                </c:when>
+                                <c:otherwise>
+                                <option value="${i.value}">${i.name}</option>
+                                </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="control-label col-md-2">标签*</label>
                         <div class="col-md-8">
-                            <div style="margin-bottom: 5px" id="tags">
-
+                            <div id="tags" class="tags">
+                                <c:forEach item="courseDesign.courseTagList" var="tag">
+                                    <span class="tag" data-tag-id="${tag.id}">${tag.tagName}</span>
+                                </c:forEach>
                             </div>
                             <input type="text" class="form-control" id="tagInput">
                         </div>
