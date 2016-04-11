@@ -29,11 +29,11 @@ pageEncoding="UTF-8"%>
             <div class="panel-body">
 
                 <c:choose>
-                <c:when test="${empty courseWare}">
+                <c:when test="${empty courseware}">
                 <form class="form-horizontal" id="myForm" action="courseware/insert" method="post">
                 </c:when>
                 <c:otherwise>
-                <form class="form-horizontal" id="myForm" action="courseware/update/${courseWare.id}" method="post">
+                <form class="form-horizontal" id="myForm" action="courseware/update/${courseware.id}" method="post">
                 </c:otherwise>
                 </c:choose>
 
@@ -43,16 +43,16 @@ pageEncoding="UTF-8"%>
                     <a href="#" class="btn btn-success" id="uploadBtn">上传</a>
                     <p class="help-block">请上传500x500的jpg，png</p>
 
-                    <c:if test="${empty courseWare.thumbnail}">
+                    <c:if test="${empty courseware.thumbnail}">
                     <img  id="image"  style="width:100px"
                     src="resources/images/app/defaultPeopleImage.jpg"/>
                     <input type="hidden" id="imageUrl" name="thumbnail">
                     </c:if>
 
-                    <c:if test="${!empty courseWare.thumbnail}">
+                    <c:if test="${!empty courseware.thumbnail}">
                     <img  id="image"  style="width:100px"
-                    src="${courseWare.thumbnail}"/>
-                    <input type="hidden" id="imageUrl" value="${courseWare.thumbnail}" name="thumbnail">
+                    src="${courseware.thumbnail}"/>
+                    <input type="hidden" id="imageUrl" value="${courseware.thumbnail}" name="thumbnail">
                     </c:if>
 
                 </div>
@@ -60,7 +60,7 @@ pageEncoding="UTF-8"%>
                 <div class="form-group">
                     <label  class="control-label col-md-2">标题*</label>
                     <div class="col-md-8">
-                    <input type="text" class="form-control" value="${courseWare.title}" name="title">
+                    <input type="text" class="form-control" value="${courseware.title}" name="title">
                 </div>
                 </div>
                 <div class="form-group">
@@ -75,7 +75,7 @@ pageEncoding="UTF-8"%>
                         %>
                         <c:forEach items="${topTags}" var="topTag">
                         <c:choose>
-                        <c:when test="${courseWare.topTag==topTag.key}">
+                        <c:when test="${courseware.topTag==topTag.key}">
                         <option value="${topTag.key}" selected="selected">${topTag.value}</option>
                         </c:when>
                         <c:otherwise>
@@ -90,7 +90,7 @@ pageEncoding="UTF-8"%>
                     <label  class="control-label col-md-2">标签*</label>
                     <div class="col-md-8">
                         <div id="tags" class="tags">
-                            <c:forEach items="${courseWare.courseTagList}" var="tag">
+                            <c:forEach items="${courseware.courseTagList}" var="tag">
                             <span class="tag" data-tag-id="${tag.tag.id}">${tag.tag.tagName}</span>
                             </c:forEach>
                         </div>
@@ -101,20 +101,20 @@ pageEncoding="UTF-8"%>
                 <div class="form-group">
                     <label  class="control-label col-md-2">作者*</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" value="${courseWare.author}" name="author">
+                        <input type="text" class="form-control" value="${courseware.author}" name="author">
                     </div>
                 </div>
                 <div class="form-group">
                     <label  class="control-label col-md-2">创建时间*</label>
                     <div class="col-md-8">
-                        <input type="date" class="form-control" value="${fn:substring(courseWare.createTime, 0, 10)}" name="createTime">
+                        <input type="date" class="form-control" value="${fn:substring(courseware.createTime, 0, 10)}" name="createTime">
                     </div>
                 </div>
                 <div class="form-group">
                     <label  class="control-label col-md-2">描述*</label>
                     <div class="col-md-8">
                         <textarea class="form-control"  name="abstract_" rows="3"
-                        id="abstract">${courseWare.abstract_}</textarea>
+                        id="abstract">${courseware.abstract_}</textarea>
                     </div>
                 </div>
                 <div class="form-group">
@@ -148,7 +148,7 @@ pageEncoding="UTF-8"%>
 <script src="resources/js/lib/jquery.toastmessage.js"></script>
 <script src="resources/js/src/config.js"></script>
 <script src="resources/js/src/functions.js"></script>
-<script src="resources/js/src/courseWareCOR.js"></script>
+<script src="resources/js/src/coursewareCOR.js"></script>
 
 </body>
 </html>
