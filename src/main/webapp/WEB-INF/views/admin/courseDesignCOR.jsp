@@ -78,7 +78,7 @@ pageEncoding="UTF-8"%>
                         <div class="col-md-8">
                             <div id="tags" class="tags">
                                 <c:forEach items="${courseDesign.courseTagList}" var="tag">
-                                    <span class="tag" data-tag-id="${tag.id}">${tag.tag.tagName}</span>
+                                    <span class="tag" data-tag-id="${tag.tag.id}">${tag.tag.tagName}</span>
                                 </c:forEach>
                             </div>
                             <input type="text" class="form-control" id="tagInput">
