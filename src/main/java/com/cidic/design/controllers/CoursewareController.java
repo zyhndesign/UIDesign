@@ -113,7 +113,7 @@ public class CoursewareController {
 	@ResponseBody 
 	public ResultModel updateCourseware(@RequestParam String title, @RequestParam String author,
 			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String content,
-			@RequestParam int topTag,@PathVariable int id,@RequestParam String updateTag,@RequestParam String deleteTag){
+			@RequestParam int topTag,@PathVariable int id,@RequestParam String insertTag,@RequestParam String deleteTag){
 		Courseware courseware = new Courseware();
 		courseware.setAuthor(author);
 		courseware.setContent(content);
@@ -121,7 +121,7 @@ public class CoursewareController {
 		courseware.setThumbnail(thumbnail);
 		courseware.setTopTag(topTag);
 		try{
-			coursewareServiceImpl.updateCourseware(courseware,updateTag,deleteTag);
+			coursewareServiceImpl.updateCourseware(courseware,insertTag,deleteTag);
 			resultModel = new ResultModel();
 			resultModel.setResultCode(200);
 		}

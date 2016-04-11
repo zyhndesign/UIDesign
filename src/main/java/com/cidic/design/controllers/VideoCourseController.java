@@ -118,7 +118,7 @@ public class VideoCourseController {
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.POST, produces="application/json")  
 	@ResponseBody 
 	public ResultModel updateVideoCourse(@RequestParam String title, @RequestParam String abstract_,@RequestParam String duration,
-			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String updateTag,@RequestParam String deleteTag,
+			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String insertTag,@RequestParam String deleteTag,
 			@RequestParam String content,@RequestParam int topTag, @PathVariable int id){
 		VideoCourse videoCourse = new VideoCourse();
 		videoCourse.setTitle(title);
@@ -129,7 +129,7 @@ public class VideoCourseController {
 		videoCourse.setThumbnail(thumbnail);
 		videoCourse.setTopTag(topTag);
 		try{
-			videoCourseServiceImpl.updateVideoCourse(videoCourse,updateTag,deleteTag);
+			videoCourseServiceImpl.updateVideoCourse(videoCourse,insertTag,deleteTag);
 			resultModel = new ResultModel();
 			resultModel.setMessage(REQUEST_RESULT_MESSAGE);
 			resultModel.setResultCode(200);
