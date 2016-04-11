@@ -101,17 +101,18 @@ pageEncoding="UTF-8"%>
                             <input type="text" class="form-control" value="${videoCourse.duration}" name="duration">
                         </div>
                     </div>-->
-                    <div class="form-group">
-                        <label  class="control-label col-md-2">描述*</label>
-                        <div class="col-md-8">
-                            <textarea class="form-control"  name="abstract_" rows="3"
-                                id="abstract">${videoCourse.abstract_}</textarea>
-                        </div>
-                    </div>
+
                     <div class="form-group">
                         <label  class="control-label col-md-2">视频地址*</label>
                         <div class="col-md-8">
                             <textarea class="form-control"  name="content" rows="3" id="content">${videoCourse.content}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="control-label col-md-2">描述*</label>
+                        <div class="col-md-8">
+                            <textarea class="form-control"  name="abstract_" rows="3"
+                        id="abstract">${videoCourse.abstract_}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
