@@ -13,5 +13,5 @@ public interface CourseDesignTagDao {
 	
 	public void updateCourseDesignTag(CourseDesignTag courseDesignTag, int courseDesignTagId);
 	
-	public List<CourseDesignTag> getCourseDesignByTagName(List<String> tagName);
+	public List<CourseDesign> getCourseDesignByTagName(List<String> tagName);
 }

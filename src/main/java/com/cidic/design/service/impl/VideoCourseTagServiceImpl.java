@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cidic.design.dao.VideoCourseTagDao;
+import com.cidic.design.model.VideoCourse;
 import com.cidic.design.model.VideoCourseTag;
 import com.cidic.design.service.VideoCourseTagService;
 
@@ -39,6 +40,11 @@ public class VideoCourseTagServiceImpl implements VideoCourseTagService {
 	@Override
 	public void updateVideoCourseTag(VideoCourseTag videoCourseTag, int videoCourseTagId) {
 		videoCourseTagDao.updateVideoCourseTag(videoCourseTag, videoCourseTagId);
+	}
+
+	@Override
+	public List<VideoCourse> getVideoCourseByTagName(List<String> tagName) {
+		return videoCourseTagDao.getVideoCourseByTagName(tagName);
 	}
 
 }

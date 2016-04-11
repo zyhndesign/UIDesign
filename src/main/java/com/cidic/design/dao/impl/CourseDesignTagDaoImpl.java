@@ -17,6 +17,7 @@ import com.cidic.design.dao.CourseDesignTagDao;
 import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.CourseDesignTag;
 import com.cidic.design.model.Tag;
+import com.cidic.design.util.DateUtil;
 
 @Repository
 @Component
@@ -70,12 +71,45 @@ public class CourseDesignTagDaoImpl implements CourseDesignTagDao {
 	}
 
 	@Override
-	public List<CourseDesignTag> getCourseDesignByTagName(List<String> tagName) {
+	public List<CourseDesign> getCourseDesignByTagName(List<String> tagName) {
 		Session session = this.getSessionFactory().getCurrentSession();
-		String hqlSelected = "from CourseDesignTag c, Tag t, CourseDesign d where d = c.courseDesign and c.tag = t and t.tagName in (:tagNames)";
-		Query query=session.createQuery(hqlSelected);
+		String sqlSelected = "select c.id as course_design_tag_id, t.id as tagId, d.id as course_design_id,"
+				+ "t.tag_name,d.abstract,d.course_detail_id,d.create_time,d.teacher,d.title, d.top_tag from"
+				+ "  course_design_tag c cross  join  tag t cross join  course_design d  where"
+				+ "  d.id=c.courseDesign_id  and c.tag_id=t.id  and ( t.tag_name in (:tagNames ) )";
+        
+		Query query=session.createSQLQuery(sqlSelected);
 		query.setParameterList("tagNames", tagName);
+		List<Object[]> roles = query.list();   
+		List<CourseDesign> courseDesignList = new ArrayList<CourseDesign>();
+		List<CourseDesignTag> courseDesignTagList = null;
 		
-		return query.list();
+		CourseDesign courseDesign = null;
+		CourseDesignTag courseDesignTag = null;
+		
+		for(Object[] role : roles){  
+			courseDesign = new CourseDesign();
+		    courseDesign.setId(Integer.parseInt(String.valueOf(role[2])));
+		    courseDesign.setAbstract_(String.valueOf(role[4]));
+		    courseDesign.setCourseDetailId(Integer.parseInt(String.valueOf(role[5])));
+		    courseDesign.setCreateTime(DateUtil.stringToDate(String.valueOf(role[6])));
+		    courseDesign.setTeacher(String.valueOf(role[7]));
+		    courseDesign.setTitle(String.valueOf(8));
+		    courseDesign.setTopTag(Integer.parseInt(String.valueOf(role[9])));
+		    Tag tag = new Tag();
+		    tag.setId(Integer.parseInt(String.valueOf(role[1])));
+		    tag.setTagName(String.valueOf(role[3]));
+		    
+		    courseDesignTag = new  CourseDesignTag();
+		    courseDesignTag.setTag(tag);
+		    courseDesignTag.setId(Integer.parseInt(String.valueOf(role[0])));
+		    courseDesignTag.setCourseDesign(courseDesign);
+		    courseDesignTagList = new ArrayList<CourseDesignTag>();
+		    courseDesignTagList.add(courseDesignTag);
+		    courseDesign.setCourseTagList(courseDesignTagList);
+		    courseDesignList.add(courseDesign);
+		}
+		
+		return courseDesignList;
 	}
 }

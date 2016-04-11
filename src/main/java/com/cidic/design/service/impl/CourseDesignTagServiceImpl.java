@@ -43,7 +43,7 @@ public class CourseDesignTagServiceImpl implements CourseDesignTagService {
 	}
 
 	@Override
-	public List<CourseDesignTag> getCourseDesignByTagName(List<String> tagName) {
+	public List<CourseDesign> getCourseDesignByTagName(List<String> tagName) {
 		return courseDesignTagDao.getCourseDesignByTagName(tagName);
 	}
 

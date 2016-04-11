@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.CourseDesignTag;
 import com.cidic.design.service.CourseDesignTagService;
 
@@ -33,9 +34,9 @@ public class CourseDesignTagServiceTest {
 		List<String> list = new ArrayList<String>();
 		list.add("字体");
 		list.add("视觉");
-		List<CourseDesignTag> listCourseDesignTag= courseDesignTagService.getCourseDesignByTagName(list);
-		for (CourseDesignTag cdTag : listCourseDesignTag){
-			System.out.println(cdTag.getCourseDesign().getAbstract_());
+		List<CourseDesign> listCourseDesignTag= courseDesignTagService.getCourseDesignByTagName(list);
+		for (CourseDesign cdTag : listCourseDesignTag){
+			System.out.println(cdTag.getAbstract_());
 		}
 	}
 }

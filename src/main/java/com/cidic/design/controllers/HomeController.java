@@ -1,6 +1,8 @@
 package com.cidic.design.controllers;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -82,17 +84,24 @@ public class HomeController {
 	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public ResultModel getSearchContent(HttpServletRequest request,@RequestParam String searchKey){
-		List<Object> list = null;
+		List<Object> list = new ArrayList<Object>();
+		String[] searchKeyValue = searchKey.split(",");
+		if (searchKeyValue.length > 0){
+			try{
+				list = homeServiceImpl.getSearchResultByKeywards(Arrays.asList(searchKey));
+				resultModel = new ResultModel();
+				resultModel.setResultCode(200);
+				resultModel.setObject(list);
+			}
+			catch(Exception e){
+				throw new UIDesignException(500, "获取数据失败！");
+			}
+		}
+		else
+		{
+			throw new UIDesignException(500, "没有搜索关键词！");
+		}
 		
-		try{
-			
-			resultModel = new ResultModel();
-			resultModel.setResultCode(200);
-			resultModel.setObject(list);
-		}
-		catch(Exception e){
-			throw new UIDesignException(500, "获取数据失败！");
-		}
 		return resultModel;
 	}
 }

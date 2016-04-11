@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cidic.design.dao.CoursewareTagDao;
+import com.cidic.design.model.Courseware;
 import com.cidic.design.model.CoursewareTag;
 import com.cidic.design.service.CoursewareTagService;
 
@@ -39,6 +40,12 @@ public class CoursewareTagServiceImpl implements CoursewareTagService {
 	@Override
 	public void updateCoursewareTag(CoursewareTag coursewareTag, int coursewareTagId) {
 		coursewareTagDao.updateCoursewareTag(coursewareTag, coursewareTagId);
+	}
+
+	@Override
+	public List<Courseware> getCoursewareByTagName(List<String> tagName) {
+		// TODO Auto-generated method stub
+		return coursewareTagDao.getCoursewareByTagName(tagName);
 	}
 
 }
