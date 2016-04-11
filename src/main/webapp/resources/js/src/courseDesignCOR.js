@@ -40,6 +40,9 @@ $(document).ready(function(){
         setup: function (ed) {
             ed.on('blur', function (e) {
                 $("#abstract").val(ed.getContent());
+                if(ed.getContent){
+                    $(".error[for='abstract']").remove();
+                }
             });
         }
     });
