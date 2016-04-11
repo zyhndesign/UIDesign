@@ -56,7 +56,7 @@ pageEncoding="UTF-8"%>
                         <div class="col-md-8">
                             <select class="form-control" name="topTag">
         <%
-            List<Map> topTags=new ArrayList<HashMap>();
+            List<HashMap> topTags=new ArrayList<HashMap>();
             topTags.add(new HashMap(int,string){
                 {
                 put("value",0);
