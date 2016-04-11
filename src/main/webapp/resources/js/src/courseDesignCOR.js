@@ -49,7 +49,7 @@ $(document).ready(function(){
             tag_id=$(this).data("tag-id");
 
         //存在tag-id,代表是修改的时候原始数据存在的tag，需要加入到deleteTags
-        if(tag_id&&$.inArray(tag_id,courseVideoCOR.deleteTags)==-1){
+        if(tag_id&&$.inArray(tag_id,courseDesignCOR.deleteTags)==-1){
             courseDesignCOR.deleteTags.push(tag);
         }else{
 
