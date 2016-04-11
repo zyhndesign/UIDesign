@@ -93,7 +93,7 @@ var courseMgr=(function(config,functions){
                 type:"delete",
                 dataType:"json",
                 success:function(response){
-                    if(response.result_code==200){
+                    if(response.resultCode==200){
                         $().toastmessage("showSuccessToast",config.messages.optSuccess);
                         me.ownTable.fnDraw();
                         functions.hideLoading();
