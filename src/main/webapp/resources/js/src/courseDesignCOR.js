@@ -8,7 +8,7 @@ var courseDesignCOR=(function(config,functions){
             $(form).ajaxSubmit({
                 dataType:"json",
                 data:{
-                    addTags:me.addTags.join(","),
+                    insertTags:me.addTags.join(","),
                     deleteTags:me.deleteTags.join(",")
                 },
                 success:function(response){
