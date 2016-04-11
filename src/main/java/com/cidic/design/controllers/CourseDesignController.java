@@ -118,7 +118,7 @@ public class CourseDesignController {
 	@ResponseBody 
 	public ResultModel updateCourseDesign(@PathVariable int id, @RequestParam String title, @RequestParam String abstract_,
 			@RequestParam String teacher,@RequestParam String createTime,@RequestParam int topTag,
-			@RequestParam int courseDetailId,@RequestParam String updateTag,@RequestParam String deleteTag){
+			@RequestParam int courseDetailId,@RequestParam String insertTag,@RequestParam String deleteTag){
 		
 		logger.info("/coursedesign/update/"+id +" "+title);
 		CourseDesign courseDesign;
@@ -130,7 +130,7 @@ public class CourseDesignController {
 			courseDesign.setCreateTime(DateUtil.stringToDate(createTime));
 			courseDesign.setTopTag(topTag);
 			courseDesign.setCourseDetailId(courseDetailId);
-			courseDesignServiceImpl.updateCourseDesign(courseDesign,updateTag,deleteTag);
+			courseDesignServiceImpl.updateCourseDesign(courseDesign,insertTag,deleteTag);
 			
 			resultModel = new ResultModel();
 			resultModel.setResultCode(200);
