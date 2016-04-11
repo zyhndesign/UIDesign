@@ -1,6 +1,5 @@
 package com.cidic.design.service.impl;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,13 +15,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.cidic.design.dao.TagDao;
 import com.cidic.design.dao.VideoCourseDao;
 import com.cidic.design.dao.VideoCourseTagDao;
-import com.cidic.design.model.CourseDesign;
-import com.cidic.design.model.CoursewareTag;
 import com.cidic.design.model.Tag;
 import com.cidic.design.model.VideoCourse;
 import com.cidic.design.model.VideoCourseTag;
 import com.cidic.design.service.VideoCourseService;
-import com.cidic.design.util.DateUtil;
 
 @Service
 @Component
@@ -86,13 +82,8 @@ public class VideoCourseServiceImpl implements VideoCourseService {
 	@Override
 	@Transactional(readOnly = true)
 	public VideoCourse selectVideoCourse(int id) {
-		VideoCourse videoCourse = videoCourseDao.selectVideoCourse(id);
-		try {
-			videoCourse.setCreateTime(DateUtil.parse(DateUtil.formatDate(videoCourse.getCreateTime())));
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		return videoCourse;
+		
+		return videoCourseDao.selectVideoCourse(id);
 	}
 
 	@Override

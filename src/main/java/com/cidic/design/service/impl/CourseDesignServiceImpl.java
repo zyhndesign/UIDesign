@@ -84,13 +84,7 @@ public class CourseDesignServiceImpl implements CourseDesignService {
 	@Override
 	@Transactional(readOnly = true)
 	public CourseDesign selectCourseDesign(int id) {
-		CourseDesign courseDesign = courseDesignDao.selectCourseDesign(id);
-		try {
-			courseDesign.setCreateTime(DateUtil.parse(DateUtil.formatDate(courseDesign.getCreateTime())));
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		return courseDesign;
+		return  courseDesignDao.selectCourseDesign(id);
 	}
 
 	@Override

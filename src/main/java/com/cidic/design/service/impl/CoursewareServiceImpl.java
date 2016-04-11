@@ -85,13 +85,7 @@ public class CoursewareServiceImpl implements CoursewareService {
 	@Override
 	@Transactional(readOnly = true)
 	public Courseware selectCourseware(int id) {
-		Courseware courseware = coursewareDao.selectCourseware(id);
-		try {
-			courseware.setCreateTime(DateUtil.parse(DateUtil.formatDate(courseware.getCreateTime())));
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		return courseware;
+		return coursewareDao.selectCourseware(id);
 	}
 
 	@Override
