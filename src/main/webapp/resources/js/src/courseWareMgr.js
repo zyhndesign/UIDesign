@@ -30,7 +30,7 @@ var courseWareMgr=(function(config,functions){
                 { "mDataProp": "create_time"},
                 { "mDataProp": "opt",
                     "fnRender":function(oObj){
-                        return '<a href="course-ware/update?id='+oObj.aData.id+'">修改</a>&nbsp;' +
+                        return '<a href="courseware/update?id='+oObj.aData.id+'">修改</a>&nbsp;' +
                             '<a class="delete" href="'+oObj.aData.id+'">删除</a>';
                     }
                 }

@@ -90,7 +90,7 @@ var courseMgr=(function(config,functions){
             var me=this;
             $.ajax({
                 url:config.ajaxUrls.courseDesignDelete.replace(":id",id),
-                type:"post",
+                type:"delete",
                 dataType:"json",
                 success:function(response){
                     if(response.result_code==200){
