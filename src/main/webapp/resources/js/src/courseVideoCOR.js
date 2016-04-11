@@ -106,6 +106,9 @@ $(document).ready(function(){
                 required:true,
                 maxlength:250
             },
+            createTime:{
+                required:true
+            },
             thumbnail:{
                 required:true
             },
@@ -121,6 +124,9 @@ $(document).ready(function(){
             abstract_:{
                 required:config.validErrors.required,
                 maxlength:config.validErrors.maxLength.replace("${max}",250)
+            },
+            createTime:{
+                required:config.validErrors.required
             },
             thumbnail:{
                 required:config.validErrors.required

@@ -108,7 +108,7 @@ $(document).ready(function(){
                 required:true,
                 maxlength:32
             },
-            create_time:{
+            createTime:{
                 required:true
             },
             course_detail_id:{
@@ -128,7 +128,7 @@ $(document).ready(function(){
                 required:config.validErrors.required,
                 maxlength:config.validErrors.maxLength.replace("${max}",32)
             },
-            create_time:{
+            createTime:{
                 required:config.validErrors.required
             },
             course_detail_id:{
