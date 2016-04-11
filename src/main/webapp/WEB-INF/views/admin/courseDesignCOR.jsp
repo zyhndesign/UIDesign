@@ -57,13 +57,13 @@ pageEncoding="UTF-8"%>
                             <select class="form-control" name="topTag">
         <%
             List<HashMap> topTags=new ArrayList<HashMap>();
-            topTags.add(new HashMap(int,string){
+            topTags.add(new HashMap(Integer,String){
                 {
                 put("value",0);
                 put("name","否");
                 }
             });
-            topTags.add(new HashMap(int,string){
+            topTags.add(new HashMap(Integer,String){
                 {
                 put("value",1);
                 put("name","是");
