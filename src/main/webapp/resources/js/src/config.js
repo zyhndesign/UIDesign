@@ -57,6 +57,7 @@ var config={
         errorTitle:"错误提示",
         optSuccess:"操作成功！",
         noData:"没有数据",
+        noTag:"请填写标签！",
         progress:"处理中...",
         uploaded:"上传完成！",
         confirmDelete:"确定删除吗？",

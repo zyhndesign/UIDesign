@@ -140,7 +140,12 @@ $(document).ready(function(){
             }
         },
         submitHandler:function(form) {
-            courseDesignCOR.submitForm(form);
+            if($("#tags .tag").length==0){
+                $().toastmessage("showErrorToast",config.messages.noTag);
+            }else{
+                courseDesignCOR.submitForm(form);
+            }
+
         }
     });
 });

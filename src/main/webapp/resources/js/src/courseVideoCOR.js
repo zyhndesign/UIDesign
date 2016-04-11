@@ -130,7 +130,12 @@ $(document).ready(function(){
             }
         },
         submitHandler:function(form) {
-            courseVideoCOR.submitForm(form);
+            if($("#tags .tag").length==0){
+                $().toastmessage("showErrorToast",config.messages.noTag);
+            }else{
+                courseVideoCOR.submitForm(form);
+            }
+
         }
     });
 });

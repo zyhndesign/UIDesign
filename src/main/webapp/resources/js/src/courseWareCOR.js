@@ -160,7 +160,11 @@ $(document).ready(function(){
             }
         },
         submitHandler:function(form) {
-            courseWareCOR.submitForm(form);
+            if($("#tags .tag").length==0){
+                $().toastmessage("showErrorToast",config.messages.noTag);
+            }else{
+                courseWareCOR.submitForm(form);
+            }
         }
     });
 });
