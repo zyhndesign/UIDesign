@@ -100,7 +100,7 @@ pageEncoding="UTF-8"%>
                 <div class="form-group">
                     <label  class="control-label col-md-2">教师*</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" value="${courseWare.teacher}" name="teacher">
+                        <input type="text" class="form-control" value="${courseWare.author}" name="author">
                     </div>
                 </div>
                 <div class="form-group">
