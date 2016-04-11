@@ -56,13 +56,9 @@ pageEncoding="UTF-8"%>
                         <div class="col-md-8">
                             <select class="form-control" name="topTag">
         <%
-            List<HashMap> topTags=new ArrayList<HashMap>();
-            topTags.add(new HashMap(Integer,String){
-                {
-                put(0,"否");
-                put(1,"是");
-                }
-            });
+             Map<Integer, String> topTags = new HashMap<Integer, String>(); // Map
+                topTags.put(0, "否");
+                topTags.put(1, "是");
             pageContext.setAttribute("topTags", topTags);
         %>
                             <c:forEach items="${topTags}" var="topTag">
