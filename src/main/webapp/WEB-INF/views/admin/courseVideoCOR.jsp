@@ -47,7 +47,7 @@ pageEncoding="UTF-8"%>
                             <input type="hidden" id="imageUrl" name="thumbnail">
                             </c:if>
 
-                            <c:if test="${empty videoCourse.thumbnail}">
+                            <c:if test="${!empty videoCourse.thumbnail}">
                             <img  id="image"  style="width:100px"
                             src="${videoCourse.thumbnail}"/>
                             <input type="hidden" id="imageUrl" value="${videoCourse.thumbnail}" name="thumbnail">
