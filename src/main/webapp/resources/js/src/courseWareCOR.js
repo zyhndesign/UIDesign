@@ -15,7 +15,7 @@ var courseWareCOR=(function(config,functions){
                     if(response.resultCode==200){
                         $().toastmessage("showSuccessToast",config.messages.optSuccess);
                         setTimeout(function(){
-                            window.location.href="course/mgr";
+                            window.location.href="courseware/courseWareMgr";
                         },3000);
                     }else{
                         functions.ajaxReturnErrorHandler(response.message);

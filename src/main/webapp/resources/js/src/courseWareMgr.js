@@ -27,7 +27,11 @@ var courseWareMgr=(function(config,functions){
                     }},
                 { "mDataProp": "title"},
                 { "mDataProp": "author"},
-                { "mDataProp": "create_time"},
+                { "mDataProp": "createTime",
+                    "fnRender":function(oObj){
+                        return "";
+                    }
+                },
                 { "mDataProp": "opt",
                     "fnRender":function(oObj){
                         return '<a href="courseware/update?id='+oObj.aData.id+'">修改</a>&nbsp;' +
