@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.cidic.design.exception.UIDesignException;
 import com.cidic.design.model.ResultModel;
 import com.cidic.design.service.HomeService;
+import com.qiniu.util.Auth;
 
 /**
  * Handles requests for the application home page.
@@ -101,6 +102,27 @@ public class HomeController {
 		{
 			throw new UIDesignException(500, "没有搜索关键词！");
 		}
+		
+		return resultModel;
+	}
+	
+	@RequestMapping(value = "/getUploadKey", method = RequestMethod.GET)
+	public ResultModel getUploadKey(HttpServletRequest request){
+			
+			final String ACCESS_KEY = "Q-DeiayZfPqA0WDSOGSf-ekk345VrzuZa_6oBrX_";
+			final String SECRET_KEY = "fIiGiRr3pFmHOmBDR2Md1hTCqpMMBcE_gvZYMzwD";
+			final String bucketname = "design-course";
+			try{
+				Auth auth = Auth.create(ACCESS_KEY, SECRET_KEY);
+				auth.uploadToken(bucketname);
+				resultModel = new ResultModel();
+				resultModel.setResultCode(200);
+				resultModel.setObject(bucketname);
+			}
+			catch(Exception e){
+				throw new UIDesignException(500, "获取数据失败！");
+			}
+		
 		
 		return resultModel;
 	}

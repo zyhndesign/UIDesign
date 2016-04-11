@@ -115,6 +115,7 @@ public class CoursewareController {
 			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String content,
 			@RequestParam int topTag,@PathVariable int id,@RequestParam String insertTag,@RequestParam String deleteTag){
 		Courseware courseware = new Courseware();
+		courseware.setId(id);
 		courseware.setAuthor(author);
 		courseware.setContent(content);
 		courseware.setCreateTime(DateUtil.stringToDate(createTime));

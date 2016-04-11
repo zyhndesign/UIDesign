@@ -120,6 +120,7 @@ public class VideoCourseController {
 			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String insertTag,@RequestParam String deleteTag,
 			@RequestParam String content,@RequestParam int topTag, @PathVariable int id){
 		VideoCourse videoCourse = new VideoCourse();
+		videoCourse.setId(id);
 		videoCourse.setTitle(title);
 		videoCourse.setAbstract_(abstract_);
 		videoCourse.setContent(content);

@@ -266,6 +266,12 @@
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.10</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.qiniu</groupId>
+			<artifactId>qiniu-java-sdk</artifactId>
+			<version>[7.0.0, 7.0.99]</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
