@@ -12,13 +12,13 @@ var courseDesignCOR=(function(config,functions){
                     deleteTag:me.deleteTags.join(",")
                 },
                 success:function(response){
-                    if(response.success){
+                    if(response.resultCode==200){
                         $().toastmessage("showSuccessToast",config.messages.optSuccess);
                         setTimeout(function(){
-                            window.location.href="course/mgr";
+                            window.location.href="coursedesign/courseDesignMgr";
                         },3000);
                     }else{
-                        functions.ajaxReturnErrorHandler(response.error_code);
+                        functions.ajaxReturnErrorHandler(response.message);
                     }
                 },
                 error:function(){
