@@ -55,7 +55,7 @@ pageEncoding="UTF-8"%>
                         <div class="col-md-8">
                             <select class="form-control" name="topTag">
         <%
-             Map<Integer, String> topTags = new HashMap<Integer, String>(); // Map
+             HashMap<Integer, String> topTags = new HashMap<Integer, String>(); // Map
                 topTags.put(0, "否");
                 topTags.put(1, "是");
             pageContext.setAttribute("topTags", topTags);
