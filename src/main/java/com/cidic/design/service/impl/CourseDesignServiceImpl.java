@@ -1,5 +1,6 @@
 package com.cidic.design.service.impl;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -19,6 +20,7 @@ import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.CourseDesignTag;
 import com.cidic.design.model.Tag;
 import com.cidic.design.service.CourseDesignService;
+import com.cidic.design.util.DateUtil;
 
 @Service
 @Component
@@ -82,7 +84,13 @@ public class CourseDesignServiceImpl implements CourseDesignService {
 	@Override
 	@Transactional(readOnly = true)
 	public CourseDesign selectCourseDesign(int id) {
-		return courseDesignDao.selectCourseDesign(id);
+		CourseDesign courseDesign = courseDesignDao.selectCourseDesign(id);
+		try {
+			courseDesign.setCreateTime(DateUtil.parse(DateUtil.formatDate(courseDesign.getCreateTime())));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return courseDesign;
 	}
 
 	@Override

@@ -20,4 +20,14 @@ public class DateUtil {
 		return date;  
 	}
 	
+	 public static  String formatDate(Date date)throws ParseException{
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(date);
+    }
+	 
+	 public static Date parse(String strDate) throws ParseException{
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        
+        return sdf.parse(strDate);
+    }
 }
