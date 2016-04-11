@@ -45,6 +45,9 @@ public class Courseware implements java.io.Serializable {
 	@Column(name="top_tag")
 	private int topTag;
 	
+	@Column(name="abstract")
+	private String abstract_;
+	
 	@OneToMany(mappedBy = "courseware",cascade=CascadeType.ALL,fetch = FetchType.EAGER)
 	private List<CoursewareTag> coursewareTagList;
 
@@ -123,5 +126,11 @@ public class Courseware implements java.io.Serializable {
 		this.topTag = topTag;
 	}
 
-	
+	public String getAbstract_() {
+		return abstract_;
+	}
+
+	public void setAbstract_(String abstract_) {
+		this.abstract_ = abstract_;
+	}
 }

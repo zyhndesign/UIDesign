@@ -74,7 +74,7 @@ public class CoursewareController {
 	@ResponseBody 
 	public ResultModel insertCourseware(@RequestParam String title, @RequestParam String author,
 			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String content,
-			@RequestParam int topTag,@RequestParam String insertTag){
+			@RequestParam int topTag,@RequestParam String abstract_,@RequestParam String insertTag){
 		
 		Courseware courseware = new Courseware();
 		courseware.setTitle(title);
@@ -83,6 +83,7 @@ public class CoursewareController {
 		courseware.setCreateTime(DateUtil.stringToDate(createTime));
 		courseware.setThumbnail(thumbnail);
 		courseware.setTopTag(topTag);
+		courseware.setAbstract_(abstract_);
 		try{
 			coursewareServiceImpl.insertCourseware(courseware,insertTag);
 			resultModel = new ResultModel();
@@ -114,7 +115,7 @@ public class CoursewareController {
 	@ResponseBody 
 	public ResultModel updateCourseware(@RequestParam String title, @RequestParam String author,
 			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String content,
-			@RequestParam int topTag,@PathVariable int id,@RequestParam String insertTag,@RequestParam String deleteTag){
+			@RequestParam int topTag,@RequestParam String abstract_,@PathVariable int id,@RequestParam String insertTag,@RequestParam String deleteTag){
 		Courseware courseware = new Courseware();
 		courseware.setId(id);
 		courseware.setAuthor(author);
@@ -122,6 +123,7 @@ public class CoursewareController {
 		courseware.setCreateTime(DateUtil.stringToDate(createTime));
 		courseware.setThumbnail(thumbnail);
 		courseware.setTopTag(topTag);
+		courseware.setAbstract_(abstract_);
 		try{
 			coursewareServiceImpl.updateCourseware(courseware,insertTag,deleteTag);
 			resultModel = new ResultModel();
