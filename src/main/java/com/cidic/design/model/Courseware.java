@@ -4,8 +4,10 @@ package com.cidic.design.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -43,7 +45,7 @@ public class Courseware implements java.io.Serializable {
 	@Column(name="top_tag")
 	private int topTag;
 	
-	@OneToMany(mappedBy = "courseware")
+	@OneToMany(mappedBy = "courseware",cascade=CascadeType.ALL,fetch = FetchType.EAGER)
 	private List<CoursewareTag> coursewareTagList;
 
 	public Courseware() {

@@ -77,6 +77,7 @@ public class CoursewareController {
 			@RequestParam int topTag,@RequestParam String insertTag){
 		
 		Courseware courseware = new Courseware();
+		courseware.setTitle(title);
 		courseware.setAuthor(author);
 		courseware.setContent(content);
 		courseware.setCreateTime(DateUtil.stringToDate(createTime));
