@@ -79,7 +79,7 @@ $(document).ready(function(){
         }
     });
 
-    $("#tags").on("click",".tags",function(){
+    $("#tags").on("click",".tag",function(){
         var tag=$(this).val(),
             tag_id=$(this).data("tag-id");
 
