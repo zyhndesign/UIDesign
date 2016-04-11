@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
     <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +53,17 @@ pageEncoding="UTF-8"%>
                         <label  class="control-label col-md-2">是否精选*</label>
                         <div class="col-md-8">
                             <select class="form-control" name="topTag">
-                            <c:set var="topTags" value="{{value:0,name:'否'},{value:1,name:'是'}}"/>
+        <% List<Map> topTags=new ArrayList<HashMap>();
+            topTags.add(new HashMap(){
+                put("value",0);
+                put("name","否");
+            });
+            topTags.add(new HashMap(){
+                put("value",1);
+                put("name","是");
+            });
+            pageContext.setAttribute("topTags", topTags);
+        %>
                             <c:forEach items="${topTags}" var="i">
                                 <c:choose>
                                 <c:when test="${courseDesign.topTag==i.value}">
