@@ -95,12 +95,12 @@ pageEncoding="UTF-8"%>
                             <input type="text" class="form-control" id="tagInput">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label  class="control-label col-md-2">时长*</label>
                         <div class="col-md-8">
                             <input type="text" class="form-control" value="${videoCourse.duration}" name="duration">
                         </div>
-                    </div>
+                    </div>-->
                     <div class="form-group">
                         <label  class="control-label col-md-2">描述*</label>
                         <div class="col-md-8">
@@ -109,9 +109,9 @@ pageEncoding="UTF-8"%>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label  class="control-label col-md-2">内容*</label>
+                        <label  class="control-label col-md-2">视频地址*</label>
                         <div class="col-md-8">
-                            <textarea class="form-control"  name="content" rows="3" id="content">${content}</textarea>
+                            <textarea class="form-control"  name="content" rows="3" id="content">${videoCourse.content}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -135,7 +135,6 @@ pageEncoding="UTF-8"%>
 <script src="resources/js/lib/jquery.validate.min.js"></script>
 <script src="resources/js/lib/plupload.full.min.js"></script>
 <script src="resources/js/lib/qiniu.js"></script>
-<script src="resources/js/lib/tinymce.min.js"></script>
 <script src="resources/js/lib/jquery.toastmessage.js"></script>
 <script src="resources/js/src/config.js"></script>
 <script src="resources/js/src/functions.js"></script>

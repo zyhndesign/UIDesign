@@ -15,7 +15,7 @@ var courseVideoCOR=(function(config,functions){
                     if(response.resultCode==200){
                         $().toastmessage("showSuccessToast",config.messages.optSuccess);
                         setTimeout(function(){
-                            window.location.href="course/mgr";
+                            window.location.href="videocourse/videoCourseMgr";
                         },3000);
                     }else{
                         functions.ajaxReturnErrorHandler(response.message);
@@ -30,35 +30,7 @@ var courseVideoCOR=(function(config,functions){
 })(config,functions);
 
 $(document).ready(function(){
-    tinymce.init({
-        selector: "#abstract",
-        height:100,
-        toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-        toolbar2: 'print preview media | forecolor backcolor emoticons',
-        //image_advtab: true,
-        plugins : 'link image preview fullscreen table textcolor colorpicker code',
-        setup: function (ed) {
-            ed.on('blur', function (e) {
-                $("#abstract").val(ed.getContent());
-            });
-        }
-    });
-    tinymce.init({
-        selector: "#content",
-        height:300,
-        toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-        toolbar2: 'print preview media | forecolor backcolor emoticons',
-        //image_advtab: true,
-        plugins : 'link image preview fullscreen table textcolor colorpicker code',
-        setup: function (ed) {
-            ed.on('blur', function (e) {
-                $("#content").val(ed.getContent());
-                if(ed.getContent){
-                    $(".error[for='content']").remove();
-                }
-            });
-        }
-    });
+
     functions.createQiNiuUploader({
         maxSize:config.uploader.sizes.img,
         filter:config.uploader.filters.img,
@@ -135,9 +107,6 @@ $(document).ready(function(){
                 required:true,
                 maxlength:250
             },
-            duration:{
-                required:true
-            },
             thumbnail:{
                 required:true
             },
@@ -153,9 +122,6 @@ $(document).ready(function(){
             abstract_:{
                 required:config.validErrors.required,
                 maxlength:config.validErrors.maxLength.replace("${max}",250)
-            },
-            duration:{
-                required:config.validErrors.required
             },
             thumbnail:{
                 required:config.validErrors.required
