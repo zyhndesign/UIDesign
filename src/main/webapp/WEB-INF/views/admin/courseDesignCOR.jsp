@@ -55,14 +55,19 @@ pageEncoding="UTF-8"%>
                         <label  class="control-label col-md-2">是否精选*</label>
                         <div class="col-md-8">
                             <select class="form-control" name="topTag">
-        <% List<Map> topTags=new ArrayList<HashMap>();
-            topTags.add(new HashMap(){
+        <%
+            List<Map> topTags=new ArrayList<HashMap>();
+            topTags.add(new HashMap(int,string){
+                {
                 put("value",0);
                 put("name","否");
+                }
             });
-            topTags.add(new HashMap(){
+            topTags.add(new HashMap(int,string){
+                {
                 put("value",1);
                 put("name","是");
+                }
             });
             pageContext.setAttribute("topTags", topTags);
         %>
