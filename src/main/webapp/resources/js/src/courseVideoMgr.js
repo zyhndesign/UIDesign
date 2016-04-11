@@ -26,7 +26,11 @@ var courseMgr=(function(config,functions){
                         return '<img class="thumb" src="'+oObj.aData.thumbnail+'">';
                     }},
                 { "mDataProp": "title"},
-                { "mDataProp": "duration"},
+                { "mDataProp": "createTime",
+                    "fnRender":function(oObj){
+                        return functions.formatDate("y-m-d",oObj.aData.createTime);
+                    }
+                },
                 { "mDataProp": "opt",
                     "fnRender":function(oObj){
                         return '<a href="videocourse/videoCourseCOR/'+oObj.aData.id+'">修改</a>&nbsp;' +

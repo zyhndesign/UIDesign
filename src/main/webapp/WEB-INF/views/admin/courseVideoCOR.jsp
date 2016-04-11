@@ -95,6 +95,12 @@ pageEncoding="UTF-8"%>
                             <input type="text" class="form-control" id="tagInput">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label  class="control-label col-md-2">创建时间*</label>
+                        <div class="col-md-8">
+                            <input type="date" class="form-control" value="${fn:substring(videoCourse.createTime, 0, 10)}" name="createTime">
+                        </div>
+                    </div>
                     <!--<div class="form-group">
                         <label  class="control-label col-md-2">时长*</label>
                         <div class="col-md-8">
