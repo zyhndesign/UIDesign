@@ -116,7 +116,7 @@ public class VideoCourseController {
 	
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.POST, produces="application/json")  
 	@ResponseBody 
-	public ResultModel updateVideoCourse(@RequestParam String title, @RequestParam String abstract_,@RequestParam String duration,
+	public ResultModel updateVideoCourse(@RequestParam String title, @RequestParam String abstract_,@RequestParam(required=false) String duration,
 			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String insertTag,@RequestParam String deleteTag,
 			@RequestParam String content,@RequestParam int topTag, @PathVariable int id){
 		VideoCourse videoCourse = new VideoCourse();
