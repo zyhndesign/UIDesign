@@ -26,18 +26,25 @@ pageEncoding="UTF-8"%>
             </div>
             <div class="panel-body">
 
-                <form class="form-horizontal" id="myForm" action="coursedesign/insert" method="post">
+    <c:choose>
+    <c:when test="${empty courseDesign}">
+    <form class="form-horizontal" id="myForm" action="coursedesign/insert" method="post">
+    </c:when>
+    <c:otherwise>
+    <form class="form-horizontal" id="myForm" action="coursedesign/update/${courseDesign.id}" method="post">
+    </c:otherwise>
+    </c:choose>
 
                     <div class="form-group">
                         <label  class="control-label col-md-2">标题*</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" value="" name="title">
+                            <input type="text" class="form-control" value="${courseDesign.title}" name="title">
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="control-label col-md-2">教师*</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" value="" name="teacher">
+                            <input type="text" class="form-control" value="${courseDesign.teacher}" name="teacher">
                         </div>
                     </div>
                     <div class="form-group">
@@ -61,19 +68,19 @@ pageEncoding="UTF-8"%>
                     <div class="form-group">
                         <label  class="control-label col-md-2">创建时间*</label>
                         <div class="col-md-8">
-                            <input type="date" class="form-control" value="" name="createTime">
+                            <input type="date" class="form-control" value="${courseDesign.createTime}" name="createTime">
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="control-label col-md-2">图钉墙ID*</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" value="" name="courseDetailId">
+                            <input type="text" class="form-control" value="${courseDesign.courseDetailId}" name="courseDetailId">
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="control-label col-md-2">描述*</label>
                         <div class="col-md-8">
-                            <textarea class="form-control"  name="abstract_" rows="3" id="abstract"></textarea>
+                            <textarea class="form-control"  name="abstract_" rows="3" id="abstract">${courseDesign.abstract_}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
