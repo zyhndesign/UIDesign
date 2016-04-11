@@ -29,10 +29,10 @@ pageEncoding="UTF-8"%>
             <div class="panel-body">
     <c:choose>
     <c:when test="${empty videoCourse}">
-    <form class="form-horizontal" id="myForm" action="videoCourse/insert" method="post">
+    <form class="form-horizontal" id="myForm" action="videocourse/insert" method="post">
     </c:when>
     <c:otherwise>
-    <form class="form-horizontal" id="myForm" action="videoCourse/update/${videoCourse.id}" method="post">
+    <form class="form-horizontal" id="myForm" action="videocourse/update/${videoCourse.id}" method="post">
     </c:otherwise>
     </c:choose>
                     <div class="form-group">
