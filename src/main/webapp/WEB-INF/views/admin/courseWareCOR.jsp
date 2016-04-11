@@ -120,7 +120,7 @@ pageEncoding="UTF-8"%>
                 <div class="form-group">
                     <label  class="control-label col-md-2">内容*</label>
                     <div class="col-md-8">
-                        <textarea class="form-control" name="content" rows="3" id="content">${content}</textarea>
+                        <textarea class="form-control" name="content" rows="3" id="content">${courseware.content}</textarea>
                     </div>
                 </div>
                 <div class="form-group">
