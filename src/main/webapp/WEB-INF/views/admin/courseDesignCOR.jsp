@@ -51,7 +51,7 @@ pageEncoding="UTF-8"%>
                         <label  class="control-label col-md-2">是否精选*</label>
                         <div class="col-md-8">
                             <select class="form-control" name="topTag">
-                            <c:set var="topTags" value="[{value:0,name:'否'},{value:1,name:'是'}]"/>
+                            <c:set var="topTags" value="{{value:0,name:'否'},{value:1,name:'是'}}"/>
                             <c:forEach items="${topTags}" var="i">
                                 <c:choose>
                                 <c:when test="${courseDesign.topTag==i.value}">
