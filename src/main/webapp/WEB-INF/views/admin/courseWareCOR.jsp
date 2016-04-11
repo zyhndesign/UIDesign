@@ -27,12 +27,13 @@ pageEncoding="UTF-8"%>
                 <h1 class="panel-title">新建/修改课件</h1>
             </div>
             <div class="panel-body">
+
                 <c:choose>
-                <c:when test="${empty videoCourse}">
-                <form class="form-horizontal" id="myForm" action="courseWare/insert" method="post">
+                <c:when test="${empty courseWare}">
+                <form class="form-horizontal" id="myForm" action="courseware/insert" method="post">
                 </c:when>
                 <c:otherwise>
-                <form class="form-horizontal" id="myForm" action="courseWare/update/${videoCourse.id}" method="post">
+                <form class="form-horizontal" id="myForm" action="courseware/update/${courseWare.id}" method="post">
                 </c:otherwise>
                 </c:choose>
 

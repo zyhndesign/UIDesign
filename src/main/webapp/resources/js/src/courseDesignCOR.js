@@ -87,7 +87,7 @@ $(document).ready(function(){
         if(event.keyCode==13){
             var tag=$(this).val(),
                 hasFlag=false;
-            $(".tags").each(function(index,el){
+            $(".tag").each(function(index,el){
                 if($(this).text()==tag){
                     hasFlag=true;
 
