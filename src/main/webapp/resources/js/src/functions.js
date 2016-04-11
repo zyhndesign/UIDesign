@@ -267,7 +267,7 @@ var functions=(function(config){
          * ajax后台返回错误处理
          * @param errorCode {string} 错误代码
          */
-        ajaxReturnErrorHandler:function(errorCode){
+        ajaxReturnErrorHandlerBak:function(errorCode){
             var me=this;
             var message="";
             switch(errorCode){
@@ -275,6 +275,10 @@ var functions=(function(config){
                     message=config.messages.systemError;
                     break;
             }
+            this.hideLoading();
+            $().toastmessage("showErrorToast",message);
+        },
+        ajaxReturnErrorHandler:function(message){
             this.hideLoading();
             $().toastmessage("showErrorToast",message);
         },
