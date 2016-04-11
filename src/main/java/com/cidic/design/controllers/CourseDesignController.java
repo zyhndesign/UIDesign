@@ -74,7 +74,7 @@ public class CourseDesignController {
 	@ResponseBody 
 	public ResultModel insertCourseDesign(@RequestParam String title, @RequestParam String abstract_,
 			@RequestParam String teacher,@RequestParam String createTime,@RequestParam int topTag,
-			@RequestParam int courseDetailId,@RequestParam String insertTag){
+			@RequestParam int courseDetailId,@RequestParam String insertTag,@RequestParam String bg){
 		
 		logger.info("/coursedesign/insert/"+title);
 		CourseDesign courseDesign;
@@ -86,6 +86,7 @@ public class CourseDesignController {
 			courseDesign.setCreateTime(DateUtil.stringToDate(createTime));
 			courseDesign.setTopTag(topTag);
 			courseDesign.setCourseDetailId(courseDetailId);
+			courseDesign.setBg(bg);
 			courseDesignServiceImpl.insertCourseDesign(courseDesign,insertTag);
 			
 			resultModel = new ResultModel();
@@ -118,7 +119,7 @@ public class CourseDesignController {
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.POST)  
 	@ResponseBody 
 	public ResultModel updateCourseDesign(@PathVariable int id, @RequestParam String title, @RequestParam String abstract_,
-			@RequestParam String teacher,@RequestParam String createTime,@RequestParam int topTag,
+			@RequestParam String teacher,@RequestParam String createTime,@RequestParam int topTag,@RequestParam String bg,
 			@RequestParam int courseDetailId,@RequestParam String insertTag,@RequestParam String deleteTag){
 		
 		CourseDesign courseDesign;
@@ -131,6 +132,7 @@ public class CourseDesignController {
 			courseDesign.setCreateTime(DateUtil.stringToDate(createTime));
 			courseDesign.setTopTag(topTag);
 			courseDesign.setCourseDetailId(courseDetailId);
+			courseDesign.setBg(bg);
 			courseDesignServiceImpl.updateCourseDesign(courseDesign,insertTag,deleteTag);
 			
 			resultModel = new ResultModel();

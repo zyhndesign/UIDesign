@@ -48,6 +48,9 @@ public class CourseDesign implements java.io.Serializable {
 	@Column(name="top_tag")
 	private int topTag;
 	
+	@Column(name="bg")
+	private String bg;
+	
 	@OneToMany(mappedBy = "courseDesign",cascade=CascadeType.ALL,fetch = FetchType.EAGER)
 	private List<CourseDesignTag> courseTagList;
 	 
@@ -124,6 +127,14 @@ public class CourseDesign implements java.io.Serializable {
 
 	public void setTopTag(int topTag) {
 		this.topTag = topTag;
+	}
+
+	public String getBg() {
+		return bg;
+	}
+
+	public void setBg(String bg) {
+		this.bg = bg;
 	}
 
 	
