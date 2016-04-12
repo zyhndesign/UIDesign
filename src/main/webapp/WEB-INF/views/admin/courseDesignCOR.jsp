@@ -44,16 +44,16 @@ pageEncoding="UTF-8"%>
                             <a href="#" class="btn btn-success" id="uploadBtn">上传</a>
                             <p class="help-block">请上传500x500的jpg，png</p>
 
-                            <c:if test="${empty videoCourse.thumbnail}">
+                            <c:if test="${empty courseDesign.thumbnail}">
                             <img  id="image"  style="width:100px"
                             src="resources/images/app/defaultPeopleImage.jpg"/>
                             <input type="hidden" id="imageUrl" name="thumbnail">
                             </c:if>
 
-                            <c:if test="${!empty videoCourse.thumbnail}">
+                            <c:if test="${!empty courseDesign.thumbnail}">
                             <img  id="image"  style="width:100px"
-                            src="${videoCourse.thumbnail}"/>
-                            <input type="hidden" id="imageUrl" value="${videoCourse.thumbnail}" name="thumbnail">
+                            src="${courseDesign.thumbnail}"/>
+                            <input type="hidden" id="imageUrl" value="${courseDesign.thumbnail}" name="thumbnail">
                             </c:if>
 
                         </div>
