@@ -76,7 +76,7 @@ public class CourseDesignController {
 	@ResponseBody 
 	public ResultModel insertCourseDesign(@RequestParam String title, @RequestParam String abstract_,
 			@RequestParam String teacher,@RequestParam String createTime,@RequestParam int topTag,
-			@RequestParam int courseDetailId,@RequestParam String insertTag,@RequestParam String bg){
+			@RequestParam int courseDetailId,@RequestParam String insertTag,@RequestParam String bg,@RequestParam String thumbnail){
 		
 		logger.info("/coursedesign/insert/"+title);
 		CourseDesign courseDesign;
@@ -89,6 +89,7 @@ public class CourseDesignController {
 			courseDesign.setTopTag(topTag);
 			courseDesign.setCourseDetailId(courseDetailId);
 			courseDesign.setBg(bg);
+			courseDesign.setThumbnail(thumbnail);
 			courseDesignServiceImpl.insertCourseDesign(courseDesign,insertTag);
 			
 			resultModel = new ResultModel();
@@ -122,7 +123,7 @@ public class CourseDesignController {
 	@ResponseBody 
 	public ResultModel updateCourseDesign(@PathVariable int id, @RequestParam String title, @RequestParam String abstract_,
 			@RequestParam String teacher,@RequestParam String createTime,@RequestParam int topTag,@RequestParam String bg,
-			@RequestParam int courseDetailId,@RequestParam String insertTag,@RequestParam String deleteTag){
+			@RequestParam int courseDetailId,@RequestParam String insertTag,@RequestParam String deleteTag,@RequestParam String thumbnail){
 		
 		CourseDesign courseDesign;
 		try{
@@ -135,6 +136,7 @@ public class CourseDesignController {
 			courseDesign.setTopTag(topTag);
 			courseDesign.setCourseDetailId(courseDetailId);
 			courseDesign.setBg(bg);
+			courseDesign.setThumbnail(thumbnail);
 			courseDesignServiceImpl.updateCourseDesign(courseDesign,insertTag,deleteTag);
 			
 			resultModel = new ResultModel();

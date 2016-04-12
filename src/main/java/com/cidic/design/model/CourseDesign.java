@@ -51,6 +51,9 @@ public class CourseDesign implements java.io.Serializable {
 	@Column(name="bg")
 	private String bg;
 	
+	@Column(name="thumbnail")
+	private String thumbnail;
+	
 	@OneToMany(mappedBy = "courseDesign",cascade=CascadeType.ALL,fetch = FetchType.EAGER)
 	private List<CourseDesignTag> courseTagList;
 	 
@@ -135,6 +138,14 @@ public class CourseDesign implements java.io.Serializable {
 
 	public void setBg(String bg) {
 		this.bg = bg;
+	}
+
+	public String getThumbnail() {
+		return thumbnail;
+	}
+
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
 	}
 
 	
