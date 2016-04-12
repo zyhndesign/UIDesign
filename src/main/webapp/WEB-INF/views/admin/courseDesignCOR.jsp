@@ -38,19 +38,19 @@ pageEncoding="UTF-8"%>
     </c:otherwise>
     </c:choose>
                     <div class="form-group">
-                        <label class="control-label col-md-2">封面图*</label>
+                        <label class="control-label col-md-2">背景图*</label>
                         <div class="col-md-10" id="uploadContainer">
                             <a href="#" class="btn btn-success" id="uploadBtn">上传</a>
-                            <p class="help-block">请上传500x500的jpg，png</p>
+                            <p class="help-block">请上传960x540的jpg，png</p>
 
                             <c:if test="${empty courseDesign.bg}">
-                            <img  id="image"  style="width:100px"
+                            <img  id="image"  style="width:200px"
                             src="resources/images/app/defaultPeopleImage.jpg"/>
                             <input type="hidden" id="imageUrl" name="bg">
                             </c:if>
 
                             <c:if test="${!empty courseDesign.bg}">
-                            <img  id="image"  style="width:100px"
+                            <img  id="image"  style="width:200px"
                             src="${courseDesign.bg}"/>
                             <input type="hidden" id="imageUrl" value="${courseDesign.bg}" name="bg">
                             </c:if>
