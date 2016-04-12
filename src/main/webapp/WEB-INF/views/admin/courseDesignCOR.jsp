@@ -45,7 +45,7 @@ pageEncoding="UTF-8"%>
 
                             <c:if test="${empty courseDesign.bg}">
                             <img  id="image"  style="width:200px"
-                            src="resources/images/app/defaultBg.jpg"/>
+                            src="resources/images/app/defaultBg.png"/>
                             <input type="hidden" id="imageUrl" name="bg">
                             </c:if>
 
