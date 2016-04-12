@@ -9,6 +9,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -88,11 +89,17 @@ public class HomeController {
 	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	@ResponseBody
-	public ResultModel getSearchContent(HttpServletRequest request,@RequestParam String searchKey){
+	public ResultModel getSearchContent(HttpServletRequest request,HttpServletResponse response,@RequestParam String searchKey){
 		
 		String[] searchKeyValue = searchKey.split(",");
 		if (searchKeyValue.length > 0){
 			try{
+				response.setContentType("text/html;charset=UTF-8");
+				response.addHeader("Access-Control-Allow-Origin","*");
+			    if("IE".equals(request.getParameter("type"))){
+			    	response.addHeader("XDomainRequestAllowed","1");
+			    }
+			    
 				Map<String,Object> map = homeServiceImpl.getSearchResultByKeywards(Arrays.asList(searchKey));
 				resultModel = new ResultModel();
 				resultModel.setResultCode(200);
