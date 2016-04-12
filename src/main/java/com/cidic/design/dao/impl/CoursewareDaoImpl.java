@@ -76,5 +76,24 @@ public class CoursewareDaoImpl implements CoursewareDao {
         final List<Courseware> list = query.list();  
 		return list;
 	}
+	
+	@Override
+	public List<Courseware> getFrontDataByPage(int limit, int offset, int choice) {
+		Session session = this.getSessionFactory().getCurrentSession();
+		String hql = null; 
+		if (choice == 0){
+			hql = "from Courseware order by createTime desc";
+		}
+		else{
+			hql = "from Courseware where topTag=1 order by createTime desc";
+		}
+	 
+        final Query query = session.createQuery(hql);   
+        query.setFirstResult(offset);    
+        query.setMaxResults(limit); 
+        
+        final List<Courseware> list = query.list();  
+		return list;
+	}
 
 }

@@ -17,4 +17,6 @@ public interface VideoCourseDao {
 	public List<VideoCourse> getTopVideoCourse();
 	
 	public List<VideoCourse> getDataByPage(int limit, int offset, String sEcho);
+	
+	public List<VideoCourse> getFrontDataByPage(int limit, int offset, int choice);
 }

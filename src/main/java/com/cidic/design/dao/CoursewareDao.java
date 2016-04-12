@@ -16,4 +16,6 @@ public interface CoursewareDao {
 	public void deleteCourseware(Courseware courseware);
 	
 	public List<Courseware> getDataByPage(int limit, int offset, String sEcho);
+	
+	public List<Courseware> getFrontDataByPage(int limit, int offset, int choice);
 }

@@ -2,7 +2,6 @@ package com.cidic.design.service;
 
 import java.util.List;
 
-import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.VideoCourse;
 
 public interface VideoCourseService {
@@ -18,4 +17,6 @@ public interface VideoCourseService {
 	public List<VideoCourse> getTopVideoCourse();
 	
 	public List<VideoCourse> getDataByPage(int limit, int offset, String sEcho);
+	
+	public List<VideoCourse> getFrontDataByPage(int limit, int offset, int choice);
 }

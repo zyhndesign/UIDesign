@@ -3,6 +3,7 @@ package com.cidic.design.controllers;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cidic.design.exception.UIDesignException;
+import com.cidic.design.model.Courseware;
 import com.cidic.design.model.ListResultModel;
 import com.cidic.design.model.ResultModel;
 import com.cidic.design.model.VideoCourse;
@@ -167,6 +169,28 @@ public class VideoCourseController {
 			listResultModel.setsEcho(sEcho);
 			listResultModel.setiTotalRecords(iDisplayLength);
 			listResultModel.setiTotalDisplayRecords(iDisplayStart + iDisplayLength);
+			listResultModel.setSuccess(true);
+		}
+		catch(Exception e){
+			listResultModel.setSuccess(false);
+		}
+		return listResultModel;
+	}
+	
+	@RequestMapping(value = "/frontList", method = RequestMethod.GET, produces="application/json")  
+	@ResponseBody 
+	public ListResultModel frontListVideoCourse(HttpServletRequest request,HttpServletResponse response,@RequestParam int limit, @RequestParam int offset,@RequestParam int choice){
+		ListResultModel listResultModel = new ListResultModel();
+		try{
+			response.setContentType("text/html;charset=UTF-8");
+			response.addHeader("Access-Control-Allow-Origin","*");
+		    if("IE".equals(request.getParameter("type"))){
+		    	response.addHeader("XDomainRequestAllowed","1");
+		    }
+			List<VideoCourse> list = videoCourseServiceImpl.getFrontDataByPage(limit, offset, choice);
+			listResultModel.setAaData(list);
+			listResultModel.setiTotalRecords(list.size());
+			listResultModel.setiTotalDisplayRecords(offset + list.size());
 			listResultModel.setSuccess(true);
 		}
 		catch(Exception e){

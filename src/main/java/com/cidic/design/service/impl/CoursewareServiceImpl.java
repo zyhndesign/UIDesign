@@ -151,4 +151,10 @@ public class CoursewareServiceImpl implements CoursewareService {
 		return coursewareDao.getDataByPage(limit, offset, sEcho);
 	}
 
+	@Override
+	public List<Courseware> getFrontDataByPage(int limit, int offset, int choice) {
+		// TODO Auto-generated method stub
+		return coursewareDao.getFrontDataByPage(limit, offset, choice);
+	}
+
 }

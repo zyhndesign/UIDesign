@@ -17,5 +17,6 @@ public interface CourseDesignService {
 	public List<CourseDesign> getTopCourseDesign();
 	
 	public List<CourseDesign> getDataByPage(int limit, int offset, String sEcho);
+	
 }
 

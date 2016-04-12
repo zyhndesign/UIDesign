@@ -150,4 +150,10 @@ public class VideoCourseServiceImpl implements VideoCourseService {
 		return videoCourseDao.getDataByPage(limit, offset, sEcho);
 	}
 
+	@Override
+	public List<VideoCourse> getFrontDataByPage(int limit, int offset, int choice) {
+		// TODO Auto-generated method stub
+		return videoCourseDao.getFrontDataByPage(limit, offset, choice);
+	}
+
 }

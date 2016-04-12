@@ -3,6 +3,7 @@ package com.cidic.design.controllers;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -160,8 +161,30 @@ public class CoursewareController {
 			List<Courseware> list = coursewareServiceImpl.getDataByPage(iDisplayLength, iDisplayStart, sEcho);
 			listResultModel.setAaData(list);
 			listResultModel.setsEcho(sEcho);
-			listResultModel.setiTotalRecords(iDisplayLength);
+			listResultModel.setiTotalRecords(list.size());
 			listResultModel.setiTotalDisplayRecords(iDisplayStart + iDisplayLength);
+			listResultModel.setSuccess(true);
+		}
+		catch(Exception e){
+			listResultModel.setSuccess(false);
+		}
+		return listResultModel;
+	}
+	
+	@RequestMapping(value = "/frontList", method = RequestMethod.GET, produces="application/json")  
+	@ResponseBody 
+	public ListResultModel frontListCourseware(HttpServletRequest request,HttpServletResponse response,@RequestParam int limit, @RequestParam int offset,@RequestParam int choice){
+		ListResultModel listResultModel = new ListResultModel();
+		try{
+			response.setContentType("text/html;charset=UTF-8");
+			response.addHeader("Access-Control-Allow-Origin","*");
+		    if("IE".equals(request.getParameter("type"))){
+		    	response.addHeader("XDomainRequestAllowed","1");
+		    }
+			List<Courseware> list = coursewareServiceImpl.getFrontDataByPage(limit, offset, choice);
+			listResultModel.setAaData(list);
+			listResultModel.setiTotalRecords(list.size());
+			listResultModel.setiTotalDisplayRecords(offset + list.size());
 			listResultModel.setSuccess(true);
 		}
 		catch(Exception e){

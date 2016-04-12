@@ -78,4 +78,23 @@ public class VideoCourseDaoImpl implements VideoCourseDao {
 		return list;
 	}
 
+	@Override
+	public List<VideoCourse> getFrontDataByPage(int limit, int offset, int choice) {
+		Session session = this.getSessionFactory().getCurrentSession();
+		String hql = null; 
+		if (choice == 0){
+			hql = "from VideoCourse order by createTime desc";
+		}
+		else{
+			hql = "from VideoCourse where topTag=1 order by createTime desc";
+		}
+	 
+        final Query query = session.createQuery(hql);   
+        query.setFirstResult(offset);    
+        query.setMaxResults(limit); 
+        
+        final List<VideoCourse> list = query.list();  
+		return list;
+	}
+
 }
