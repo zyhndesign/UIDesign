@@ -96,6 +96,12 @@ pageEncoding="UTF-8"%>
                         </div>
                     </div>
                     <div class="form-group">
+                        <label  class="control-label col-md-2">作者*</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" value="${videoCourse.author}" name="author">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label  class="control-label col-md-2">创建时间*</label>
                         <div class="col-md-8">
                             <input type="date" class="form-control" value="${fn:substring(videoCourse.createTime, 0, 10)}" name="createTime">

@@ -122,6 +122,12 @@ $(document).ready(function(){
     $("#myForm").validate({
         ignore:[],
         rules:{
+            thumbnail:{
+                required:true
+            },
+            bg:{
+                required:true
+            },
             title:{
                 required:true,
                 maxlength:32
@@ -142,6 +148,12 @@ $(document).ready(function(){
             }
         },
         messages:{
+            thumbnail:{
+                required:config.validErrors.required
+            },
+            bg:{
+                required:config.validErrors.required
+            },
             title:{
                 required:config.validErrors.required,
                 maxlength:config.validErrors.maxLength.replace("${max}",32)

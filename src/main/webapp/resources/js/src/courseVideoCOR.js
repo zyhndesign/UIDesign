@@ -106,6 +106,10 @@ $(document).ready(function(){
                 required:true,
                 maxlength:250
             },
+            author:{
+                required:true,
+                maxlength:32
+            },
             createTime:{
                 required:true
             },
@@ -124,6 +128,10 @@ $(document).ready(function(){
             abstract_:{
                 required:config.validErrors.required,
                 maxlength:config.validErrors.maxLength.replace("${max}",250)
+            },
+            author:{
+                required:config.validErrors.required,
+                maxlength:config.validErrors.maxLength.replace("${max}",32)
             },
             createTime:{
                 required:config.validErrors.required
