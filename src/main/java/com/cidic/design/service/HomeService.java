@@ -1,11 +1,12 @@
 package com.cidic.design.service;
 
 import java.util.List;
+import java.util.Map;
 
 
 public interface HomeService {
 	
 	public List<Object> getHomeContentData();
 	
-	public List<Object> getSearchResultByKeywards(List<String> keywords);
+	public Map<String,Object> getSearchResultByKeywards(List<String> keywords);
 }

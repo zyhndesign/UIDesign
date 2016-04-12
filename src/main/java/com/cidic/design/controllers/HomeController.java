@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -88,14 +89,14 @@ public class HomeController {
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	@ResponseBody
 	public ResultModel getSearchContent(HttpServletRequest request,@RequestParam String searchKey){
-		List<Object> list = new ArrayList<Object>();
+		
 		String[] searchKeyValue = searchKey.split(",");
 		if (searchKeyValue.length > 0){
 			try{
-				list = homeServiceImpl.getSearchResultByKeywards(Arrays.asList(searchKey));
+				Map<String,Object> map = homeServiceImpl.getSearchResultByKeywards(Arrays.asList(searchKey));
 				resultModel = new ResultModel();
 				resultModel.setResultCode(200);
-				resultModel.setObject(list);
+				resultModel.setObject(map);
 			}
 			catch(Exception e){
 				throw new UIDesignException(500, "获取数据失败！");

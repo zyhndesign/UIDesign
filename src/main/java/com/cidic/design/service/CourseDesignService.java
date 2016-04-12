@@ -18,5 +18,6 @@ public interface CourseDesignService {
 	
 	public List<CourseDesign> getDataByPage(int limit, int offset, String sEcho);
 	
+	public List<CourseDesign> getFrontDataByPage(int limit, int offset, int choice);
 }
 

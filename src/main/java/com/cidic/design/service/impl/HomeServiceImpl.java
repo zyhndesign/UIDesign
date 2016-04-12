@@ -2,7 +2,9 @@ package com.cidic.design.service.impl;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -69,18 +71,20 @@ public class HomeServiceImpl implements HomeService {
 
 	@Override
 	@Transactional(readOnly = true, rollbackFor = Exception.class)
-	public List<Object> getSearchResultByKeywards(List<String> keywords) {
+	public Map<String,Object> getSearchResultByKeywards(List<String> keywords) {
 		
-		List<Object> list = new ArrayList<Object>();
+		Map<String,Object> map = new HashMap<String,Object>();
 		
 		List<CourseDesign> courseDesignList = courseDesignTagServiceImpl.getCourseDesignByTagName(keywords);
-		list.add(courseDesignList);
-		List<Courseware> coursewareList = coursewareTagServiceImpl.getCoursewareByTagName(keywords);
-		list.add(coursewareList);
-		List<VideoCourse> videoCourseList = videoCourseTagServiceImpl.getVideoCourseByTagName(keywords);
-		list.add(videoCourseList);
+		map.put("CourseDesign", courseDesignList);
 		
-		return list;
+		List<Courseware> coursewareList = coursewareTagServiceImpl.getCoursewareByTagName(keywords);
+		map.put("Courseware", coursewareList);
+		
+		List<VideoCourse> videoCourseList = videoCourseTagServiceImpl.getVideoCourseByTagName(keywords);
+		map.put("VideoCourse", videoCourseList);
+		
+		return map;
 	}
 
 	

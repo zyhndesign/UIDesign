@@ -3,6 +3,7 @@ package com.cidic.design.dao;
 import java.util.List;
 
 import com.cidic.design.model.CourseDesign;
+import com.cidic.design.model.Courseware;
 
 public interface CourseDesignDao {
 
@@ -18,4 +19,5 @@ public interface CourseDesignDao {
 	
 	public List<CourseDesign> getDataByPage(int limit, int offset, String sEcho);
 	
+	public List<CourseDesign> getFrontDataByPage(int limit, int offset, int choice);
 }

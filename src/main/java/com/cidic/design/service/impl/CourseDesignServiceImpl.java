@@ -157,4 +157,10 @@ public class CourseDesignServiceImpl implements CourseDesignService {
 		return courseDesignDao.getDataByPage(limit, offset, sEcho);
 	}
 
+	@Override
+	public List<CourseDesign> getFrontDataByPage(int limit, int offset, int choice) {
+		// TODO Auto-generated method stub
+		return courseDesignDao.getFrontDataByPage(limit, offset, choice);
+	}
+
 }
