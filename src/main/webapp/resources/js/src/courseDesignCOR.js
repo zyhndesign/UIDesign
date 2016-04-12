@@ -42,7 +42,7 @@ $(document).ready(function(){
         progressCb:null,
         uploadedCb:function(info,file,up){
             //后台的up-token里面要注明返回图片信息
-            if(info.w==500&&info.h==500){
+            if(info.w==960&&info.h==540){
                 $("#imageUrl").val(info.url);
 
                 $("#image").attr("src",info.url);
