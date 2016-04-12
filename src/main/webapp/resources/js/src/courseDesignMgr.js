@@ -29,6 +29,11 @@ var courseMgr=(function(config,functions){
                     }
                 },
                 { "mDataProp": "courseDetailId"},
+                { "mDataProp": "topTag",
+                    "fnRender":function(oObj){
+                        return config.topTag[oObj.aData.topTag];
+                    }
+                },
                 { "mDataProp": "opt",
                     "fnRender":function(oObj){
                         return '<a href="coursedesign/courseDesignCOR/'+oObj.aData.id+'">修改</a>&nbsp;' +

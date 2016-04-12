@@ -27,6 +27,10 @@ var config={
     perLoadCounts:{
         table:10
     },
+    topTag:{
+        0:"否",
+        1:"是"
+    },
     uploader:{
         url:"#",
         swfUrl:"resources/js/plupload/plupload.flash.swf",

@@ -41,7 +41,8 @@ pageEncoding="UTF-8"%>
                     <tr>
                         <th>封面</th>
                         <th>标题</th>
-                        <th>时长</th>
+                        <th>创建时间</th>
+                        <th>精选</th>
                         <th>操作</th>
                     </tr>
                     </thead>

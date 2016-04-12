@@ -31,6 +31,11 @@ var courseMgr=(function(config,functions){
                         return functions.formatDate("y-m-d",oObj.aData.createTime);
                     }
                 },
+                { "mDataProp": "topTag",
+                    "fnRender":function(oObj){
+                        return config.topTag[oObj.aData.topTag];
+                    }
+                },
                 { "mDataProp": "opt",
                     "fnRender":function(oObj){
                         return '<a href="videocourse/videoCourseCOR/'+oObj.aData.id+'">修改</a>&nbsp;' +

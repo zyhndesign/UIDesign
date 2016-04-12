@@ -41,6 +41,7 @@
                         <th>教师</th>
                         <th>创建时间</th>
                         <th>图钉墙ID</th>
+                        <th>精选</th>
                         <th>操作</th>
                     </tr>
                     </thead>
