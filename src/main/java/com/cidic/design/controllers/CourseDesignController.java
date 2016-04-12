@@ -20,7 +20,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cidic.design.exception.UIDesignException;
 import com.cidic.design.model.CourseDesign;
-import com.cidic.design.model.Courseware;
 import com.cidic.design.model.ListResultModel;
 import com.cidic.design.model.ResultModel;
 import com.cidic.design.service.CourseDesignService;
@@ -104,9 +103,14 @@ public class CourseDesignController {
 	
 	@RequestMapping(value = "/select/{id}", method = RequestMethod.GET, produces="application/json")  
 	@ResponseBody 
-	public ResultModel selectCourseDesign(@PathVariable int id) throws Exception{
+	public ResultModel selectCourseDesign(HttpServletRequest request,HttpServletResponse response,@PathVariable int id) throws Exception{
 		CourseDesign courseDesign = null;
 		try{
+			response.setContentType("text/html;charset=UTF-8");
+			response.addHeader("Access-Control-Allow-Origin","*");
+		    if("IE".equals(request.getParameter("type"))){
+		    	response.addHeader("XDomainRequestAllowed","1");
+		    }
 			courseDesign = courseDesignServiceImpl.selectCourseDesign(id);
 			resultModel = new ResultModel();
 			resultModel.setResultCode(200);

@@ -48,6 +48,8 @@ public class VideoCourse implements java.io.Serializable {
 	@Column(name="top_tag")
 	private int topTag;
 	
+	@Column(name="author")
+	private String author;
 	
 	@OneToMany(mappedBy = "videoCourse",cascade=CascadeType.ALL,fetch = FetchType.EAGER)
 	private List<VideoCourseTag> videoCourseTagList;
@@ -133,6 +135,14 @@ public class VideoCourse implements java.io.Serializable {
 
 	public void setVideoCourseTagList(List<VideoCourseTag> videoCourseTagList) {
 		this.videoCourseTagList = videoCourseTagList;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 }

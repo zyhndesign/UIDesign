@@ -39,7 +39,6 @@ public class CourseDesign implements java.io.Serializable {
 	private String teacher;
 	       
     @Column(name="create_time")
-    @Temporal(TemporalType.TIMESTAMP)
 	private Date createTime;
 	
 	@Column(name="course_detail_id")

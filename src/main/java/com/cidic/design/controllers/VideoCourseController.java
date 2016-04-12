@@ -78,7 +78,7 @@ public class VideoCourseController {
 	@ResponseBody 
 	public ResultModel insertVideoCourse(@RequestParam String title, @RequestParam String abstract_,@RequestParam(required=false) String duration,
 			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String content,
-			@RequestParam int topTag , @RequestParam String insertTag){
+			@RequestParam int topTag , @RequestParam String insertTag,@RequestParam String author){
 		VideoCourse videoCourse = new VideoCourse();
 		videoCourse.setTitle(title);
 		videoCourse.setAbstract_(abstract_);
@@ -87,6 +87,7 @@ public class VideoCourseController {
 		videoCourse.setDuration(duration);
 		videoCourse.setThumbnail(thumbnail);
 		videoCourse.setTopTag(topTag);
+		videoCourse.setAuthor(author);
 		try{
 			videoCourseServiceImpl.insertVideoCourse(videoCourse,insertTag);
 			resultModel = new ResultModel();
@@ -101,9 +102,14 @@ public class VideoCourseController {
 	
 	@RequestMapping(value = "/select/{id}", method = RequestMethod.GET, produces="application/json")  
 	@ResponseBody 
-	public ResultModel selectVideoCourse(@PathVariable int id) throws Exception{
+	public ResultModel selectVideoCourse(HttpServletRequest request,HttpServletResponse response,@PathVariable int id) throws Exception{
 		VideoCourse videoCourse = null;
 		try{
+			response.setContentType("text/html;charset=UTF-8");
+			response.addHeader("Access-Control-Allow-Origin","*");
+		    if("IE".equals(request.getParameter("type"))){
+		    	response.addHeader("XDomainRequestAllowed","1");
+		    }
 			videoCourse = videoCourseServiceImpl.selectVideoCourse(id);
 			resultModel = new ResultModel();
 			resultModel.setResultCode(200);
@@ -120,7 +126,7 @@ public class VideoCourseController {
 	@ResponseBody 
 	public ResultModel updateVideoCourse(@RequestParam String title, @RequestParam String abstract_,@RequestParam(required=false) String duration,
 			@RequestParam String thumbnail,@RequestParam String createTime,@RequestParam String insertTag,@RequestParam String deleteTag,
-			@RequestParam String content,@RequestParam int topTag, @PathVariable int id){
+			@RequestParam String content,@RequestParam int topTag, @PathVariable int id,@RequestParam String author){
 		VideoCourse videoCourse = new VideoCourse();
 		videoCourse.setId(id);
 		videoCourse.setTitle(title);
@@ -130,6 +136,7 @@ public class VideoCourseController {
 		videoCourse.setDuration(duration);
 		videoCourse.setThumbnail(thumbnail);
 		videoCourse.setTopTag(topTag);
+		videoCourse.setAuthor(author);
 		try{
 			videoCourseServiceImpl.updateVideoCourse(videoCourse,insertTag,deleteTag);
 			resultModel = new ResultModel();

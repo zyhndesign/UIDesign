@@ -98,9 +98,14 @@ public class CoursewareController {
 	
 	@RequestMapping(value = "/select/{id}", method = RequestMethod.GET, produces="application/json")  
 	@ResponseBody 
-	public ResultModel selectCourseware(@PathVariable int id) throws Exception{
+	public ResultModel selectCourseware(HttpServletRequest request,HttpServletResponse response,@PathVariable int id) throws Exception{
 		Courseware courseware = null;
 		try{
+			response.setContentType("text/html;charset=UTF-8");
+			response.addHeader("Access-Control-Allow-Origin","*");
+		    if("IE".equals(request.getParameter("type"))){
+		    	response.addHeader("XDomainRequestAllowed","1");
+		    }
 			courseware = coursewareServiceImpl.selectCourseware(id);
 			resultModel = new ResultModel();
 			resultModel.setResultCode(200);
