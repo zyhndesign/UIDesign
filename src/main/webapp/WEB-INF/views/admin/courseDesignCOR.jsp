@@ -37,22 +37,43 @@ pageEncoding="UTF-8"%>
     <form class="form-horizontal" id="myForm" action="coursedesign/update/${courseDesign.id}" method="post">
     </c:otherwise>
     </c:choose>
+
                     <div class="form-group">
-                        <label class="control-label col-md-2">背景图*</label>
+                        <label class="control-label col-md-2">封面图*</label>
                         <div class="col-md-10" id="uploadContainer">
                             <a href="#" class="btn btn-success" id="uploadBtn">上传</a>
+                            <p class="help-block">请上传500x500的jpg，png</p>
+
+                            <c:if test="${empty videoCourse.thumbnail}">
+                            <img  id="image"  style="width:100px"
+                            src="resources/images/app/defaultPeopleImage.jpg"/>
+                            <input type="hidden" id="imageUrl" name="thumbnail">
+                            </c:if>
+
+                            <c:if test="${!empty videoCourse.thumbnail}">
+                            <img  id="image"  style="width:100px"
+                            src="${videoCourse.thumbnail}"/>
+                            <input type="hidden" id="imageUrl" value="${videoCourse.thumbnail}" name="thumbnail">
+                            </c:if>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">背景图*</label>
+                        <div class="col-md-10" id="uploadBgContainer">
+                            <a href="#" class="btn btn-success" id="uploadBgBtn">上传</a>
                             <p class="help-block">请上传960x540的jpg，png</p>
 
                             <c:if test="${empty courseDesign.bg}">
-                            <img  id="image"  style="width:200px"
+                            <img  id="bg"  style="width:200px"
                             src="resources/images/app/defaultBg.png"/>
-                            <input type="hidden" id="imageUrl" name="bg">
+                            <input type="hidden" id="bgUrl" name="bg">
                             </c:if>
 
                             <c:if test="${!empty courseDesign.bg}">
-                            <img  id="image"  style="width:200px"
+                            <img  id="bg"  style="width:200px"
                             src="${courseDesign.bg}"/>
-                            <input type="hidden" id="imageUrl" value="${courseDesign.bg}" name="bg">
+                            <input type="hidden" id="bgUrl" value="${courseDesign.bg}" name="bg">
                             </c:if>
 
                         </div>
