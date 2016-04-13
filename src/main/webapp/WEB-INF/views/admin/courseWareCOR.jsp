@@ -95,6 +95,7 @@ pageEncoding="UTF-8"%>
                             </c:forEach>
                         </div>
                         <input type="text" class="form-control" id="tagInput">
+                        <span class="help-block">按回车确认，请勿输入英文逗号！</span>
                     </div>
                 </div>
 
