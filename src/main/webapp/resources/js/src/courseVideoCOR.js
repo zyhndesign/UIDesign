@@ -63,7 +63,7 @@ $(document).ready(function(){
         }else{
 
             //如果不是原始存在的tag,删除addTags中的数据
-            var index= $.inArray(tag,courseDesignCOR.addTags);
+            var index= $.inArray(tag,courseVideoCOR.addTags);
             courseVideoCOR.addTags.splice(index,1);
         }
 
