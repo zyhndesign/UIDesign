@@ -36,7 +36,5 @@ public class ResultModel {
 
 	public void setUptoken(String uptoken) {
 		this.uptoken = uptoken;
-	}
-	
-	
+	}	
 }
