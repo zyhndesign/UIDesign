@@ -96,4 +96,12 @@ public class CoursewareDaoImpl implements CoursewareDao {
 		return list;
 	}
 
+	@Override
+	public int getCountData() {
+		Session session = this.getSessionFactory().getCurrentSession();
+		String hql = "select count(*) from Courseware";  
+		Query query =  session.createQuery(hql);  
+		return ((Number)query.uniqueResult()).intValue();
+	}
+
 }

@@ -97,4 +97,12 @@ public class VideoCourseDaoImpl implements VideoCourseDao {
 		return list;
 	}
 
+	@Override
+	public int getCountData() {
+		Session session = this.getSessionFactory().getCurrentSession();
+		String hql = "select count(*) from VideoCourse";  
+		Query query =  session.createQuery(hql);  
+		return ((Number)query.uniqueResult()).intValue();
+	}
+
 }

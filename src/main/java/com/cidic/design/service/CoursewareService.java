@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.Courseware;
+import com.cidic.design.model.CoursewarePageModel;
 
 public interface CoursewareService {
 	
@@ -17,7 +18,7 @@ public interface CoursewareService {
 	
 	public List<Courseware> getTopCourseware();
 	
-	public List<Courseware> getDataByPage(int limit, int offset, String sEcho);
+	public CoursewarePageModel getDataByPage(int limit, int offset, String sEcho);
 	
 	public List<Courseware> getFrontDataByPage(int limit, int offset, int choice);
 }

@@ -9,6 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.CourseDesignTag;
+import com.cidic.design.model.CoursePageModel;
 import com.cidic.design.service.CourseDesignService;
 
 import static java.lang.System.out;
@@ -82,7 +83,8 @@ public class CourseDesignServiceTest {
     
    // @Test
     public void listCourseDesign(){
-    	List<CourseDesign> list = courseDesignService.getDataByPage(10, 0, "");
+    	CoursePageModel coursePageModel = courseDesignService.getDataByPage(10, 0, "");
+    	List<CourseDesign> list = coursePageModel.getList();
     	out.println("list size is :"+list.size());
     	for (CourseDesign courseDesign : list){
     		out.println(courseDesign.getTitle());

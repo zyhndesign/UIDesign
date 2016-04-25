@@ -111,6 +111,14 @@ public class CourseDesignDaoImpl implements CourseDesignDao {
         final List<CourseDesign> list = query.list();  
 		return list;
 	}
+
+	@Override
+	public int getCountData() {
+		Session session = this.getSessionFactory().getCurrentSession();
+		String hql = "select count(*) from CourseDesign";  
+		Query query =  session.createQuery(hql);  
+		return ((Number)query.uniqueResult()).intValue();
+	}
 	
 	
 }

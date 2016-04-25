@@ -18,6 +18,7 @@ import com.cidic.design.dao.CourseDesignTagDao;
 import com.cidic.design.dao.TagDao;
 import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.CourseDesignTag;
+import com.cidic.design.model.CoursePageModel;
 import com.cidic.design.model.Tag;
 import com.cidic.design.service.CourseDesignService;
 import com.cidic.design.util.DateUtil;
@@ -152,9 +153,13 @@ public class CourseDesignServiceImpl implements CourseDesignService {
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<CourseDesign> getDataByPage(int limit, int offset, String sEcho) {
-		// TODO Auto-generated method stub
-		return courseDesignDao.getDataByPage(limit, offset, sEcho);
+	public CoursePageModel getDataByPage(int limit, int offset, String sEcho) {
+		CoursePageModel coursePageModel = new CoursePageModel();
+		List<CourseDesign> list = courseDesignDao.getDataByPage(limit, offset, sEcho);
+		int count = courseDesignDao.getCountData();
+		coursePageModel.setList(list);
+		coursePageModel.setCount(count);
+		return coursePageModel;
 	}
 
 	@Override

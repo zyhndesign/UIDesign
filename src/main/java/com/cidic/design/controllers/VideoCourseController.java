@@ -23,6 +23,7 @@ import com.cidic.design.model.Courseware;
 import com.cidic.design.model.ListResultModel;
 import com.cidic.design.model.ResultModel;
 import com.cidic.design.model.VideoCourse;
+import com.cidic.design.model.VideoCoursePageModel;
 import com.cidic.design.service.VideoCourseService;
 import com.cidic.design.util.DateUtil;
 
@@ -171,11 +172,12 @@ public class VideoCourseController {
 	public ListResultModel listVideoCourse(@RequestParam int iDisplayLength, @RequestParam int iDisplayStart,@RequestParam String sEcho){
 		ListResultModel listResultModel = new ListResultModel();
 		try{
-			List<VideoCourse> list = videoCourseServiceImpl.getDataByPage(iDisplayLength, iDisplayStart, sEcho);
+			VideoCoursePageModel videoCoursePageModel =  videoCourseServiceImpl.getDataByPage(iDisplayLength, iDisplayStart, sEcho);
+			List<VideoCourse> list = videoCoursePageModel.getList();
 			listResultModel.setAaData(list);
 			listResultModel.setsEcho(sEcho);
-			listResultModel.setiTotalRecords(iDisplayLength);
-			listResultModel.setiTotalDisplayRecords(iDisplayStart + iDisplayLength);
+			listResultModel.setiTotalRecords(videoCoursePageModel.getCount());
+			listResultModel.setiTotalDisplayRecords(videoCoursePageModel.getCount());
 			listResultModel.setSuccess(true);
 		}
 		catch(Exception e){

@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cidic.design.exception.UIDesignException;
 import com.cidic.design.model.Courseware;
+import com.cidic.design.model.CoursewarePageModel;
 import com.cidic.design.model.ListResultModel;
 import com.cidic.design.model.ResultModel;
 import com.cidic.design.service.CoursewareService;
@@ -163,11 +164,12 @@ public class CoursewareController {
 	public ListResultModel listCourseware(@RequestParam int iDisplayLength, @RequestParam int iDisplayStart,@RequestParam String sEcho){
 		ListResultModel listResultModel = new ListResultModel();
 		try{
-			List<Courseware> list = coursewareServiceImpl.getDataByPage(iDisplayLength, iDisplayStart, sEcho);
+			CoursewarePageModel coursewarePageModel  = coursewareServiceImpl.getDataByPage(iDisplayLength, iDisplayStart, sEcho);
+			List<Courseware> list = coursewarePageModel.getList();
 			listResultModel.setAaData(list);
 			listResultModel.setsEcho(sEcho);
-			listResultModel.setiTotalRecords(list.size());
-			listResultModel.setiTotalDisplayRecords(iDisplayStart + iDisplayLength);
+			listResultModel.setiTotalRecords(coursewarePageModel.getCount());
+			listResultModel.setiTotalDisplayRecords(coursewarePageModel.getCount());
 			listResultModel.setSuccess(true);
 		}
 		catch(Exception e){

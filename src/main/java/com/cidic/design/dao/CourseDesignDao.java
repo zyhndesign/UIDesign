@@ -20,4 +20,6 @@ public interface CourseDesignDao {
 	public List<CourseDesign> getDataByPage(int limit, int offset, String sEcho);
 	
 	public List<CourseDesign> getFrontDataByPage(int limit, int offset, int choice);
+	
+	public int getCountData();
 }

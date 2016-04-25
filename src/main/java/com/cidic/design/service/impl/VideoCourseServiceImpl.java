@@ -15,8 +15,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.cidic.design.dao.TagDao;
 import com.cidic.design.dao.VideoCourseDao;
 import com.cidic.design.dao.VideoCourseTagDao;
+import com.cidic.design.model.Courseware;
+import com.cidic.design.model.CoursewarePageModel;
 import com.cidic.design.model.Tag;
 import com.cidic.design.model.VideoCourse;
+import com.cidic.design.model.VideoCoursePageModel;
 import com.cidic.design.model.VideoCourseTag;
 import com.cidic.design.service.VideoCourseService;
 
@@ -145,9 +148,13 @@ public class VideoCourseServiceImpl implements VideoCourseService {
 	}
 
 	@Override
-	public List<VideoCourse> getDataByPage(int limit, int offset, String sEcho) {
-		// TODO Auto-generated method stub
-		return videoCourseDao.getDataByPage(limit, offset, sEcho);
+	public VideoCoursePageModel getDataByPage(int limit, int offset, String sEcho) {
+		VideoCoursePageModel videoCoursePageModel = new VideoCoursePageModel();
+		List<VideoCourse> list = videoCourseDao.getDataByPage(limit, offset, sEcho);
+		int count = videoCourseDao.getCountData();
+		videoCoursePageModel.setList(list);
+		videoCoursePageModel.setCount(count);
+		return videoCoursePageModel;
 	}
 
 	@Override

@@ -18,7 +18,9 @@ import com.cidic.design.dao.CoursewareTagDao;
 import com.cidic.design.dao.TagDao;
 import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.CourseDesignTag;
+import com.cidic.design.model.CoursePageModel;
 import com.cidic.design.model.Courseware;
+import com.cidic.design.model.CoursewarePageModel;
 import com.cidic.design.model.CoursewareTag;
 import com.cidic.design.model.Tag;
 import com.cidic.design.service.CoursewareService;
@@ -147,8 +149,13 @@ public class CoursewareServiceImpl implements CoursewareService {
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<Courseware> getDataByPage(int limit, int offset, String sEcho) {
-		return coursewareDao.getDataByPage(limit, offset, sEcho);
+	public CoursewarePageModel getDataByPage(int limit, int offset, String sEcho) {
+		CoursewarePageModel coursewarePageModel = new CoursewarePageModel();
+		List<Courseware> list = coursewareDao.getDataByPage(limit, offset, sEcho);
+		int count = coursewareDao.getCountData();
+		coursewarePageModel.setList(list);
+		coursewarePageModel.setCount(count);
+		return coursewarePageModel;
 	}
 
 	@Override
