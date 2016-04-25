@@ -24,7 +24,7 @@ pageEncoding="UTF-8"%>
     <div class="main">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h1 class="panel-title">新建/修改课件</h1>
+                <h1 class="panel-title">新建/修改教学课件</h1>
             </div>
             <div class="panel-body">
 

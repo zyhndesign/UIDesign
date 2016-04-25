@@ -22,7 +22,7 @@
     <div class="main">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h1 class="panel-title">课程管理</h1>
+                <h1 class="panel-title">课程设计</h1>
             </div>
             <div class="panel-body" id="opt-body">
                 <a class="btn btn-success" href="coursedesign/courseDesignCOR">

@@ -24,7 +24,7 @@ pageEncoding="UTF-8"%>
     <div class="main">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h1 class="panel-title">课件管理</h1>
+                <h1 class="panel-title">教学课件</h1>
             </div>
             <div class="panel-body" id="opt-body">
                 <a class="btn btn-success" href="courseware/courseWareCOR">
