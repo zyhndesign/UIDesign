@@ -1,5 +1,6 @@
 package com.cidic.design.controllers;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -133,7 +134,13 @@ public class VideoCourseController {
 		videoCourse.setTitle(title);
 		videoCourse.setAbstract_(abstract_);
 		videoCourse.setContent(content);
-		videoCourse.setCreateTime(DateUtil.stringToDate(createTime));
+		if (createTime.equals("")){
+			videoCourse.setCreateTime(new Date());
+		}
+		else{
+			videoCourse.setCreateTime(DateUtil.stringToDate(createTime));
+		}
+		
 		videoCourse.setDuration(duration);
 		videoCourse.setThumbnail(thumbnail);
 		videoCourse.setTopTag(topTag);

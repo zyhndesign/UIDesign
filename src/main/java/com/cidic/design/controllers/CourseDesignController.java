@@ -1,5 +1,6 @@
 package com.cidic.design.controllers;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -85,7 +86,13 @@ public class CourseDesignController {
 			courseDesign.setAbstract_(abstract_);
 			courseDesign.setTeacher(teacher);
 			courseDesign.setTitle(title);
-			courseDesign.setCreateTime(DateUtil.stringToDate(createTime));
+			if (createTime.equals("")){
+				courseDesign.setCreateTime(new Date());
+			}
+			else{
+				courseDesign.setCreateTime(DateUtil.stringToDate(createTime));
+			}
+			
 			courseDesign.setTopTag(topTag);
 			courseDesign.setCourseDetailId(courseDetailId);
 			courseDesign.setBg(bg);
@@ -137,7 +144,12 @@ public class CourseDesignController {
 			courseDesign.setAbstract_(abstract_);
 			courseDesign.setTeacher(teacher);
 			courseDesign.setTitle(title);
-			courseDesign.setCreateTime(DateUtil.stringToDate(createTime));
+			if (createTime.equals("")){
+				courseDesign.setCreateTime(new Date());
+			}
+			else{
+				courseDesign.setCreateTime(DateUtil.stringToDate(createTime));
+			}
 			courseDesign.setTopTag(topTag);
 			courseDesign.setCourseDetailId(courseDetailId);
 			courseDesign.setBg(bg);

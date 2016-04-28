@@ -1,5 +1,6 @@
 package com.cidic.design.controllers;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -82,7 +83,13 @@ public class CoursewareController {
 		courseware.setTitle(title);
 		courseware.setAuthor(author);
 		courseware.setContent(content);
-		courseware.setCreateTime(DateUtil.stringToDate(createTime));
+		if (createTime.equals("")){
+			courseware.setCreateTime(new Date());
+		}
+		else{
+			courseware.setCreateTime(DateUtil.stringToDate(createTime));
+		}
+		
 		courseware.setThumbnail(thumbnail);
 		courseware.setTopTag(topTag);
 		courseware.setAbstract_(abstract_);
@@ -128,7 +135,13 @@ public class CoursewareController {
 		courseware.setTitle(title);
 		courseware.setAuthor(author);
 		courseware.setContent(content);
-		courseware.setCreateTime(DateUtil.stringToDate(createTime));
+		if (createTime.equals("")){
+			courseware.setCreateTime(new Date());
+		}
+		else{
+			courseware.setCreateTime(DateUtil.stringToDate(createTime));
+		}
+		
 		courseware.setThumbnail(thumbnail);
 		courseware.setTopTag(topTag);
 		courseware.setAbstract_(abstract_);

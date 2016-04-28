@@ -110,9 +110,9 @@ $(document).ready(function(){
                 required:true,
                 maxlength:32
             },
-            createTime:{
+            /*createTime:{
                 required:true
-            },
+            },*/
             thumbnail:{
                 required:true
             },
@@ -133,9 +133,9 @@ $(document).ready(function(){
                 required:config.validErrors.required,
                 maxlength:config.validErrors.maxLength.replace("${max}",32)
             },
-            createTime:{
+            /*createTime:{
                 required:config.validErrors.required
-            },
+            },*/
             thumbnail:{
                 required:config.validErrors.required
             },

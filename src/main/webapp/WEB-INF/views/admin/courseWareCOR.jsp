@@ -106,7 +106,7 @@ pageEncoding="UTF-8"%>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label  class="control-label col-md-2">创建时间*</label>
+                    <label  class="control-label col-md-2">创建时间</label>
                     <div class="col-md-8">
                         <input type="date" class="form-control" value="${fn:substring(courseware.createTime, 0, 10)}" name="createTime">
                     </div>
