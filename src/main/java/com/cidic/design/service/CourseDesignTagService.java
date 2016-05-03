@@ -6,6 +6,7 @@ import com.cidic.design.model.CourseDesign;
 import com.cidic.design.model.CourseDesignTag;
 
 public interface CourseDesignTagService {
+	
 	public void insertCourseDesignTagDao(List<CourseDesignTag> list);
 	
 	public void deleteCourseDesignTag(int courseDesignId, int tagId);

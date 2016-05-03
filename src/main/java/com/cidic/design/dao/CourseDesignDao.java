@@ -3,7 +3,6 @@ package com.cidic.design.dao;
 import java.util.List;
 
 import com.cidic.design.model.CourseDesign;
-import com.cidic.design.model.Courseware;
 
 public interface CourseDesignDao {
 

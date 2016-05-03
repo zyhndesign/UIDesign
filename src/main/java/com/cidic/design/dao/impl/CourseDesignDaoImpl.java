@@ -21,7 +21,7 @@ import com.cidic.design.model.Courseware;
 @Qualifier(value = "courseDesignDaoImpl")
 public class CourseDesignDaoImpl implements CourseDesignDao {
 
-	private static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
+	private static final Logger logger = LoggerFactory.getLogger(CourseDesignDaoImpl.class);
 	
 	@Autowired
 	@Qualifier("sessionFactory")
