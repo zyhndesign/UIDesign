@@ -34,7 +34,6 @@ body{
     height: 100%;
     position: relative;
     font-family: "Arail","微软雅黑","Heiti";
-    background: #443c3c!important;
 }
 ul{
     padding:0px;
@@ -70,7 +69,7 @@ label.error{
 .right{
     border-left: 1px solid #ccccc8;
     background: #f2f2f2;
-    padding:50px 30px;
+    padding:20px;
     position: absolute;
     left:180px;
     top:60px;
@@ -79,7 +78,7 @@ label.error{
     overflow: auto;
 }
 .main{
-    width: 90%;
+    width: 100%;
     margin: 0px auto 0px auto;
 }
 .hasRightBorder{
@@ -92,6 +91,8 @@ label.error{
     position: relative;
     background: #fff;
     height: 60px;
+    z-index: 99;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
 }
 .tags{
     margin-bottom: 10px;
@@ -130,14 +131,13 @@ label.error{
     line-height: 60px;
     padding-left: 10px;
     font-weight: 500;
-    font-size: 27px;
+    font-size: 1em;
     display: block;
 }
 .logo a .icon-gui{
-    color: #ff2e38;
-    font-size: 36px;
+    color: #333;
+    font-size: 1em;
     margin-right: 5px;
-    vertical-align: text-top;
 }
 /**
 顶部userMenu
@@ -176,7 +176,7 @@ label.error{
 *menu导航
 */
 .menu{
-    padding-top: 60px;
+    
 }
 .menu .separate{
     height: 10px;
@@ -193,7 +193,7 @@ label.error{
     font-size: 21px;
     height: 60px;
     line-height: 60px;
-    color: #fff;
+    
     display: block;
     border-top: 1px solid #edece3;
     vertical-align: text-top;

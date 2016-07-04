@@ -68,14 +68,13 @@ label.error{
     line-height: 60px;
     padding-left: 10px;
     font-weight: 500;
-    font-size: 27px;
+    font-size: 1em;
     display: block;
 }
 .logo a .icon-gui{
-    color: #ff2e38;
-    font-size: 36px;
+    color: #333;
+    font-size: 1em;
     margin-right: 5px;
-    vertical-align: text-top;
 }
 
 .pCenter{
@@ -114,6 +113,7 @@ label.error{
     border-radius: 0 4px 4px 0;
     background: #f2f2f2;
     padding-left: 26px;
+    font-size:1em;
 }
 .ctrlInput:focus{
     outline: none;

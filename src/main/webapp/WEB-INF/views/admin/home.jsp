@@ -9,10 +9,10 @@
 </head>
 <body>
 
-    <%@ include file="header.jsp"%>
+    <%@ include file="header.jsp" %>
 
 <div class="left">
-    <%@ include file="menu.jsp"%>
+    <%@ include file="menu.jsp" %>
 </div>
 
 <div class="right">
@@ -22,7 +22,7 @@
                 <h1 class="panel-title">欢迎</h1>
             </div>
             <div class="panel-body">
-                <h1 class="text-success text-center">欢迎使用管理系统</h1>
+                <h1 class="text-center">欢迎使用管理系统</h1>
             </div>
         </div>
     </div>

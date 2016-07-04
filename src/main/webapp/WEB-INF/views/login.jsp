@@ -12,7 +12,7 @@ pageEncoding="UTF-8"%>
 <div class="header">
     <h1 class="logo">
         <a href="#">
-            <span class="icon-gui"></span>GUI
+            <span class="icon-gui"></span>图形用户界面设计-课程管理
         </a>
     </h1>
 </div>
