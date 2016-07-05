@@ -64,14 +64,14 @@ label.error{
     display: none;
 }
 .left{
-    width: 180px;
+    width: 150px;
 }
 .right{
     border-left: 1px solid #ccccc8;
     background: #f2f2f2;
     padding:20px;
     position: absolute;
-    left:180px;
+    left:150px;
     top:60px;
     bottom: 0px;
     right: 0px;
