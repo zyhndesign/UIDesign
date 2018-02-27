@@ -96,7 +96,7 @@ public class VideoCourseTagDaoImpl implements VideoCourseTagDao {
 			videoCourse.setCreateTime(DateUtil.stringToDate(String.valueOf(role[8])));
 			videoCourse.setTitle(String.valueOf(role[4]));
 			videoCourse.setDuration(String.valueOf(role[6]));
-			videoCourse.setThumbnail(String.valueOf(7));
+			videoCourse.setThumbnail(String.valueOf(role[7]));
 			videoCourse.setTopTag(Integer.parseInt(String.valueOf(role[10])));
 		    Tag tag = new Tag();
 		    tag.setId(Integer.parseInt(String.valueOf(role[1])));

@@ -96,7 +96,8 @@ public class CoursewareTagDaoImpl implements CoursewareTagDao {
 			courseware.setContent(String.valueOf(role[8]));
 			courseware.setCreateTime(DateUtil.stringToDate(String.valueOf(role[7])));
 			courseware.setTitle(String.valueOf(role[4]));
-			courseware.setThumbnail(String.valueOf(6));
+			courseware.setThumbnail(String.valueOf(role[6]));
+			
 			courseware.setTopTag(Integer.parseInt(String.valueOf(role[9])));
 		    Tag tag = new Tag();
 		    tag.setId(Integer.parseInt(String.valueOf(role[1])));

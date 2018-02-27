@@ -74,7 +74,7 @@ public class CourseDesignTagDaoImpl implements CourseDesignTagDao {
 	public List<CourseDesign> getCourseDesignByTagName(List<String> tagName) {
 		Session session = this.getSessionFactory().getCurrentSession();
 		String sqlSelected = "select c.id as course_design_tag_id, t.id as tagId, d.id as course_design_id,"
-				+ "t.tag_name,d.abstract,d.course_detail_id,d.create_time,d.teacher,d.title, d.top_tag from"
+				+ "t.tag_name,d.abstract,d.course_detail_id,d.create_time,d.teacher,d.title, d.top_tag,d.thumbnail,d.bg from"
 				+ "  course_design_tag c cross  join  tag t cross join  course_design d  where"
 				+ "  d.id=c.courseDesign_id  and c.tag_id=t.id  and ( t.tag_name in (:tagNames ) )";
         
@@ -94,7 +94,10 @@ public class CourseDesignTagDaoImpl implements CourseDesignTagDao {
 		    courseDesign.setCourseDetailId(Integer.parseInt(String.valueOf(role[5])));
 		    courseDesign.setCreateTime(DateUtil.stringToDate(String.valueOf(role[6])));
 		    courseDesign.setTeacher(String.valueOf(role[7]));
-		    courseDesign.setTitle(String.valueOf(8));
+		    courseDesign.setTitle(String.valueOf(role[8]));
+		    courseDesign.setThumbnail(String.valueOf(role[10]));
+		    courseDesign.setBg(String.valueOf(role[11]));
+		    
 		    courseDesign.setTopTag(Integer.parseInt(String.valueOf(role[9])));
 		    Tag tag = new Tag();
 		    tag.setId(Integer.parseInt(String.valueOf(role[1])));
